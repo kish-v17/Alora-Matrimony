@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".reg6_qualiOccupationIncome">
+
+    <LinearLayout
+        android:id="@+id/mainlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <TextView
+            android:gravity="start"
+            android:id="@+id/txtMaritalStatus"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.09"
+            android:text="@string/lbl_qualification"
+            style="@style/txtQuicksandsemibold30" />
+
+        <EditText
+            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+            android:hint="Highest qualification"
+            android:id="@+id/etamsa"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.06"
+            android:paddingBottom="12dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="14dp"
+            android:paddingTop="17dp"
+            android:textColorHint="@color/gray_700"/>
+
+        <TextView
+            android:gravity="start"
+            android:id="@+id/txtHeight"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.09"
+            android:text="@string/lbl_occupation"
+            style="@style/txtQuicksandsemibold30" />
+
+        <EditText
+            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+            android:hint="You work as"
+            android:id="@+id/etGroupEighty"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.06"
+            android:paddingBottom="12dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="14dp"
+            android:paddingTop="17dp"
+            android:textColorHint="@color/gray_700" />
+
+        <TextView
+            android:id="@+id/txtIncome"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:letterSpacing="0.09"
+            android:text="@string/lbl_income"
+            style="@style/txtQuicksandsemibold30"/>
+
+        <EditText
+            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+            android:hint="Per annum"
+            android:id="@+id/etamaa"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.06"
+            android:paddingBottom="12dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="14dp"
+            android:paddingTop="17dp"
+            android:textColorHint="@color/gray_700" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        style="@style/btnSolidRounded_1"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:paddingStart="30dp"
+        android:paddingTop="9dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="11dp"
+        android:text="@string/lbl_continue"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

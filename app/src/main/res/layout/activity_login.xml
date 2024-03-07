@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:id="@+id/linearLogInActivity"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frameStackturtlelogotwo"
+            android:layout_width="wrap_content"
+            android:layout_height="197dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="21dp">
+
+            <ImageView
+                android:id="@+id/imageTurtlelogoTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/img_turtlelogo2" />
+
+            <TextView
+                android:id="@+id/txtAlora"
+                style="@style/txtCinzelDecorativebold35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:letterSpacing="0.32"
+                android:singleLine="true"
+                android:text="@string/lbl_alora" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linearColumngroupseventyseven"
+            android:background="@drawable/rectangle_gradient_s_bluegray_700_e_gray_400_radius_40"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="84dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearColumnemail"
+                android:background="@drawable/rectangle_radius_40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="125dp"
+                android:layout_marginEnd="11dp"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/btnEmail"
+                    style="@style/btnSolidRounded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="@string/lbl_email"
+                    android:inputType="textEmailAddress"
+                    android:letterSpacing="0.07"
+                    android:paddingStart="30dp"
+                    android:paddingTop="13dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="13dp"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/btnPassword"
+                    style="@style/btnSolidRounded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:hint="@string/lbl_password"
+                    android:inputType="textPassword"
+                    android:letterSpacing="0.07"
+                    android:paddingStart="30dp"
+                    android:paddingTop="13dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="13dp"
+                    android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/txtLogIn"
+                        style="@style/txtQuicksandregular23"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginEnd="19dp"
+                        android:letterSpacing="0.07"
+                        android:text="@string/lbl_log_in" />
+
+                <TextView
+                    android:id="@+id/txtsignup"
+                    style="@style/txtQuicksandregular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="19dp"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.05"
+                    android:singleLine="true"
+                    android:text="@string/msg_don_t_have_an_a" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearRowgroupseventyseven"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="54dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/reg_google"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rectangle_bg_white_a700_radius_25"
+                    android:paddingHorizontal="7dp"
+                    android:paddingVertical="7dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_google_logo" />
+
+                <ImageButton
+                    android:id="@+id/reg_phn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="45dp"
+                    android:background="@drawable/rectangle_bg_white_a700_radius_25"
+                    android:paddingHorizontal="7dp"
+                    android:paddingVertical="7dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_phone_logo" />
+
+                <ImageButton
+                    android:id="@+id/reg_mail"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="45dp"
+                    android:background="@drawable/rectangle_bg_white_a700_radius_25"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="6dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_mail_logo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".reg2_nmDob">
+
+    <LinearLayout
+        android:id="@+id/mainlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:layout_width="wrap_content"
+            android:letterSpacing="0.09"
+            android:singleLine="true"
+            android:layout_gravity="start"
+            android:text="@string/lbl_name"
+            style="@style/txtQuicksandsemibold30"/>
+
+        <EditText
+            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+            android:hint="@string/lbl_first_name"
+            android:id="@+id/etGroupFortyOne"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.06"
+            android:paddingBottom="14dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="11dp"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_700" />
+
+        <EditText
+            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+            android:hint="@string/lbl_last_name"
+            android:id="@+id/etGroupForty"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.06"
+            android:paddingBottom="14dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="11dp"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_700" />
+
+        <TextView
+            android:id="@+id/txtDateofBirth"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="57dp"
+            android:layout_marginBottom="34dp"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.09"
+            android:singleLine="true"
+            android:text="@string/lbl_date_of_birth"
+            style="@style/txtQuicksandsemibold30"/>
+
+        <LinearLayout
+            android:id="@+id/linearRowgroupfortyfour"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etGroupFortyFour"
+                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.22"
+                android:hint="@string/lbl_dd"
+                android:inputType="number"
+                android:letterSpacing="0.06"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="14dp"
+                android:textColorHint="@color/gray_700"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/txtGroupFortyThree"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_weight="0.22"
+                android:layout_width="0dp"
+                android:inputType="number"
+                android:letterSpacing="0.06"
+                android:paddingBottom="14dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:singleLine="true"
+                android:hint="@string/lbl_mm"
+                android:textColorHint="@color/gray_700"
+                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"/>
+
+            <EditText
+                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+                android:hint="@string/lbl_yyyy"
+                android:id="@+id/etGroupFortyTwo"
+                android:inputType="number"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_weight="0.42"
+                android:layout_width="0dp"
+                android:letterSpacing="0.06"
+                android:paddingBottom="14dp"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="15dp"
+                android:singleLine="true"
+                android:autofillHints="@string/lbl_yyyy"
+                android:textColorHint="@color/gray_700" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        style="@style/btnSolidRounded_1"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:paddingStart="30dp"
+        android:paddingTop="9dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="11dp"
+        android:text="@string/lbl_continue"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

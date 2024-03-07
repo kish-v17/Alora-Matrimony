@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="txtCinzelDecorativebold35">
+        <item name="android:textSize">35dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/cinzel_decorative_bold</item>
+    </style>
+    <style name="btnSolidRounded">
+        <item name="android:textSize">23dp</item>
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_20</item>
+    </style>
+    <style name="txtQuicksandregular23">
+        <item name="android:textSize">23dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+    <style name="txtQuicksandregular16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+    <style name="txtQuicksandsemibold30">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/bluegray_700</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+    <style name="btnSolidRounded_1">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <item name="android:background">@drawable/rectangle_bg_bluegray_700_radius_20</item>
+    </style>
+    <style name="txtQuicksandmedium15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+    </style>
+</resources>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".reg1_profileFor">
+
+    <LinearLayout
+        android:id="@+id/mainlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <TextView
+            android:id="@+id/txtThisprofilefo"
+            style="@style/txtQuicksandsemibold30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="start"
+            android:letterSpacing="0.09"
+            android:singleLine="true"
+            android:text="@string/msg_this_profile_fo" />
+
+        <LinearLayout
+            android:id="@+id/linearColumnmyself"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearRowmyself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMySelf"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="150dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:singleLine="true"
+                    android:text="@string/lbl_my_self" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/txtMyRelative"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="180dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:textSize="20dp"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:singleLine="true"
+                    android:text="@string/lbl_my_relative" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearRowmyfriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/txtMyFriend"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:textSize="20dp"
+                    android:letterSpacing="0.06"
+                    android:singleLine="true"
+                    android:text="@string/lbl_my_friend" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/txtMyChild"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:textSize="20dp"
+                    android:letterSpacing="0.06"
+                    android:singleLine="true"
+                    android:text="@string/lbl_my_child" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/txtMySibling"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="160dp"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/quicksand_regular"
+                android:textSize="20dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="10dp"
+                android:letterSpacing="0.06"
+                android:singleLine="true"
+                android:text="@string/lbl_my_sibling" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtChooseGender"
+            style="@style/txtQuicksandsemibold30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="57dp"
+            android:gravity="start"
+            android:letterSpacing="0.09"
+            android:singleLine="true"
+            android:text="@string/lbl_choose_gender" />
+
+        <LinearLayout
+            android:id="@+id/linearRowgender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/txtfemale"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="160dp"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/quicksand_regular"
+                android:textSize="20dp"
+                android:layout_marginEnd="10dp"
+                android:letterSpacing="0.06"
+                android:singleLine="true"
+                android:text="@string/lbl_female" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/txtmale"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="160dp"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/quicksand_regular"
+                android:textSize="20dp"
+                android:layout_marginEnd="10dp"
+                android:letterSpacing="0.06"
+                android:singleLine="true"
+                android:text="@string/lbl_male" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        style="@style/btnSolidRounded_1"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:paddingStart="30dp"
+        android:paddingTop="9dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="11dp"
+        android:text="@string/lbl_continue"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
