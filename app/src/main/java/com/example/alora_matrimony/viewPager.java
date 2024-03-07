@@ -23,11 +23,13 @@ public class viewPager extends FragmentPagerAdapter {
             return new reg4_religionCommunity();
         else if(position==4)
             return new reg5_maritalHeightWeightDiet();
-        else return new reg6_qualiOccupationIncome();
+        else
+            return new reg6_qualiOccupationIncome();
     }
 
     @Override
     public int getCount() {
         return 6;
     }
+
 }

@@ -14,7 +14,8 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/img_backbtn"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tb"
