@@ -37,7 +37,7 @@
             android:letterSpacing="0.35"
             android:text="@string/msg_sparking_love_s"
             android:textColor="@color/bluegray_700"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
     </LinearLayout>
 

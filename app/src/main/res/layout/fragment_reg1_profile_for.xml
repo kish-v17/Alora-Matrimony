@@ -29,63 +29,48 @@
             android:singleLine="true"
             android:text="@string/msg_this_profile_fo" />
 
-        <RadioGroup
-            android:id="@+id/linearColumnmyself"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/linearRowmyself"
+            <RadioGroup
+                android:id="@+id/rg_pro_for"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="1dp"
-                android:orientation="horizontal">
-
+                android:gravity="center"
+                android:orientation="vertical">
                 <RadioButton
                     android:id="@+id/btnMySelf"
-                    android:layout_width="150dp"
-                    android:background="@drawable/btn_selected"
+                    android:layout_width="170dp"
+                    android:background="@drawable/rdo_selector"
                     android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
                     android:gravity="center"
+                    android:layout_marginBottom="15dp"
                     android:layout_height="wrap_content"
                     android:letterSpacing="0.06"
                     android:button="@color/blah"
                     android:singleLine="true"
                     android:text="@string/lbl_my_self" />
-
                 <RadioButton
-                    android:id="@+id/txtMyRelative"
-                    android:layout_width="180dp"
+                    android:id="@+id/txtMyChild"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
-                    android:background="@drawable/btn_selected"
-                    android:textAllCaps="false"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="0.06"
                     android:button="@color/blah"
-                    android:textAlignment="center"
+                    android:letterSpacing="0.06"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rdo_selector"
                     android:singleLine="true"
-                    android:text="@string/lbl_my_relative" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearRowmyfriend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:orientation="horizontal">
-
+                    android:textAlignment="center"
+                    android:text="@string/lbl_my_child" />
                 <RadioButton
                     android:id="@+id/txtMyFriend"
-                    android:layout_width="160dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rdo_selector"
                     android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
@@ -96,38 +81,35 @@
                     android:text="@string/lbl_my_friend" />
 
                 <RadioButton
-                    android:id="@+id/txtMyChild"
-                    android:layout_width="160dp"
+                    android:id="@+id/txtMySibling"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
                     android:button="@color/blah"
+                    android:layout_marginBottom="15dp"
                     android:letterSpacing="0.06"
+                    android:background="@drawable/rdo_selector"
                     android:singleLine="true"
                     android:textAlignment="center"
-                    android:text="@string/lbl_my_child" />
-
-            </LinearLayout>
-
-            <RadioButton
-                android:id="@+id/txtMySibling"
-                android:layout_width="160dp"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/quicksand_regular"
-                android:textSize="20dp"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="10dp"
-                android:letterSpacing="0.06"
-                android:button="@color/blah"
-                android:textAlignment="center"
-                android:singleLine="true"
-                android:text="@string/lbl_my_sibling" />
-
-        </RadioGroup>
+                    android:text="@string/lbl_my_sibling" />
+                <RadioButton
+                    android:id="@+id/txtMyRelative"
+                    android:layout_width="170dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:textSize="20dp"
+                    android:background="@drawable/rdo_selector"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:button="@color/blah"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:text="@string/lbl_my_relative" />
+            </RadioGroup>
 
         <TextView
             android:id="@+id/txtChooseGender"
@@ -140,42 +122,46 @@
             android:singleLine="true"
             android:text="@string/lbl_choose_gender" />
 
-        <LinearLayout
-            android:id="@+id/linearRowgender"
+        <RadioGroup
+            android:id="@+id/rg_gen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="29dp"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="ExtraText">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <RadioButton
+                android:id="@+id/txtmale"
+                android:layout_width="150dp"
+                android:textAllCaps="false"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/quicksand_regular"
+                android:textSize="20dp"
+                android:background="@drawable/rdo_selector"
+                android:button="@color/blah"
+                android:textAlignment="center"
+                android:letterSpacing="0.06"
+                android:singleLine="true"
+                android:text="@string/lbl_male"/>
+
+            <RadioButton
                 android:id="@+id/txtfemale"
-                android:layout_width="160dp"
+                android:layout_width="150dp"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/quicksand_regular"
                 android:textSize="20dp"
-                android:layout_marginEnd="10dp"
+                android:background="@drawable/rdo_selector"
+                android:button="@color/blah"
+                android:textAlignment="center"
                 android:letterSpacing="0.06"
                 android:singleLine="true"
                 android:text="@string/lbl_female" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/txtmale"
-                android:layout_width="160dp"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/quicksand_regular"
-                android:textSize="20dp"
-                android:layout_marginEnd="10dp"
-                android:letterSpacing="0.06"
-                android:singleLine="true"
-                android:text="@string/lbl_male" />
-
-        </LinearLayout>
-
+        </RadioGroup>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
