@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Fragment f=new reg1_profileFor();
-                getSupportFragmentManager().beginTransaction().add(R.id.cont,f).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.container,f).commit();
             }
         });
 
