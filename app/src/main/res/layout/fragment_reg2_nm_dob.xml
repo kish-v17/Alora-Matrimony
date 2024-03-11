@@ -42,7 +42,7 @@
             android:paddingStart="11dp"
             android:paddingTop="15dp"
             android:singleLine="true"
-            android:textColorHint="@color/gray_700" />
+            style="@style/etSolidRounded" />
 
         <EditText
             android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
@@ -58,7 +58,7 @@
             android:paddingStart="11dp"
             android:paddingTop="15dp"
             android:singleLine="true"
-            android:textColorHint="@color/gray_700" />
+            style="@style/etSolidRounded"/>
 
         <TextView
             android:id="@+id/txtDateofBirth"
@@ -91,7 +91,7 @@
                 android:paddingTop="15dp"
                 android:paddingEnd="14dp"
                 android:paddingBottom="14dp"
-                android:textColorHint="@color/gray_700"
+                style="@style/etSolidRounded"
                 android:singleLine="true" />
 
             <EditText
@@ -108,7 +108,7 @@
                 android:paddingTop="15dp"
                 android:singleLine="true"
                 android:hint="@string/lbl_mm"
-                android:textColorHint="@color/gray_700"
+                style="@style/etSolidRounded"
                 android:background="@drawable/rectangle_bg_bluegray_100_radius_20"/>
 
             <EditText
@@ -127,7 +127,7 @@
                 android:paddingTop="15dp"
                 android:singleLine="true"
                 android:autofillHints="@string/lbl_yyyy"
-                android:textColorHint="@color/gray_700" />
+                style="@style/etSolidRounded"/>
 
         </LinearLayout>
 

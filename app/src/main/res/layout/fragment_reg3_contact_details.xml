@@ -45,20 +45,11 @@
             android:layout_width="match_parent"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/btnNinetyOne"
-                android:layout_width="65dp"
-                android:layout_height="55dp"
-                android:gravity="center"
-                android:letterSpacing="0.06"
-                android:hint="@string/lbl_91"
-                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"/>
 
             <EditText
                 android:id="@+id/etGroupTwentyFive"
-                android:layout_width="235dp"
+                android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginStart="12dp"
                 android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
                 android:hint="@string/lbl_mobile_number"
                 android:inputType="phone"
@@ -66,7 +57,7 @@
                 android:paddingStart="11dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="14dp"
-                android:textColorHint="@color/gray_700" />
+                style="@style/etSolidRounded" />
 
         </LinearLayout>
 
@@ -96,7 +87,7 @@
             android:paddingStart="11dp"
             android:paddingTop="15dp"
             android:singleLine="true"
-            android:textColorHint="@color/gray_700" />
+            style="@style/etSolidRounded" />
 
     </LinearLayout>
 

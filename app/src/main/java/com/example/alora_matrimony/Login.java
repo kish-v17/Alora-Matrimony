@@ -24,8 +24,7 @@ public class Login extends AppCompatActivity {
         b.txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment f=new reg1_profileFor();
-                getSupportFragmentManager().beginTransaction().add(R.id.container,f).commit();
+                startActivity(new Intent(getApplicationContext(), registration.class));
             }
         });
 

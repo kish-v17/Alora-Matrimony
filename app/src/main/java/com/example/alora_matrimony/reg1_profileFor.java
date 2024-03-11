@@ -23,14 +23,14 @@ androidx.appcompat.widget.AppCompatButton btnContinue;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_reg1_profile_for, container, false);
-//        b=FragmentReg1ProfileForBinding.inflate(getLayoutInflater());
+
         btnContinue= view.findViewById(R.id.btnContinue);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 reg2_nmDob nmDob=new reg2_nmDob();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.for_proFor,nmDob).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,nmDob).commit();
             }
         });
         return view;
