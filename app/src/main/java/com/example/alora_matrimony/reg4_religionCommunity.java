@@ -18,7 +18,6 @@ public class reg4_religionCommunity extends Fragment {
         View view=inflater.inflate(R.layout.fragment_reg4_religion_community, container, false);
 
         btnContinue= view.findViewById(R.id.btnContinue);
-        cityState=view.findViewById(R.id.cityState);
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
