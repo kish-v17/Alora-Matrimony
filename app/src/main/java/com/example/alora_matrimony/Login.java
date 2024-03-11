@@ -1,6 +1,8 @@
 package com.example.alora_matrimony;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +24,8 @@ public class Login extends AppCompatActivity {
         b.txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Registration.class));
+                Fragment f=new reg1_profileFor();
+                getSupportFragmentManager().beginTransaction().add(R.id.cont,f).commit();
             }
         });
 
