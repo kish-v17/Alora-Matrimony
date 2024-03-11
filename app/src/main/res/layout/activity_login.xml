@@ -94,8 +94,7 @@
                 android:paddingTop="13dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="13dp"
-                android:singleLine="true"
-                android:drawableEnd="@drawable/password_state"/>
+                android:singleLine="true" />
 
             <TextView
                 android:id="@+id/txtLogIn"
