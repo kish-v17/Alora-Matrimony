@@ -28,10 +28,9 @@
             android:text="@string/lbl_religion"
             style="@style/txtQuicksandsemibold30"/>
 
-        <EditText
+        <Spinner
             android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:hint="@string/lbl_religion"
-            android:id="@+id/etGroupEighty"
+            android:id="@+id/regReligion"
             android:inputType="text"
             android:layout_height="wrap_content"
             android:layout_marginTop="33dp"
@@ -41,6 +40,7 @@
             android:paddingEnd="30dp"
             android:paddingStart="14dp"
             android:paddingTop="17dp"
+            android:spinnerMode="dropdown"
             style="@style/etSolidRounded"/>
 
         <EditText
@@ -69,6 +69,7 @@
             style="@style/txtQuicksandsemibold30"/>
 
         <AutoCompleteTextView
+            android:id="@+id/regCity"
             android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
             android:hint="@string/lbl_city_state"
             android:inputType="text"
