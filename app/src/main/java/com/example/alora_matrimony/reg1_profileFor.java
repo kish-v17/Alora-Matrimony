@@ -30,7 +30,7 @@ androidx.appcompat.widget.AppCompatButton btnContinue;
             @Override
             public void onClick(View v) {
                 reg2_nmDob nmDob=new reg2_nmDob();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,nmDob).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,nmDob).addToBackStack(null).commit();
             }
         });
         return view;

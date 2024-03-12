@@ -23,7 +23,7 @@ public class reg2_nmDob extends Fragment {
             @Override
             public void onClick(View v) {
                 reg3_contactDetails con=new reg3_contactDetails();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,con).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,con).addToBackStack(null).commit();
             }
         });
 

@@ -21,7 +21,7 @@ public class reg5_maritalHeightWeightDiet extends Fragment {
             @Override
             public void onClick(View v) {
                 reg6_qualiOccupationIncome quali=new reg6_qualiOccupationIncome();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,quali).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,quali).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment

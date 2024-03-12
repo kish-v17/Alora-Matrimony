@@ -22,7 +22,7 @@ public class reg4_religionCommunity extends Fragment {
             @Override
             public void onClick(View v) {
                 reg5_maritalHeightWeightDiet merital=new reg5_maritalHeightWeightDiet();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,merital).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,merital).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment

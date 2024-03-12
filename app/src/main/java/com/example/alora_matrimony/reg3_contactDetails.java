@@ -24,7 +24,7 @@ public class reg3_contactDetails extends Fragment {
             @Override
             public void onClick(View v) {
                 reg4_religionCommunity community=new reg4_religionCommunity();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,community).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,community).addToBackStack(null).commit();
             }
         });
 
