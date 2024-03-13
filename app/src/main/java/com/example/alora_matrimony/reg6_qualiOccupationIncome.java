@@ -24,7 +24,7 @@ public class reg6_qualiOccupationIncome extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), MainActivity.class);
+                Intent intent=new Intent(getActivity(), Deshbord.class);
                 startActivity(intent);
             }
         });
