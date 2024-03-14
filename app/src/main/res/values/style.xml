@@ -43,4 +43,9 @@
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/quicksand_medium</item>
     </style>
+    <style name="txtArimaMadurairegular20">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/arima_regular</item>
+    </style>
 </resources>

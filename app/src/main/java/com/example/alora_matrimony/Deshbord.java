@@ -22,6 +22,11 @@ public class Deshbord extends AppCompatActivity {
         setContentView(R.layout.activity_deshbord);
         MeowBottomNavigation navbar=findViewById(R.id.navbar);
 
+        //fragment
+        getSupportFragmentManager().beginTransaction().add(R.id.dbContainer,new Home()).commit();
+
+
+        //navbar
         navbar.add(new MeowBottomNavigation.Model(home,R.drawable.img_home));
         navbar.add(new MeowBottomNavigation.Model(search,R.drawable.img_search));
         navbar.add(new MeowBottomNavigation.Model(chat,R.drawable.img_chat));
@@ -54,9 +59,5 @@ public class Deshbord extends AppCompatActivity {
                 return null;
             }
         });
-
-
-        //fragment
-        getSupportFragmentManager().beginTransaction().add(R.id.container,new Home()).commit();
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,11 @@
     tools:context=".Deshbord">
 
     <FrameLayout
+        android:id="@+id/dbContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/dbContainer"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/navbar"
@@ -18,6 +20,7 @@
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dbContainer"
+        app:layout_constraintVertical_bias="1.0"
         app:mbn_backgroundBottomColor="@color/bluegray_700"
         app:mbn_circleColor="@color/bluegray_700"
         app:mbn_countBackgroundColor="#ff6f00"
@@ -25,6 +28,7 @@
         app:mbn_defaultIconColor="@color/white"
         app:mbn_rippleColor="#2f424242"
         app:mbn_selectedIconColor="@color/white"
-        app:mbn_shadowColor="#1f212121" />
+        app:mbn_shadowColor="#1f212121"
+        tools:layout_editor_absoluteX="0dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
