@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
         b.txtLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                startActivity(new Intent(getApplicationContext(), Deshbord.class));
             }
         });
     }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
@@ -18,10 +19,9 @@ import java.util.List;
 
 public class Home extends Fragment {
 
-    RecyclerView rv;
-    AppCompatButton more;
+    ImageButton more;
 
-    RelativeLayout db_rv;
+    RecyclerView db_rv;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,8 +38,8 @@ public class Home extends Fragment {
             iteamlist.add(new rv_itemmodel(R.drawable.deshboard_profile_circle,R.drawable.deshboard_profile,R.drawable.img_likebtn,R.drawable.img_morebtn));
         }
 
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setAdapter(new rv_adapter(getContext(),iteamlist));
+        db_rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        db_rv.setAdapter(new rv_adapter(getContext(),iteamlist));
         // Inflate the layout for this fragment
         return view;
     }

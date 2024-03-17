@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
@@ -16,6 +17,8 @@ public class Deshbord extends AppCompatActivity {
     private final int search=2;
     private final int chat=3;
     private final int profile=4;
+
+    String fTag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,14 +26,14 @@ public class Deshbord extends AppCompatActivity {
         MeowBottomNavigation navbar=findViewById(R.id.navbar);
 
         //fragment
-        getSupportFragmentManager().beginTransaction().add(R.id.dbContainer,new Home()).commit();
+        Fragment fragmentToRemove = getSupportFragmentManager().findFragmentByTag(fTag);
 
-
-        //navbar
+        //navbar items
         navbar.add(new MeowBottomNavigation.Model(home,R.drawable.img_home));
         navbar.add(new MeowBottomNavigation.Model(search,R.drawable.img_search));
         navbar.add(new MeowBottomNavigation.Model(chat,R.drawable.img_chat));
         navbar.add(new MeowBottomNavigation.Model(profile,R.drawable.img_profile));
+
         //for default cell
         navbar.show(1,true);
 
@@ -43,15 +46,27 @@ public class Deshbord extends AppCompatActivity {
         navbar.setOnShowListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
-                String name;
                 switch (model.getId()){
-                    case home:name="Home";
+                    case home:
+                        if (savedInstanceState != null) {
+                            getSupportFragmentManager().beginTransaction().add(R.id.dbContainer, new Home()).commit();
+                        }
+                        else {
+                            //getSupportFragmentManager().beginTransaction().remove(fragmentToRemove);
+                            getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Home()).commit();
+                        }
                         break;
-                    case search:name="Search";
-                        //break;
-                    case chat:name="Chat";
+                    case search:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Search()).commit();
+                        fTag=Search.class.getName();
                         break;
-                    case profile:name="Profile";
+                    case chat:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Chat()).commit();
+                        fTag=Chat.class.getName();
+                        break;
+                    case profile:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Profile()).commit();
+                        fTag=Profile.class.getName();
                         break;
                 }
                 //for notification

@@ -10,9 +10,8 @@
         android:id="@+id/frameStackturtlelogotwo"
         android:layout_width="wrap_content"
         android:layout_height="170dp"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linearColumngroupseventyseven">
 
         <ImageView
             android:id="@+id/imageTurtlelogoTwo"
@@ -42,17 +41,15 @@
         android:id="@+id/linearColumngroupseventyseven"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rectangle_gradient_s_bluegray_700_e_gray_400_radius_40"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameStackturtlelogotwo">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearColumnemail"

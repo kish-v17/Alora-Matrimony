@@ -19,31 +19,30 @@
             android:layout_height="wrap_content"
             android:background="@drawable/deshboard_profile" />
 
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="42dp"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/deshboard_profile_rectangle"
-            android:gravity="center"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/deshboard_profile_rectangle"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/like"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="7dp"
-                android:background="@drawable/img_likebtn"
-                />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/like"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/img_likebtn" />
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/more"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="7dp"
-                android:background="@drawable/img_morebtn" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/more"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/img_morebtn" />
 
-        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>
