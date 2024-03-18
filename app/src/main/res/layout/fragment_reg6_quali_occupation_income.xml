@@ -41,7 +41,8 @@
             android:paddingEnd="30dp"
             android:paddingStart="14dp"
             android:paddingTop="17dp"
-            android:textColorHint="@color/gray_700"/>
+            android:textColorHint="@color/gray_700"
+            style="@style/etSolidRounded"/>
 
         <TextView
             android:gravity="start"
@@ -66,7 +67,8 @@
             android:paddingEnd="30dp"
             android:paddingStart="14dp"
             android:paddingTop="17dp"
-            android:textColorHint="@color/gray_700" />
+            android:textColorHint="@color/gray_700"
+            style="@style/etSolidRounded"/>
 
         <TextView
             android:id="@+id/txtIncome"
@@ -91,7 +93,8 @@
             android:paddingEnd="30dp"
             android:paddingStart="14dp"
             android:paddingTop="17dp"
-            android:textColorHint="@color/gray_700" />
+            android:textColorHint="@color/gray_700"
+            style="@style/etSolidRounded"/>
 
     </LinearLayout>
 
