@@ -14,6 +14,7 @@
             android:background="@drawable/deshboard_profile_circle" />
 
         <ImageView
+
             android:id="@+id/bigpfp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,14 +30,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
             android:id="@+id/like"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="7dp"
             android:background="@drawable/img_likebtn" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
             android:id="@+id/more"
             android:layout_width="35dp"
             android:layout_height="35dp"

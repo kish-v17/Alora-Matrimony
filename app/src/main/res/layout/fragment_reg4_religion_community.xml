@@ -39,7 +39,6 @@
             android:paddingBottom="12dp"
             android:paddingEnd="30dp"
             android:paddingStart="14dp"
-            android:paddingTop="17dp"
             android:spinnerMode="dropdown"
             style="@style/etSolidRounded"/>
 
