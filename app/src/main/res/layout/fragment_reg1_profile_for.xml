@@ -48,7 +48,7 @@
                     android:layout_marginBottom="15dp"
                     android:layout_height="wrap_content"
                     android:letterSpacing="0.06"
-                    android:button="@color/blah"
+                    android:button="@color/white"
                     android:singleLine="true"
                     android:text="@string/lbl_my_self" />
                 <RadioButton
@@ -59,7 +59,7 @@
                     android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
-                    android:button="@color/blah"
+                    android:button="@color/white"
                     android:letterSpacing="0.06"
                     android:layout_marginBottom="15dp"
                     android:background="@drawable/rdo_selector"
@@ -79,7 +79,7 @@
                     android:textAlignment="center"
                     android:letterSpacing="0.06"
                     android:singleLine="true"
-                    android:button="@color/blah"
+                    android:button="@color/white"
                     android:text="@string/lbl_my_friend" />
 
                 <RadioButton
@@ -90,7 +90,7 @@
                     android:textAllCaps="false"
                     android:fontFamily="@font/quicksand_regular"
                     android:textSize="20dp"
-                    android:button="@color/blah"
+                    android:button="@color/white"
                     android:layout_marginBottom="15dp"
                     android:letterSpacing="0.06"
                     android:background="@drawable/rdo_selector"
@@ -107,7 +107,7 @@
                     android:textAllCaps="false"
                     android:layout_height="wrap_content"
                     android:letterSpacing="0.06"
-                    android:button="@color/blah"
+                    android:button="@color/white"
                     android:textAlignment="center"
                     android:singleLine="true"
                     android:text="@string/lbl_my_relative" />
@@ -143,7 +143,7 @@
                 android:fontFamily="@font/quicksand_regular"
                 android:textSize="20dp"
                 android:background="@drawable/rdo_selector"
-                android:button="@color/blah"
+                android:button="@color/white"
                 android:textAlignment="center"
                 android:letterSpacing="0.06"
                 android:singleLine="true"
@@ -158,7 +158,7 @@
                 android:fontFamily="@font/quicksand_regular"
                 android:textSize="20dp"
                 android:background="@drawable/rdo_selector"
-                android:button="@color/blah"
+                android:button="@color/white"
                 android:textAlignment="center"
                 android:letterSpacing="0.06"
                 android:singleLine="true"
