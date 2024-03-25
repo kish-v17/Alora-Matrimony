@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115797061337",
+    "project_id": "alora-matrimony",
+    "storage_bucket": "alora-matrimony.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115797061337:android:7af1749903d308da9618c8",
+        "android_client_info": {
+          "package_name": "com.example.alora_matrimony"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1h6rMKz41BoXuMSsnLmlbk3ZG8ah84c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
