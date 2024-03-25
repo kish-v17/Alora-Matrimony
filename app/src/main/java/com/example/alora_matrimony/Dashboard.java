@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-public class Deshbord extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     private final int home=1;
     private final int search=2;
@@ -22,7 +21,7 @@ public class Deshbord extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deshbord);
+        setContentView(R.layout.activity_dashboard);
         MeowBottomNavigation navbar=findViewById(R.id.navbar);
 
         //fragment

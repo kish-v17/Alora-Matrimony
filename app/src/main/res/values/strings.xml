@@ -160,45 +160,399 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
     <string name="msg_please_enter_valid_phone_nu">Please enter valid phone number</string>
     <string name="msg_please_enter_valid_text">Please enter valid text</string>
     <string name="lbl_hello">Hello</string>
+    <string name="selectDate">DD/MM/YYYY</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lbl_state">State</string>
+    <string name="lbl_sub_community">Sub Community</string>
+    <string name="lbl_city">City\n</string>
 
-    <string-array name="cs" tools:ignore="ExtraTranslation">
-        <item>Agra, Uttar Pradesh</item>
-        <item>Ahmedabad, Gujarat</item>
-        <item>Amritsar, Punjab</item>
-        <item>Bengaluru, Karnataka</item>
-        <item>Bhopal, Madhya Pradesh</item>
-        <item>Bhubaneswar, Odisha</item>
-        <item>Chennai, Tamil Nadu</item>
-        <item>Chandigarh, Chandigarh (Union Territory)</item>
-        <item>Coimbatore, Tamil Nadu</item>
-        <item>Dehradun, Uttarakhand</item>
-        <item>Delhi, National Capital Territory of Delhi</item>
-        <item>Gwalior, Madhya Pradesh</item>
-        <item>Hyderabad, Telangana</item>
-        <item>Indore, Madhya Pradesh</item>
-        <item>Jaipur, Rajasthan</item>
-        <item>Jalandhar, Punjab</item>
-        <item>Jodhpur, Rajasthan</item>
-        <item>Kanpur, Uttar Pradesh</item>
-        <item>Kochi, Kerala</item>
-        <item>Kolkata, West Bengal</item>
-        <item>Lucknow, Uttar Pradesh</item>
-        <item>Ludhiana, Punjab</item>
-        <item>Mumbai, Maharashtra</item>
-        <item>Nagpur, Maharashtra</item>
-        <item>Patna, Bihar</item>
-        <item>Pune, Maharashtra</item>
-        <item>Raipur, Chhattisgarh</item>
-        <item>Ranchi, Jharkhand</item>
-        <item>Surat, Gujarat</item>
-        <item>Visakhapatnam, Andhra Pradesh</item>
-        <item>Vadodara, Gujarat</item>
+    <string-array name="state">
+        <item><b>Select State</b></item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Chandigarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+
+    <string-array name="andaman_and_nicobar_islands">
+        <item><b>Select City</b></item>
+        <item>Port Blair</item>
+        <item>South Andaman</item>
+        <item>North Andaman</item>
+        <item>Car Nicobar</item>
+        <item>Mayabunder</item>
+        <item>Great Nicobar</item>
+        <item>Nancowry</item>
+        <item>Hut Bay</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="andhra_pradesh">
+        <item><b>Select City</b></item>
+        <item>Visakhapatnam</item>
+        <item>Vijayawada</item>
+        <item>Guntur</item>
+        <item>Nellore</item>
+        <item>Kurnool</item>
+        <item>Rajahmundry</item>
+        <item>Kakinada</item>
+        <item>Tirupati</item>
+        <item>Anantapur</item>
+        <item>Vizianagaram</item>
+        <item>Eluru</item>
+        <item>Ongole</item>
+        <item>Nandyal</item>
+        <item>Machilipatnam</item>
+        <item>Kadapa (Cuddapah)</item>
+        <item>Hindupur</item>
+        <item>Chittoor</item>
+        <item>Tenali</item>
+        <item>Proddatur</item>
+        <item>Adoni</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="arunachal_pradesh">
+        <item><b>Select City</b></item>
+        <item>Itanagar</item>
+        <item>Naharlagun</item>
+        <item>Pasighat</item>
+        <item>Ziro</item>
+        <item>Tawang</item>
+        <item>Bomdila</item>
+        <item>Along</item>
+        <item>Roing</item>
+        <item>Tezu</item>
+        <item>Changlang</item>
+    </string-array>
+
+    <string-array name="assam">
+        <item><b>Select City</b></item>
+        <item>Guwahati</item>
+        <item>Dibrugarh</item>
+        <item>Jorhat</item>
+        <item>Silchar</item>
+        <item>Tezpur</item>
+        <item>Nagaon</item>
+        <item>Tinsukia</item>
+        <item>Goalpara</item>
+        <item>Barpeta</item>
+        <item>Haflong</item>
+        <item>North Lakhimpur</item>
+        <item>South Salmara-Mankachar</item>
+        <item>Bongaigaon</item>
+        <item>Karimganj</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="bihar">
+        <item><b>Select City</b></item>
+        <item>Patna</item>
+        <item>Gaya</item>
+        <item>Bhagalpur</item>
+        <item>Muzaffarpur</item>
+        <item>Darbhanga</item>
+        <item>Arrah</item>
+        <item>Bihar Sharif</item>
+        <item>Chhapra</item>
+        <item>Sasaram</item>
+        <item>Dehri</item>
+    </string-array>
+
+    <string-array name="chhattisgarh">
+        <item><b>Select City</b></item>
+        <item>Raipur</item>
+        <item>Bhilai</item>
+        <item>Durg</item>
+        <item>Bilaspur</item>
+        <item>Rajnandgaon</item>
+        <item>Korba</item>
+    </string-array>
+
+    <string-array name="chandigarh">
+        <item><b>Select City</b></item>
+        <item>Chandigarh</item>
+        <item>Panchkula</item>
+        <item>Mohali (SAS Nagar)</item>
+        <item>Zirakpur</item>
+        <item>Kharar</item>
+    </string-array>
+
+    <string-array name="dadra_and_nagar_haveli">
+        <item><b>Select City</b></item>
+        <item>Bhilad</item>
+        <item>Amli</item>
+        <item>Dadra</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Selwasa</item>
+        <item>Vapi</item>
+    </string-array>
+
+    <string-array name="daman_and_diu">
+        <item><b>Select City</b></item>
+        <item>Daman</item>
+        <item>Diu</item>
+    </string-array>
+
+    <string-array name="delhi">
+        <item><b>Select City</b></item>
+        <item>New Delhi</item>
+        <item>Old Delhi</item>
+        <item>Noida</item>
+        <item>Gurugram (Gurgaon)</item>
+        <item>Faridabad</item>
+        <item>Ghaziabad</item>
+    </string-array>
+
+    <string-array name="goa">
+        <item><b>Select City</b></item>
+        <item>Panaji (Panjim)</item>
+        <item>Vasco da Gama (Vasco)</item>
+        <item>Margao (Madgaon)</item>
+        <item>Mapusa</item>
+        <item>Ponda</item>
+        <item>Old Goa (Velha Goa)</item>
+    </string-array>
+
+    <string-array name="gujarat">
+        <item><b>Select City</b></item>
+        <item>Ahmedabad</item>
+        <item>Vadodara</item>
+        <item>Rajkot</item>
+        <item>Surat</item>
+        <item>Bhavnagar</item>
+        <item>Jamnagar</item>
+        <item>Junagadh</item>
+        <item>Gandhinagar</item>
+        <item>Anand</item>
+        <item>Porbandar</item>
+        <item>Mehsana</item>
+        <item>Bharuch</item>
+        <item>Narmada</item>
+        <item>Patan</item>
+        <item>Navsari</item>
+        <item>Kheda</item>
+        <item>Amreli</item>
+        <item>Sabarkantha</item>
+        <item>Dahod</item>
+        <item>Panchmahal</item>
+        <item>Valsad</item>
+        <item>Tapi</item>
+        <item>Dang</item>
+        <item>Botad</item>
+        <item>Aravalli</item>
+        <item>Morbi</item>
+        <item>Devbhoomi Dwarka</item>
+        <item>Chhota Udaipur</item>
+        <item>Mahisagar</item>
+        <item>Gir Somnath</item>
+    </string-array>
+
+    <string-array name="haryana">
+        <item><b>Select City</b></item>
+        <item>Chandigarh</item>
+        <item>Faridabad</item>
+        <item>Gurugram</item>
+        <item>Sonipat</item>
+    </string-array>
+
+    <string-array name="himachal_pradesh">
+        <item><b>Select City</b></item>
+        <item>Shimla</item>
+        <item>Manali</item>
+        <item>Dharamshala</item>
+        <item>Kullu</item>
+    </string-array>
+
+    <string-array name="jharkhand">
+        <item><b>Select City</b></item>
+        <item>Ranchi</item>
+        <item>Jamshedpur</item>
+        <item>Dhanbad</item>
+        <item>Bokaro</item>
+    </string-array>
+
+    <string-array name="karnataka">
+        <item><b>Select City</b></item>
+        <item>Bengaluru</item>
+        <item>Mysuru</item>
+        <item>Hubballi-Dharwad</item>
+        <item>Mangalore</item>
+    </string-array>
+
+    <string-array name="kerala">
+        <item><b>Select City</b></item>
+        <item>Thiruvananthapuram</item>
+        <item>Kochi</item>
+        <item>Kozhikode</item>
+        <item>Kollam</item>
+    </string-array>
+
+    <string-array name="lakshadweep">
+        <item><b>Select City</b></item>
+        <item>Kavaratti</item>
+    </string-array>
+
+    <string-array name="madhya_pradesh">
+        <item><b>Select City</b></item>
+        <item>Bhopal</item>
+        <item>Indore</item>
+        <item>Jabalpur</item>
+        <item>Gwalior</item>
+        <item>Ujjain</item>
+    </string-array>
+
+    <string-array name="maharashtra">
+        <item><b>Select City</b></item>
+        <item>Mumbai</item>
+        <item>Pune</item>
+        <item>Nagpur</item>
+        <item>Thane</item>
+        <item>Nashik</item>
+    </string-array>
+
+    <string-array name="manipur">
+        <item><b>Select City</b></item>
+        <item>Imphal</item>
+    </string-array>
+
+    <string-array name="meghalaya">
+        <item><b>Select City</b></item>
+        <item>Shillong</item>
+    </string-array>
+
+    <string-array name="mizoram">
+        <item><b>Select City</b></item>
+        <item>Aizawl</item>
+    </string-array>
+
+    <string-array name="nagaland">
+        <item><b>Select City</b></item>
+        <item>Kohima</item>
+    </string-array>
+
+    <string-array name="odisha">
+        <item><b>Select City</b></item>
+        <item>Bhubaneswar</item>
+        <item>Cuttack</item>
+        <item>Rourkela</item>
+        <item>Sambalpur</item>
+    </string-array>
+
+    <string-array name="pondicherry">
+        <item><b>Select City</b></item>
+        <item>Puducherry</item>
+    </string-array>
+
+    <string-array name="punjab">
+        <item><b>Select City</b></item>
+        <item>Chandigarh</item>
+        <item>Ludhiana</item>
+        <item>Amritsar</item>
+        <item>Jalandhar</item>
+        <item>Patiala</item>
+    </string-array>
+
+    <string-array name="rajasthan">
+        <item><b>Select City</b></item>
+        <item>Jaipur</item>
+        <item>Jodhpur</item>
+        <item>Udaipur</item>
+        <item>Kota</item>
+        <item>Ajmer</item>
+    </string-array>
+
+    <string-array name="sikkim">
+        <item><b>Select City</b></item>
+        <item>Gangtok</item>
+    </string-array>
+
+    <string-array name="tamil_nadu">
+        <item><b>Select City</b></item>
+        <item>Chennai</item>
+        <item>Coimbatore</item>
+        <item>Madurai</item>
+        <item>Tiruchirappalli</item>
+        <item>Salem</item>
+    </string-array>
+
+    <string-array name="telangana">
+        <item><b>Select City</b></item>
+        <item>Hyderabad</item>
+        <item>Warangal</item>
+        <item>Nizamabad</item>
+        <item>Karimnagar</item>
+    </string-array>
+
+    <string-array name="tripura">
+        <item><b>Select City</b></item>
+        <item>Agartala</item>
+    </string-array>
+
+    <string-array name="uttar_pradesh">
+        <item><b>Select City</b></item>
+        <item>Lucknow</item>
+        <item>Kanpur</item>
+        <item>Ghaziabad</item>
+        <item>Agra</item>
+        <item>Varanasi</item>
+    </string-array>
+
+    <string-array name="uttarakhand">
+        <item><b>Select City</b></item>
+        <item>Dehradun</item>
+        <item>Haridwar</item>
+        <item>Roorkee</item>
+        <item>Haldwani</item>
+        <item>Rudrapur</item>
+    </string-array>
+
+    <string-array name="west_bengal">
+        <item><b>Select City</b></item>
+        <item>Kolkata</item>
+        <item>Asansol</item>
+        <item>Siliguri</item>
+        <item>Durgapur</item>
+    </string-array>
+
+    <string-array name="defaultCity">
+        <item><b>Select City</b></item>
     </string-array>
 
     <string-array name="religion">
-        <item>---Religion---</item>
+        <item><b>Select Religion</b></item>
         <item>Hindu</item>
         <item>Muslim</item>
         <item>Christian</item>
@@ -212,4 +566,366 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
         <item>Spiritual - not religious</item>
     </string-array>
 
+
+    <string-array name="community">
+        <item><b>Select Community</b></item>
+        <item>Gujarati</item>
+        <item>Kathiyawadi</item>
+        <item>Hindi</item>
+        <item>English</item>
+        <item>Sindhi</item>
+        <item>Kutchi</item>
+        <item>Marwari</item>
+        <item>Marathi</item>
+        <item>Kashmiri</item>
+        <item>Nepali</item>
+        <item>Sanskrit</item>
+        <item>Urdu</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Bhojpuri</item>
+        <item>Haryanvi</item>
+        <item>Punjabi</item>
+        <item>Pahari/Himachali</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Hindu Communities -->
+    <string-array name="hindu_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Patel</item>
+        <item>Brahmin</item>
+        <item>Kshatriya</item>
+        <item>Vaishya</item>
+        <item>Shudra</item>
+        <item>Jat</item>
+        <item>Gujjar</item>
+        <item>Yadav</item>
+        <item>Thakur</item>
+        <item>Rajput</item>
+        <!-- Add more Hindu communities as needed -->
+    </string-array>
+
+    <!-- Muslim Communities -->
+    <string-array name="muslim_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Sunni</item>
+        <item>Shia</item>
+        <item>Pathan</item>
+        <item>Ansari</item>
+        <item>Sheikh</item>
+        <item>Mughal</item>
+        <item>Syed</item>
+        <!-- Add more Muslim communities as needed -->
+    </string-array>
+
+    <!-- Christian Communities -->
+    <string-array name="christian_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Latin Catholic</item>
+        <item>Malayali Christian</item>
+        <item>Tamil Christian</item>
+        <item>Telugu Christian</item>
+        <item>Marthomite</item>
+        <item>CSI Christian</item>
+        <!-- Add more Christian communities as needed -->
+    </string-array>
+
+    <!-- Jain Communities -->
+    <string-array name="jain_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Shwetambar</item>
+        <item>Digambar</item>
+        <item>Terapanthi</item>
+        <item>Sthanakvasi</item>
+        <item>Deravasi</item>
+        <!-- Add more Jain communities as needed -->
+    </string-array>
+
+    <!-- Sikh Communities -->
+    <string-array name="sikh_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Jat</item>
+        <item>Ramgarhia</item>
+        <item>Saini</item>
+        <item>Khatri</item>
+        <item>Mazhabi</item>
+        <item>Ravidasi</item>
+        <!-- Add more Sikh communities as needed -->
+    </string-array>
+
+    <!-- Buddhist Communities -->
+    <string-array name="buddhist_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Navayana</item>
+        <item>Mahayana</item>
+        <item>Theravada</item>
+        <item>Vajrayana</item>
+        <!-- Add more Buddhist communities as needed -->
+    </string-array>
+
+    <!-- Parsi Communities -->
+    <string-array name="parsi_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Zoroastrian</item>
+        <item>Irani</item>
+        <item>Parsee</item>
+        <!-- Add more Parsi communities as needed -->
+    </string-array>
+
+    <!-- Jewish Communities -->
+    <string-array name="jewish_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Ashkenazi</item>
+        <item>Sephardi</item>
+        <item>Mizrahi</item>
+        <!-- Add more Jewish communities as needed -->
+    </string-array>
+
+    <!-- Other Communities -->
+    <string-array name="other_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Specify Other Community</item>
+        <!-- Add more other communities as needed -->
+    </string-array>
+
+    <!-- No Religion Community -->
+    <string-array name="no_religion_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>Atheist</item>
+        <item>Agnostic</item>
+        <!-- Add more no religion communities as needed -->
+    </string-array>
+
+    <!-- Spiritual - not religious Communities -->
+    <string-array name="spiritual_not_religious_communities">
+        <item><b>Select Sub Community</b></item>
+        <item>New Age</item>
+        <item>Yoga</item>
+        <!-- Add more spiritual - not religious communities as needed -->
+    </string-array>
+    <string-array name="default_subcommunity">
+        <item><b>Select Sub Community</b></item>
+    </string-array>
+
+    <string-array name="marital_status">
+        <item><b>Select Marital Status</b></item>
+        <item>Single</item>
+        <item>Divorced</item>
+        <item>Awaiting Divorce</item>
+        <item>Widowed</item>
+    </string-array>
+
+    <string-array name="diet">
+        <item><b>Select Diet</b></item>
+        <item>Veg</item>
+        <item>Non-Veg</item>
+        <item>Occassionally Non-Veg</item>
+        <item>Eggetarian</item>
+        <item>Jain</item>
+        <item>Vegan</item>
+    </string-array>
+
+    <string-array name="height">
+        <item>4ft 5in - 134cm</item>
+        <item>4ft 6in - 137cm</item>
+        <item>4ft 7in - 139cm</item>
+        <item>4ft 8in - 142cm</item>
+        <item>4ft 9in - 144cm</item>
+        <item>4ft 10in - 147cm</item>
+        <item>4ft 11in - 149cm</item>
+        <item>5ft - 152cm</item>
+        <item>5ft 1in - 154cm</item>
+        <item>5ft 2in - 157cm</item>
+        <item>5ft 3in - 160cm</item>
+        <item>5ft 4in - 162cm</item>
+        <item>5ft 5in - 165cm</item>
+        <item>5ft 6in - 167cm</item>
+        <item>5ft 7in - 170cm</item>
+        <item>5ft 8in - 172cm</item>
+        <item>5ft 9in - 175cm</item>
+        <item>5ft 10in - 177cm</item>
+        <item>5ft 11in - 180cm</item>
+        <item>6ft - 182cm</item>
+        <item>6ft 1in - 185cm</item>
+        <item>6ft 2in - 187cm</item>
+        <item>6ft 3in - 190cm</item>
+        <item>6ft 4in - 192cm</item>
+        <item>6ft 5in - 195cm</item>
+        <item>6ft 6in - 198cm</item>
+        <item>6ft 7in - 200cm</item>
+        <item>6ft 8in - 203cm</item>
+        <item>6ft 9in - 205cm</item>
+        <item>6ft 10in - 208cm</item>
+        <item>6ft 11in - 210cm</item>
+        <item>7ft - 213cm</item>
+    </string-array>
+
+    <string-array name="qaulifications">
+        <item><b>Select Highest Qualification</b></item>
+        <item>Less than high school</item>
+        <item>High School</item>
+        <item>B.E / B.Tech</item>
+        <item>M.E / M.Tech</item>
+        <item>B.C.A</item>
+        <item>M.C.A</item>
+        <item>B.B.A</item>
+        <item>M.B.A</item>
+        <item>B.A</item>
+        <item>M.A</item>
+        <item>B.Com</item>
+        <item>M.Com</item>
+        <item>B.Sc</item>
+        <item>M.Sc</item>
+        <item>B.Des</item>
+        <item>M.Des</item>
+        <item>B.Arch</item>
+        <item>M.Arch</item>
+        <item>B.Ed</item>
+        <item>M.Ed</item>
+        <item>CA</item>
+        <item>CS</item>
+        <item>LLB</item>
+        <item>Ph.D</item>
+        <item>M.Phil</item>
+        <item>PGDCA</item>
+        <item>MBBS</item>
+        <item>BHMS</item>
+        <item>M.D</item>
+        <item>B.Pharma</item>
+        <item>M.Pharma</item>
+        <item>Diploma Engineering</item>
+        <item>M.S Engineering</item>
+    </string-array>
+
+
+    <string-array name="income">
+        <item><b>Select Income</b></item>
+        <item>Upto INR 1 Lakh</item>
+        <item>INR 1 Lakh to 2 Lakh</item>
+        <item>INR 2 Lakh to 5 Lakh</item>
+        <item>INR 5 Lakh to 8 Lakh</item>
+        <item>INR 8 Lakh to 10 Lakh</item>
+        <item>INR 10 Lakh to 20 Lakh</item>
+        <item>INR 20 Lakh to 30 Lakh</item>
+        <item>INR 30 Lakh to 50 Lakh</item>
+        <item>INR 50 Lakh to 75 Lakh</item>
+        <item>INR 1 Crore &amp; above</item>
+    </string-array>
+
+
+    <string-array name="professions">
+
+        <item><b>Select Occupation</b></item>
+    <item>Engineer</item>
+    <item>Doctor</item>
+    <item>Teacher</item>
+    <item>Lawyer</item>
+    <item>Artist</item>
+    <item>Architect</item>
+    <item>Software Developer</item>
+    <item>Nurse</item>
+    <item>Police Officer</item>
+    <item>Chef</item>
+    <item>Musician</item>
+    <item>Banking Professional</item>
+    <item>Chartered Accountant</item>
+    <item>HR (Human Resources)</item>
+    <item>Actor</item>
+    <item>Journalist</item>
+    <item>Graphic Designer</item>
+    <item>Photographer</item>
+    <item>Real Estate Agent</item>
+    <item>Marketing Manager</item>
+    <item>Consultant</item>
+    <item>Electrician</item>
+    <item>Plumber</item>
+    <item>Carpenter</item>
+    <item>Firefighter</item>
+    <item>Scientist</item>
+    <item>Psychologist</item>
+    <item>Social Worker</item>
+    <item>Flight Attendant</item>
+    <item>Translator</item>
+    <item>Entrepreneur</item>
+    <item>Financial Advisor</item>
+    <item>Librarian</item>
+    <item>Pharmacist</item>
+    <item>Veterinarian</item>
+    <item>Web Developer</item>
+    <item>Project Manager</item>
+    <item>Event Planner</item>
+    <item>Academic Researcher</item>
+    <item>Interior Designer</item>
+    <item>Police Detective</item>
+    <item>Actor</item>
+    <item>Director</item>
+    <item>Producer</item>
+    <item>Scriptwriter</item>
+    <item>Dancer</item>
+    <item>Model</item>
+    <item>Painter</item>
+    <item>Illustrator</item>
+    <item>Cartoonist</item>
+    <item>Fashion Designer</item>
+    <item>Makeup Artist</item>
+    <item>Hairstylist</item>
+    <item>Magician</item>
+    <item>Tattoo Artist</item>
+    <item>Barista</item>
+    <item>Journalist</item>
+    <item>News Anchor</item>
+    <item>Reporter</item>
+    <item>Editor</item>
+    <item>Copywriter</item>
+    <item>Social Media Manager</item>
+    <item>SEO Specialist</item>
+    <item>Content Creator</item>
+    <item>Podcaster</item>
+    <item>Videographer</item>
+    <item>Sound Engineer</item>
+    <item>Animator</item>
+    <item>Game Developer</item>
+    <item>UX/UI Designer</item>
+    <item>Product Manager</item>
+    <item>Market Research Analyst</item>
+    <item>Financial Analyst</item>
+    <item>Investment Banker</item>
+    <item>Stock Trader</item>
+    <item>Actuary</item>
+    <item>Economist</item>
+    <item>Mathematician</item>
+    <item>Biologist</item>
+    <item>Chemist</item>
+    <item>Physicist</item>
+    <item>Astronomer</item>
+    <item>Geologist</item>
+    <item>Environmental Scientist</item>
+    <item>Anthropologist</item>
+    <item>Historian</item>
+    <item>Archaeologist</item>
+    <item>Political Scientist</item>
+    <item>Sociologist</item>
+    <item>Philosopher</item>
+    <item>Theologian</item>
+    <item>Professor</item>
+    <item>Lecturer</item>
+    <item>Teacher Assistant</item>
+    <item>Principal</item>
+    <item>School Counselor</item>
+    <item>Librarian</item>
+    <item>Psychologist</item>
+    <item>Speech Therapist</item>
+    <item>Special Education Teacher</item>
+    <item>Coach</item>
+    <item>Athlete</item>
+    <item>Referee</item>
+    <item>Sports Agent</item>
+    <item>Physical Therapist</item>
+    <item>Nutritionist</item>
+    <item>Personal Trainer</item>
+    <item>Fitness Instructor</item>
+    <item>Yoga Instructor</item>
+    </string-array>
 </resources>
+

@@ -1,177 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/for_proFor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/for_proFor"
     android:background="@color/white"
     tools:context=".reg1_profileFor">
 
-    <LinearLayout
-        android:id="@+id/mainlinear"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtThisprofilefo"
+        style="@style/txtQuicksandsemibold30"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:letterSpacing="0.09"
+        android:singleLine="true"
+        android:text="@string/msg_this_profile_fo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_pro_for"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/txtChooseGender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtThisprofilefo">
+
+        <RadioButton
+            android:id="@+id/btnMySelf"
+            style="@style/RadioButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/lbl_my_self" />
+
+        <RadioButton
+            android:id="@+id/txtMyChild"
+            style="@style/RadioButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/lbl_my_child" />
+
+        <RadioButton
+            android:id="@+id/txtMyFriend"
+            style="@style/RadioButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/lbl_my_friend" />
+
+        <RadioButton
+            android:id="@+id/txtMySibling"
+            style="@style/RadioButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/lbl_my_sibling" />
+
+        <RadioButton
+            android:id="@+id/txtMyRelative"
+            style="@style/RadioButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:text="@string/lbl_my_relative" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtChooseGender"
+        style="@style/txtQuicksandsemibold30"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+        android:gravity="start"
+        android:letterSpacing="0.09"
+        android:singleLine="true"
+        android:text="@string/lbl_choose_gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_pro_for" />
 
-        <TextView
-            android:id="@+id/txtThisprofilefo"
-            style="@style/txtQuicksandsemibold30"
-            android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/rg_gen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtChooseGender">
+
+        <RadioButton
+            android:id="@+id/txtmale"
+            style="@style/RadioButtonStyle"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="34dp"
-            android:gravity="start"
-            android:letterSpacing="0.09"
-            android:singleLine="true"
-            android:text="@string/msg_this_profile_fo" />
+            android:layout_marginEnd="10dp"
+            android:text="@string/lbl_male"
+            />
 
-            <RadioGroup
-                android:id="@+id/rg_pro_for"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-                <RadioButton
-                    android:id="@+id/btnMySelf"
-                    android:layout_width="170dp"
-                    android:background="@drawable/rdo_selector"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/quicksand_regular"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_marginBottom="15dp"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="0.06"
-                    android:button="@color/blah"
-                    android:singleLine="true"
-                    android:text="@string/lbl_my_self" />
-                <RadioButton
-                    android:id="@+id/txtMyChild"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/quicksand_regular"
-                    android:textSize="20dp"
-                    android:button="@color/blah"
-                    android:letterSpacing="0.06"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/rdo_selector"
-                    android:singleLine="true"
-                    android:textAlignment="center"
-                    android:text="@string/lbl_my_child" />
-                <RadioButton
-                    android:id="@+id/txtMyFriend"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/rdo_selector"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/quicksand_regular"
-                    android:textSize="20dp"
-                    android:textAlignment="center"
-                    android:letterSpacing="0.06"
-                    android:singleLine="true"
-                    android:button="@color/blah"
-                    android:text="@string/lbl_my_friend" />
-
-                <RadioButton
-                    android:id="@+id/txtMySibling"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/quicksand_regular"
-                    android:textSize="20dp"
-                    android:button="@color/blah"
-                    android:layout_marginBottom="15dp"
-                    android:letterSpacing="0.06"
-                    android:background="@drawable/rdo_selector"
-                    android:singleLine="true"
-                    android:textAlignment="center"
-                    android:text="@string/lbl_my_sibling" />
-                <RadioButton
-                    android:id="@+id/txtMyRelative"
-                    android:layout_width="170dp"
-                    android:gravity="center"
-                    android:fontFamily="@font/quicksand_regular"
-                    android:textSize="20dp"
-                    android:background="@drawable/rdo_selector"
-                    android:textAllCaps="false"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="0.06"
-                    android:button="@color/blah"
-                    android:textAlignment="center"
-                    android:singleLine="true"
-                    android:text="@string/lbl_my_relative" />
-            </RadioGroup>
-
-        <TextView
-            android:id="@+id/txtChooseGender"
-            style="@style/txtQuicksandsemibold30"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/txtfemale"
+            style="@style/RadioButtonStyle"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
-            android:gravity="start"
-            android:letterSpacing="0.09"
-            android:singleLine="true"
-            android:text="@string/lbl_choose_gender" />
-
-        <RadioGroup
-            android:id="@+id/rg_gen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="29dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="ExtraText">
-
-            <RadioButton
-                android:id="@+id/txtmale"
-                android:layout_width="150dp"
-                android:textAllCaps="false"
-                android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/quicksand_regular"
-                android:textSize="20dp"
-                android:background="@drawable/rdo_selector"
-                android:button="@color/blah"
-                android:textAlignment="center"
-                android:letterSpacing="0.06"
-                android:singleLine="true"
-                android:text="@string/lbl_male"/>
-
-            <RadioButton
-                android:id="@+id/txtfemale"
-                android:layout_width="150dp"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/quicksand_regular"
-                android:textSize="20dp"
-                android:background="@drawable/rdo_selector"
-                android:button="@color/blah"
-                android:textAlignment="center"
-                android:letterSpacing="0.06"
-                android:singleLine="true"
-                android:text="@string/lbl_female" />
-        </RadioGroup>
-    </LinearLayout>
+            android:text="@string/lbl_female" />
+    </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
         style="@style/btnSolidRounded_1"
         android:layout_width="190dp"
         android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:letterSpacing="0.06"
         android:paddingStart="30dp"
@@ -183,7 +150,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_gen"
+        app:layout_constraintVertical_bias="0.699" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="RadioButtonStyle">
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <item name="android:background">@drawable/rdo_selector</item>
+        <item name="android:button">@color/blah</item>
+        <item name="android:textAlignment">center</item>
+    </style>
     <style name="etSolidRounded">
         <item name="android:textSize">20dp</item>
         <item name="android:textColor">@color/gray_700</item>

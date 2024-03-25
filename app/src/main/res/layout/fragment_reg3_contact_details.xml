@@ -1,103 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".reg3_contactDetails">
 
-    <LinearLayout
-        android:id="@+id/mainlinear"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtContactDetails"
+        style="@style/txtQuicksandsemibold30"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:gravity="start"
+        android:letterSpacing="0.09"
+        android:singleLine="true"
+        android:text="@string/lbl_contact_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etMobile"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+        android:hint="@string/lbl_mobile_number"
+        android:inputType="phone"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMobileno" />
 
-        <TextView
-            android:id="@+id/txtContactDetails"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:singleLine="true"
-            android:text="@string/lbl_contact_details"
-            style="@style/txtQuicksandsemibold30"/>
+    <TextView
+        android:id="@+id/txtMobileno"
+        style="@style/txtQuicksandmedium15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:gravity="start"
+        android:letterSpacing="0.04"
+        android:singleLine="true"
+        android:text="@string/lbl_mobile_no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContactDetails" />
 
-        <TextView
-            android:id="@+id/txtMobileno"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="44dp"
-            android:letterSpacing="0.04"
-            android:singleLine="true"
-            android:layout_gravity="start"
-            android:text="@string/lbl_mobile_no"
-            style="@style/txtQuicksandmedium15"/>
+    <EditText
+        android:id="@+id/etEmail"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/lbl_your_email"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailid" />
 
-        <LinearLayout
-            android:id="@+id/linearRowNinetyone"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/txtEmailid"
+        style="@style/txtQuicksandmedium15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:gravity="start"
+        android:letterSpacing="0.04"
+        android:singleLine="true"
+        android:text="@string/lbl_email_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMobile" />
 
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
-            <EditText
-                android:id="@+id/etGroupTwentyFive"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-                android:hint="@string/lbl_mobile_number"
-                android:inputType="phone"
-                android:letterSpacing="0.06"
-                android:paddingStart="11dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="14dp"
-                style="@style/etSolidRounded" />
+    <TextView
+        android:id="@+id/txtPassword"
+        style="@style/txtQuicksandmedium15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:gravity="start"
+        android:letterSpacing="0.04"
+        android:singleLine="true"
+        android:text="Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
-        </LinearLayout>
+    <EditText
+        android:id="@+id/etConPassword"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtComPassword" />
 
-
-        <TextView
-            android:id="@+id/txtEmailid"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="44dp"
-            android:letterSpacing="0.04"
-            android:singleLine="true"
-            android:layout_gravity="start"
-            android:text="@string/lbl_email_id"
-            style="@style/txtQuicksandmedium15"/>
-
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:hint="@string/lbl_your_email"
-            android:id="@+id/etGroupTwentyFour"
-            android:inputType="textEmailAddress"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp"
-            android:singleLine="true"
-            style="@style/etSolidRounded" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/txtComPassword"
+        style="@style/txtQuicksandmedium15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:gravity="start"
+        android:letterSpacing="0.04"
+        android:singleLine="true"
+        android:text="Confirm Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
         style="@style/btnSolidRounded_1"
         android:layout_width="190dp"
         android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:letterSpacing="0.06"
         android:paddingStart="30dp"
@@ -109,7 +181,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintTop_toBottomOf="@+id/etConPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

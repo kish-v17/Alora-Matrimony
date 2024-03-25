@@ -1,135 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".reg5_maritalHeightWeightDiet">
 
-    <LinearLayout
-        android:id="@+id/mainlinear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
-
-        <TextView
-            android:gravity="start"
-            android:id="@+id/txtMaritalStatus"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:text="@string/lbl_marital_status"
-            style="@style/txtQuicksandsemibold30" />
-
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:id="@+id/viewRectangleEightyNine"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp" />
-
-        <TextView
-            android:gravity="start"
-            android:id="@+id/txtHeight"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:text="@string/lbl_height"
-            style="@style/txtQuicksandsemibold30" />
-
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:id="@+id/viewRectangleNinty"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp"/>
-
-        <TextView
-            android:gravity="start"
-            android:id="@+id/txtweight"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:text="@string/lbl_weight"
-            style="@style/txtQuicksandsemibold30" />
-
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:id="@+id/viewRectangleNintyOne"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp" />
-
-        <TextView
-            android:gravity="start"
-            android:id="@+id/txtDiet"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:text="@string/lbl_diet"
-            style="@style/txtQuicksandsemibold30" />
-
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:id="@+id/viewRectangleNintyTwo"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp" />
-
-    </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnContinue"
-        style="@style/btnSolidRounded_1"
-        android:layout_width="190dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:letterSpacing="0.06"
-        android:paddingStart="30dp"
-        android:paddingTop="9dp"
-        android:paddingEnd="30dp"
-        android:paddingBottom="11dp"
-        android:text="@string/lbl_continue"
-        android:textAllCaps="false"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+            <TextView
+                android:id="@+id/txtMaritalStatus"
+                style="@style/txtQuicksandsemibold30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="112dp"
+                android:gravity="start"
+                android:letterSpacing="0.09"
+                android:text="@string/lbl_marital_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spMaritalStatus"
+                style="@style/etSolidRounded"
+                android:layout_width="0dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_spinner"
+                android:dropDownVerticalOffset="51dp"
+                android:entries="@array/marital_status"
+                android:fontFamily="@font/quicksand_regular"
+                android:letterSpacing="0.06"
+                android:paddingStart="15dp"
+                android:paddingTop="17dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:spinnerMode="dropdown"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtMaritalStatus" />
+
+            <TextView
+                android:id="@+id/txtHeight"
+                style="@style/txtQuicksandsemibold30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:letterSpacing="0.09"
+                android:text="@string/lbl_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spMaritalStatus" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvHeight"
+                style="@style/etSolidRounded"
+                android:layout_width="0dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_spinner"
+                android:completionThreshold="1"
+                android:dropDownVerticalOffset="51dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:hint="Enter Height"
+                android:letterSpacing="0.06"
+                android:paddingStart="15dp"
+                android:paddingTop="17dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHeight" />
+
+            <TextView
+                android:id="@+id/txtWeight"
+                style="@style/txtQuicksandsemibold30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:letterSpacing="0.09"
+                android:text="@string/lbl_weight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/actvHeight" />
+
+            <EditText
+                android:id="@+id/etWeight"
+                style="@style/etSolidRounded"
+                android:layout_width="0dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
+                android:hint="Enter Weight"
+                android:inputType="text"
+                android:letterSpacing="0.06"
+                android:paddingStart="15dp"
+                android:paddingTop="17dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtWeight" />
+
+            <TextView
+                android:id="@+id/txtDiet"
+                style="@style/txtQuicksandsemibold30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:letterSpacing="0.09"
+                android:text="@string/lbl_diet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etWeight" />
+
+            <Spinner
+                android:id="@+id/spDiet"
+                style="@style/etSolidRounded"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_spinner"
+                android:dropDownVerticalOffset="51dp"
+                android:entries="@array/diet"
+                android:fontFamily="@font/quicksand_regular"
+                android:letterSpacing="0.06"
+                android:paddingStart="15dp"
+                android:paddingTop="17dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:scrollbarStyle="insideOverlay"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDiet" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnContinue"
+                style="@style/btnSolidRounded_1"
+                android:layout_width="190dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:letterSpacing="0.06"
+                android:paddingStart="30dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="11dp"
+                android:text="@string/lbl_continue"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spDiet" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

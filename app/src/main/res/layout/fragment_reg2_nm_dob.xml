@@ -1,145 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".reg2_nmDob">
 
-    <LinearLayout
-        android:id="@+id/mainlinear"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtName"
+        style="@style/txtQuicksandsemibold30"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+        android:gravity="start"
+        android:letterSpacing="0.09"
+        android:singleLine="true"
+        android:text="@string/lbl_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="34dp"
-            android:layout_width="wrap_content"
-            android:letterSpacing="0.09"
-            android:singleLine="true"
-            android:layout_gravity="start"
-            android:text="@string/lbl_name"
-            style="@style/txtQuicksandsemibold30"/>
+    <EditText
+        android:id="@+id/etFirstName"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/lbl_first_name"
+        android:inputType="text"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:hint="@string/lbl_first_name"
-            android:id="@+id/etGroupFortyOne"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp"
-            android:singleLine="true"
-            style="@style/etSolidRounded" />
+    <EditText
+        android:id="@+id/etLastName"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/lbl_last_name"
+        android:inputType="text"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
 
-        <EditText
-            android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-            android:hint="@string/lbl_last_name"
-            android:id="@+id/etGroupForty"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.06"
-            android:paddingBottom="14dp"
-            android:paddingEnd="30dp"
-            android:paddingStart="11dp"
-            android:paddingTop="15dp"
-            android:singleLine="true"
-            style="@style/etSolidRounded"/>
+    <TextView
+        android:id="@+id/txtDateofBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="34dp"
+        android:gravity="start"
+        android:letterSpacing="0.09"
+        android:singleLine="true"
+        android:text="@string/lbl_date_of_birth"
+        style="@style/txtQuicksandsemibold30"
+        app:layout_constraintBottom_toTopOf="@+id/tvPickDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName" />
 
-        <TextView
-            android:id="@+id/txtDateofBirth"
-            android:layout_gravity="start"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
-            android:layout_marginBottom="34dp"
-            android:layout_width="match_parent"
-            android:letterSpacing="0.09"
-            android:singleLine="true"
-            android:text="@string/lbl_date_of_birth"
-            style="@style/txtQuicksandsemibold30"/>
-
-        <LinearLayout
-            android:id="@+id/linearRowgroupfortyfour"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/etGroupFortyFour"
-                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.22"
-                android:hint="@string/lbl_dd"
-                android:inputType="number"
-                android:letterSpacing="0.06"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:paddingEnd="14dp"
-                android:paddingBottom="14dp"
-                style="@style/etSolidRounded"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/txtGroupFortyThree"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_weight="0.22"
-                android:layout_width="0dp"
-                android:inputType="number"
-                android:letterSpacing="0.06"
-                android:paddingBottom="14dp"
-                android:paddingEnd="14dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:singleLine="true"
-                android:hint="@string/lbl_mm"
-                style="@style/etSolidRounded"
-                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"/>
-
-            <EditText
-                android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
-                android:hint="@string/lbl_yyyy"
-                android:id="@+id/etGroupFortyTwo"
-                android:inputType="number"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_weight="0.42"
-                android:layout_width="0dp"
-                android:letterSpacing="0.06"
-                android:paddingBottom="14dp"
-                android:paddingEnd="30dp"
-                android:paddingStart="30dp"
-                android:paddingTop="15dp"
-                android:singleLine="true"
-                android:autofillHints="@string/lbl_yyyy"
-                style="@style/etSolidRounded"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvPickDate"
+        style="@style/etSolidRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/selectDate"
+        android:inputType="text"
+        android:letterSpacing="0.06"
+        android:paddingStart="11dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDateofBirth" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
         style="@style/btnSolidRounded_1"
         android:layout_width="190dp"
         android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:letterSpacing="0.06"
         android:paddingStart="30dp"
@@ -150,8 +124,9 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPickDate"
+        app:layout_constraintVertical_bias="0.845" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

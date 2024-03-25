@@ -9,22 +9,36 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import com.example.alora_matrimony.databinding.FragmentReg6QualiOccupationIncomeBinding;
 
 public class reg6_qualiOccupationIncome extends Fragment {
-    AppCompatButton btnContinue;
+    AppCompatButton btnCreate;
+    Spinner spQual,spincome,spWorkAs;
+    String relation,gender,firstName,lastName,dateOfBirth,mobile,email,password,religion,community,subCommunity,state,city,maritalStatus,height,weight,diet,qualification,income,workSector,occupation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_reg6_quali_occupation_income, container, false);
-        btnContinue=view.findViewById(R.id.btnContinue);
-        btnContinue.setOnClickListener(new View.OnClickListener() {
+        btnCreate=view.findViewById(R.id.btnContinue);
+        spQual=view.findViewById(R.id.spQualification);
+        spincome=view.findViewById(R.id.spIncome);;
+        spWorkAs=view.findViewById(R.id.spWorksAs);
+        btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), Deshbord.class);
+                Bundle b=getArguments();
+                relation=b.getString("relation");
+                gender=b.getString("gender");
+                firstName=b.getString("firstName");
+                lastName=b.getString("lastName");
+                //dateOfBirth
+
+
+                Intent intent=new Intent(getActivity(), Dashboard.class);
                 startActivity(intent);
             }
         });

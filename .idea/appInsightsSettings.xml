@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.alora_matrimony" />
+                  <option name="mobileSdkAppId" value="1:115797061337:android:7af1749903d308da9618c8" />
+                  <option name="projectId" value="alora-matrimony" />
+                  <option name="projectNumber" value="115797061337" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
