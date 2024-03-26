@@ -28,6 +28,7 @@ public class reg2_nmDob extends Fragment {
     AppCompatButton btnContinue;
     EditText etFnm,etLnm;
     TextView tvPickDate;
+    long dob;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,7 +47,6 @@ public class reg2_nmDob extends Fragment {
         tvPickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                materialDatePicker.show(getActivity().getSupportFragmentManager(), "DATE_PICKER");
                 if (materialDatePicker != null && !materialDatePicker.isVisible()) {
                     materialDatePicker.show(getActivity().getSupportFragmentManager(), "DATE_PICKER");
                 }
@@ -56,14 +56,10 @@ public class reg2_nmDob extends Fragment {
         materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
             @Override
             public void onPositiveButtonClick(Long selectedDate) {
-//                Calendar calendar = Calendar.getInstance();
-//                calendar.setTimeInMillis(selectedDate);
-//                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
-//                String selectedDateStr = dateFormat.format(calendar.getTime());
-//                tvPickDate.setText(selectedDateStr);
                 if (selectedDate != null) {
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTimeInMillis(selectedDate);
+                    dob=selectedDate;
                     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
                     String selectedDateStr = dateFormat.format(calendar.getTime());
                     tvPickDate.setText(selectedDateStr);
@@ -79,15 +75,13 @@ public class reg2_nmDob extends Fragment {
                 validateFields();
             }
         });
-
-        // Inflate the layout for this fragment
         return view;
     }
 
         void validateFields() {
             String fnm = etFnm.getText().toString().trim();
             String lnm = etLnm.getText().toString().trim();
-            String dob = tvPickDate.getText().toString().trim();
+            String dobStr = tvPickDate.getText().toString().trim();
 
             if (fnm.isEmpty()) {
                 etFnm.setError("Enter first name");
@@ -101,7 +95,7 @@ public class reg2_nmDob extends Fragment {
                 return;
             }
 
-            if (dob.isEmpty()) {
+            if (dobStr.isEmpty()) {
                 Toast.makeText(getContext(), "Select date of birth", Toast.LENGTH_SHORT).show();
 
                 return;
@@ -110,7 +104,8 @@ public class reg2_nmDob extends Fragment {
         Bundle b=getArguments();
         b.putString("firstName",fnm);
         b.putString("lastName",lnm);
-        b.putString("dateOfBirth",dob);
+        b.putLong("dateOfBirth",dob);
+
         con.setArguments(b);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, con).addToBackStack(null).commit();
 

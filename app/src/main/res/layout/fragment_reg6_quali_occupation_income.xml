@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spIncome" />
 
     <Spinner
-        android:id="@+id/spWorksAs"
+        android:id="@+id/spOccupation"
         style="@style/etSolidRounded"
         android:layout_width="match_parent"
         android:layout_height="51dp"
@@ -110,8 +110,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOccupation" />
-
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
@@ -133,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spWorksAs"
+        app:layout_constraintTop_toBottomOf="@+id/spOccupation"
         app:layout_constraintVertical_bias="0.845" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

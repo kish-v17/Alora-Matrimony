@@ -19,7 +19,8 @@ public class reg5_maritalHeightWeightDiet extends Fragment {
    AutoCompleteTextView actvHeight;
    Spinner spMarital,spDiet;
    EditText etWeight;
-   String maritalStatus,height,weight,diet;
+   String maritalStatus,height,diet;
+   int weight;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,14 +40,14 @@ public class reg5_maritalHeightWeightDiet extends Fragment {
             public void onClick(View v) {
                 maritalStatus=spMarital.getSelectedItem().toString();
                 height=actvHeight.getText().toString().trim();
-                weight=etWeight.getText().toString().trim();
+                weight=Integer.parseInt(etWeight.getText().toString().trim());
                 diet=spDiet.getSelectedItem().toString();
 
                 if (maritalStatus.equals("Select Marital Status")) {
                     Toast.makeText(getActivity(), "Please select a marital status", Toast.LENGTH_SHORT).show();
                 } else if (height.isEmpty()) {
                     actvHeight.setError("Please enter height");
-                } else if (weight.isEmpty()) {
+                } else if (etWeight.getText().toString().isEmpty()) {
                     etWeight.setError("Please enter weight");
                 } else if(diet.equals("Select Diet")) {
                     Toast.makeText(getActivity(), "Please select a diet", Toast.LENGTH_SHORT).show();
@@ -55,7 +56,7 @@ public class reg5_maritalHeightWeightDiet extends Fragment {
                     Bundle b=getArguments();
                     b.putString("maritalStatus",maritalStatus);
                     b.putString("height",height);
-                    b.putString("weight",weight);
+                    b.putInt("weight",weight);
                     b.putString("diet",diet);
                     qual.setArguments(b);
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,qual).addToBackStack(null).commit();
