@@ -25,7 +25,7 @@ public class reg6_qualiOccupationIncome extends Fragment {
         View view=inflater.inflate(R.layout.fragment_reg6_quali_occupation_income, container, false);
         btnCreate=view.findViewById(R.id.btnContinue);
         spQual=view.findViewById(R.id.spQualification);
-        spincome=view.findViewById(R.id.spIncome);;
+        spincome=view.findViewById(R.id.spIncome);
         spWorkAs=view.findViewById(R.id.spWorksAs);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
