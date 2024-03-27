@@ -29,7 +29,6 @@ public class Login extends AppCompatActivity {
         b = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
 
-
         b.txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

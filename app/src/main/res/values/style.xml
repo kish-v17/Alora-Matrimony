@@ -50,9 +50,20 @@
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/quicksand_medium</item>
     </style>
+    <style name="txtQuicksandbold24">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/bluegray_700</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
     <style name="txtArimaMadurairegular20">
         <item name="android:textSize">20dp</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/arima_regular</item>
     </style>
+    <style name="txtArimaMaduraibold30">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/arima_semibold</item>
+    </style>
+
 </resources>

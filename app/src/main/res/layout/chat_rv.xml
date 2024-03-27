@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/chat_listbg"
+    android:layout_marginTop="20dp"
+    android:gravity="start|center"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:orientation="horizontal"
+    android:id="@+id/chat_list">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/pfp_otheruser"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/deshboard_profile_circle"/>
+
+        <TextView
+            android:id="@+id/usrnm_otheruser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_user_name"
+            android:layout_marginStart="20dp"
+            android:textSize="20dp"/>
+
+    </LinearLayout>

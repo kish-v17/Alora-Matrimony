@@ -1,6 +1,8 @@
 package com.example.alora_matrimony;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,14 +39,12 @@ public class rv_adapter extends RecyclerView.Adapter<rv_myViewHolder> {
         holder.more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context.getApplicationContext(), "user acc page"+v, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        holder.like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context.getApplicationContext(), "added to liked"+v, Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(context, db2.class);
+                Bundle b=new Bundle();
+                b.putInt("btnId",R.id.more);
+                i.putExtras(b);
+                context.startActivity(i);
+                Toast.makeText(context, "ID:"+R.id.more, Toast.LENGTH_SHORT).show();
             }
         });
     }

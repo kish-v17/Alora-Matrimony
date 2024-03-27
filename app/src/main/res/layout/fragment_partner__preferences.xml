@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Partner_Preferences">
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/search_header">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Partner Preferences"
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="@color/white"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pref_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From here you can customize your partner preferences "
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        android:fontFamily="@font/quicksand_medium"
+        android:textSize="20dp"
+        android:layout_margin="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pref_text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic Details"
+                android:layout_gravity="center"
+                style="@style/txtQuicksandbold24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age:"
+                android:layout_marginTop="10dp"
+                style="@style/txtQuicksandregular23"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height:"
+                android:layout_marginTop="10dp"
+                style="@style/txtQuicksandregular23"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight:"
+                android:layout_marginTop="10dp"
+                style="@style/txtQuicksandregular23"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diet:"
+                android:layout_marginTop="10dp"
+                style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education and Career"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Highest Qualification:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proffession:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Income:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Religion and Community"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Religion:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Community:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Community:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sub Community:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

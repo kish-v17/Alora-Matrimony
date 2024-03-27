@@ -817,115 +817,115 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
     <string-array name="professions">
 
         <item><b>Select Occupation</b></item>
-    <item>Engineer</item>
-    <item>Doctor</item>
-    <item>Teacher</item>
-    <item>Lawyer</item>
-    <item>Artist</item>
-    <item>Architect</item>
-    <item>Software Developer</item>
-    <item>Nurse</item>
-    <item>Police Officer</item>
-    <item>Chef</item>
-    <item>Musician</item>
-    <item>Banking Professional</item>
-    <item>Chartered Accountant</item>
-    <item>HR (Human Resources)</item>
-    <item>Actor</item>
-    <item>Journalist</item>
-    <item>Graphic Designer</item>
-    <item>Photographer</item>
-    <item>Real Estate Agent</item>
-    <item>Marketing Manager</item>
-    <item>Consultant</item>
-    <item>Electrician</item>
-    <item>Plumber</item>
-    <item>Carpenter</item>
-    <item>Firefighter</item>
-    <item>Scientist</item>
-    <item>Psychologist</item>
-    <item>Social Worker</item>
-    <item>Flight Attendant</item>
-    <item>Translator</item>
-    <item>Entrepreneur</item>
-    <item>Financial Advisor</item>
-    <item>Librarian</item>
-    <item>Pharmacist</item>
-    <item>Veterinarian</item>
-    <item>Web Developer</item>
-    <item>Project Manager</item>
-    <item>Event Planner</item>
-    <item>Academic Researcher</item>
-    <item>Interior Designer</item>
-    <item>Police Detective</item>
-    <item>Actor</item>
-    <item>Director</item>
-    <item>Producer</item>
-    <item>Scriptwriter</item>
-    <item>Dancer</item>
-    <item>Model</item>
-    <item>Painter</item>
-    <item>Illustrator</item>
-    <item>Cartoonist</item>
-    <item>Fashion Designer</item>
-    <item>Makeup Artist</item>
-    <item>Hairstylist</item>
-    <item>Magician</item>
-    <item>Tattoo Artist</item>
-    <item>Barista</item>
-    <item>Journalist</item>
-    <item>News Anchor</item>
-    <item>Reporter</item>
-    <item>Editor</item>
-    <item>Copywriter</item>
-    <item>Social Media Manager</item>
-    <item>SEO Specialist</item>
-    <item>Content Creator</item>
-    <item>Podcaster</item>
-    <item>Videographer</item>
-    <item>Sound Engineer</item>
-    <item>Animator</item>
-    <item>Game Developer</item>
-    <item>UX/UI Designer</item>
-    <item>Product Manager</item>
-    <item>Market Research Analyst</item>
-    <item>Financial Analyst</item>
-    <item>Investment Banker</item>
-    <item>Stock Trader</item>
-    <item>Actuary</item>
-    <item>Economist</item>
-    <item>Mathematician</item>
-    <item>Biologist</item>
-    <item>Chemist</item>
-    <item>Physicist</item>
-    <item>Astronomer</item>
-    <item>Geologist</item>
-    <item>Environmental Scientist</item>
-    <item>Anthropologist</item>
-    <item>Historian</item>
-    <item>Archaeologist</item>
-    <item>Political Scientist</item>
-    <item>Sociologist</item>
-    <item>Philosopher</item>
-    <item>Theologian</item>
-    <item>Professor</item>
-    <item>Lecturer</item>
-    <item>Teacher Assistant</item>
-    <item>Principal</item>
-    <item>School Counselor</item>
-    <item>Librarian</item>
-    <item>Psychologist</item>
-    <item>Speech Therapist</item>
-    <item>Special Education Teacher</item>
-    <item>Coach</item>
-    <item>Athlete</item>
-    <item>Referee</item>
-    <item>Sports Agent</item>
-    <item>Physical Therapist</item>
-    <item>Nutritionist</item>
-    <item>Personal Trainer</item>
-    <item>Fitness Instructor</item>
-    <item>Yoga Instructor</item>
+        <item>Engineer</item>
+        <item>Doctor</item>
+        <item>Teacher</item>
+        <item>Lawyer</item>
+        <item>Artist</item>
+        <item>Architect</item>
+        <item>Software Developer</item>
+        <item>Nurse</item>
+        <item>Police Officer</item>
+        <item>Chef</item>
+        <item>Musician</item>
+        <item>Banking Professional</item>
+        <item>Chartered Accountant</item>
+        <item>HR (Human Resources)</item>
+        <item>Actor</item>
+        <item>Journalist</item>
+        <item>Graphic Designer</item>
+        <item>Photographer</item>
+        <item>Real Estate Agent</item>
+        <item>Marketing Manager</item>
+        <item>Consultant</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Carpenter</item>
+        <item>Firefighter</item>
+        <item>Scientist</item>
+        <item>Psychologist</item>
+        <item>Social Worker</item>
+        <item>Flight Attendant</item>
+        <item>Translator</item>
+        <item>Entrepreneur</item>
+        <item>Financial Advisor</item>
+        <item>Librarian</item>
+        <item>Pharmacist</item>
+        <item>Veterinarian</item>
+        <item>Web Developer</item>
+        <item>Project Manager</item>
+        <item>Event Planner</item>
+        <item>Academic Researcher</item>
+        <item>Interior Designer</item>
+        <item>Police Detective</item>
+        <item>Actor</item>
+        <item>Director</item>
+        <item>Producer</item>
+        <item>Scriptwriter</item>
+        <item>Dancer</item>
+        <item>Model</item>
+        <item>Painter</item>
+        <item>Illustrator</item>
+        <item>Cartoonist</item>
+        <item>Fashion Designer</item>
+        <item>Makeup Artist</item>
+        <item>Hairstylist</item>
+        <item>Magician</item>
+        <item>Tattoo Artist</item>
+        <item>Barista</item>
+        <item>Journalist</item>
+        <item>News Anchor</item>
+        <item>Reporter</item>
+        <item>Editor</item>
+        <item>Copywriter</item>
+        <item>Social Media Manager</item>
+        <item>SEO Specialist</item>
+        <item>Content Creator</item>
+        <item>Podcaster</item>
+        <item>Videographer</item>
+        <item>Sound Engineer</item>
+        <item>Animator</item>
+        <item>Game Developer</item>
+        <item>UX/UI Designer</item>
+        <item>Product Manager</item>
+        <item>Market Research Analyst</item>
+        <item>Financial Analyst</item>
+        <item>Investment Banker</item>
+        <item>Stock Trader</item>
+        <item>Actuary</item>
+        <item>Economist</item>
+        <item>Mathematician</item>
+        <item>Biologist</item>
+        <item>Chemist</item>
+        <item>Physicist</item>
+        <item>Astronomer</item>
+        <item>Geologist</item>
+        <item>Environmental Scientist</item>
+        <item>Anthropologist</item>
+        <item>Historian</item>
+        <item>Archaeologist</item>
+        <item>Political Scientist</item>
+        <item>Sociologist</item>
+        <item>Philosopher</item>
+        <item>Theologian</item>
+        <item>Professor</item>
+        <item>Lecturer</item>
+        <item>Teacher Assistant</item>
+        <item>Principal</item>
+        <item>School Counselor</item>
+        <item>Librarian</item>
+        <item>Psychologist</item>
+        <item>Speech Therapist</item>
+        <item>Special Education Teacher</item>
+        <item>Coach</item>
+        <item>Athlete</item>
+        <item>Referee</item>
+        <item>Sports Agent</item>
+        <item>Physical Therapist</item>
+        <item>Nutritionist</item>
+        <item>Personal Trainer</item>
+        <item>Fitness Instructor</item>
+        <item>Yoga Instructor</item>
     </string-array>
 </resources>
 
