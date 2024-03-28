@@ -21,10 +21,7 @@ import com.example.alora_matrimony.databinding.FragmentReg1ProfileForBinding;
 public class reg1_profileFor extends Fragment {
 
     //    FragmentReg1ProfileForBinding b;
-    AppCompatButton btnContinue;
-    RadioGroup rel,gen;
-    RadioButton relsel,gensel;
-    String relation,gender;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
