@@ -12,7 +12,7 @@ public class registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        Fragment f=new reg1_profileFor();
+        Fragment f=new reg2_nmDob();
         getSupportFragmentManager().beginTransaction().add(R.id.container,f).commit();
     }
 }
