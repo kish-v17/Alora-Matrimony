@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/splash_bg"
+    tools:context=".AboutUs">
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/search_header">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="@color/white"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Welcome to Alora - Where Love Meets Compatibility"
+        android:textSize="20dp"
+        android:fontFamily="@font/quicksand_medium"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the world of Alora Matrimony - a revolutionary platform designed to redefine the journey of finding lifelong companionship. In a world where connections matter more than ever, Alora Matrimony emerges as the beacon of hope, seamlessly blending tradition with technology."
+        android:textSize="20dp"
+        android:fontFamily="@font/quicksand_regular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Our Vision"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:fontFamily="@font/quicksand_medium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Who we are"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            android:fontFamily="@font/quicksand_medium"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alora is more than just a matchmaking app; it's a community driven by a passion for fostering meaningful connections. Our team comprises dedicated individuals who understand the nuances of finding a life partner and are committed to making this process seamless and enjoyable."
+            android:textSize="20dp"
+            android:fontFamily="@font/quicksand_regular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How Alora works"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            android:fontFamily="@font/quicksand_medium"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Create Your Profile: Build a detailed profile that reflects your personality, preferences, and aspirations."
+            android:textSize="20dp"
+            android:fontFamily="@font/quicksand_regular"/>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Smart Matching: Our intelligent algorithms analyze your profile and preferences to suggest compatible matches."
+                android:textSize="20dp"
+                android:fontFamily="@font/quicksand_regular"/>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Engage and Connect: Initiate conversations, discover shared interests, and build connections that go beyond the surface."
+                android:textSize="20dp"
+                android:fontFamily="@font/quicksand_regular"/>
+    </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,22 +25,14 @@ public class Profile extends Fragment {
         b.ppref.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getContext(), db2.class);
-                Bundle b=new Bundle();
-                b.putInt("btnId",R.id.ppref);
-                i.putExtras(b);
-                startActivity(i);
+                changeFragment(R.id.ppref);
             }
         });
 
         b.editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getContext(), db2.class);
-                Bundle b=new Bundle();
-                b.putInt("btnId",R.id.editProfile);
-                i.putExtras(b);
-                startActivity(i);
+                changeFragment(R.id.editProfile);
             }
         });
         b.btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +44,26 @@ public class Profile extends Fragment {
                 Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show();
             }
         });
+        b.abtus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(R.id.abtus);
+            }
+        });
+        b.delacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(R.id.delacc);
+            }
+        });
         return view;
+    }
+    void changeFragment(int btnId){
+        Intent i=new Intent(getContext(), db2.class);
+        Bundle b=new Bundle();
+        b.putInt("btnId",btnId);
+        i.putExtras(b);
+        startActivity(i);
     }
 
 }

@@ -28,6 +28,10 @@ public class db2 extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Single_userProfile_Details()).commit();
             } else if (btnId==R.id.editProfile) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Edit_profile()).commit();
+            } else if (btnId==R.id.abtus) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new AboutUs()).commit();
+            }else if(btnId==R.id.delacc){
+                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Delete_Profile()).commit();
             }
         }
 
