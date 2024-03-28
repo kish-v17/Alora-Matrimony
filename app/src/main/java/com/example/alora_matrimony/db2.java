@@ -21,11 +21,13 @@ public class db2 extends AppCompatActivity {
 
         if(getIntent()!=null){
             int btnId=i.getIntExtra("btnId",-1);
-            if(btnId==R.id.partner_preferences){
+            if(btnId==R.id.partner_preferences || btnId==R.id.ppref){
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Partner_Preferences()).commit();
             }
             else if(btnId==R.id.more){
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Single_userProfile_Details()).commit();
+            } else if (btnId==R.id.editProfile) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Edit_profile()).commit();
             }
         }
 

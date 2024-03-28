@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Edit_profile">
+
+    <ImageView
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/search_header"/>
+
+    <ImageView
+        android:id="@+id/profilePhoto"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/rectangle_radius_40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profilePhoto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            //BasicDetails
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic Details"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Created By:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of birth:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diet:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marital Status:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            //ContactDetails
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Details"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No.:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            //EducationandCareer
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education and Career"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Highest Qualification:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occupation:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Income:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            //Password
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Old Password:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Password:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+            </LinearLayout>
+
+            //Area
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle_bluegray100_radius25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area"
+                    android:layout_gravity="center"
+                    style="@style/txtQuicksandbold24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City:"
+                    android:layout_marginTop="10dp"
+                    style="@style/txtQuicksandregular23"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
