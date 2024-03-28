@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
     ActivityLoginBinding b;
     String email,password;
-
+    boolean isPasswordVisable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,21 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userLogin();
+            }
+        });
+
+        b.etLogPassword.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (isPasswordVisable) {
+                    b.etLogPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    isPasswordVisable = false;
+                } else {
+                    b.etLogPassword.setTransformationMethod(null);
+                    isPasswordVisable = true;
+                }
+                b.etLogPassword.setSelection(b.etLogPassword.getText().length());
+                return true;
             }
         });
     }

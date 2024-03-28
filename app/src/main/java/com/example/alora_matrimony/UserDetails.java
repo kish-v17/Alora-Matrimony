@@ -5,11 +5,10 @@ import androidx.lifecycle.ViewModel;
 import java.security.Timestamp;
 
 public class UserDetails extends ViewModel {
-    String relation, gender, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
+    String gender, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
     long dateOfBirth;
     int weight;
-    public UserDetails(String relation, String gender, String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
-        this.relation = relation;
+    public UserDetails(String gender, String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,14 +28,6 @@ public class UserDetails extends ViewModel {
         this.occupation = occupation;
         this.income = income;
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getRelation() {
-        return relation;
-    }
-
-    public void setRelation(String relation) {
-        this.relation = relation;
     }
 
     public String getGender() {

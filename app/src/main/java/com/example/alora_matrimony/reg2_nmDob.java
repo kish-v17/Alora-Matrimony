@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +29,11 @@ public class reg2_nmDob extends Fragment {
 
     AppCompatButton btnContinue;
     EditText etFnm,etLnm;
+    RadioGroup gen;
+    RadioButton gensel;
     TextView tvPickDate;
     long dob;
+    String gender,fnm,lnm;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class reg2_nmDob extends Fragment {
         tvPickDate = view.findViewById(R.id.tvPickDate);
         etFnm=view.findViewById(R.id.etFirstName);
         etLnm=view.findViewById(R.id.etLastName);
+        gen=view.findViewById(R.id.rg_gen);
 
         MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Select Date of Birth");
@@ -78,33 +84,41 @@ public class reg2_nmDob extends Fragment {
         return view;
     }
 
-        void validateFields() {
-            String fnm = etFnm.getText().toString().trim();
-            String lnm = etLnm.getText().toString().trim();
-            String dobStr = tvPickDate.getText().toString().trim();
+    void validateFields() {
+        fnm = etFnm.getText().toString().trim();
+        lnm = etLnm.getText().toString().trim();
+        String dobStr = tvPickDate.getText().toString().trim();
+        int checkedGenId = gen.getCheckedRadioButtonId();
 
-            if (fnm.isEmpty()) {
-                etFnm.setError("Enter first name");
-                etFnm.requestFocus();
-                return;
-            }
+        if (checkedGenId == -1) {
+            Toast.makeText(getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (fnm.isEmpty()) {
+            etFnm.setError("Enter first name");
+            etFnm.requestFocus();
+            return;
+        }
 
-            if (lnm.isEmpty()) {
-                etLnm.setError("Enter last name");
-                etLnm.requestFocus();
-                return;
-            }
+        if (lnm.isEmpty()) {
+            etLnm.setError("Enter last name");
+            etLnm.requestFocus();
+            return;
+        }
 
-            if (dobStr.isEmpty()) {
-                Toast.makeText(getContext(), "Select date of birth", Toast.LENGTH_SHORT).show();
+        if (dobStr.isEmpty()) {
+            Toast.makeText(getContext(), "Select date of birth", Toast.LENGTH_SHORT).show();
 
-                return;
-            }
+            return;
+        }
+        gensel=getView().findViewById(checkedGenId);
+        gender=gensel.getText().toString();
         reg3_contactDetails con = new reg3_contactDetails();
-        Bundle b=getArguments();
+        Bundle b=new Bundle();
         b.putString("firstName",fnm);
         b.putString("lastName",lnm);
         b.putLong("dateOfBirth",dob);
+        b.putString("gender",gender);
 
         con.setArguments(b);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, con).addToBackStack(null).commit();
