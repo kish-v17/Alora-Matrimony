@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class reg6_qualiOccupationIncome extends Fragment {
     AppCompatButton btnCreate;
     Spinner spQual,spincome,spOccupation;
-    String gender,firstName,lastName,mobile,email,password,religion,community,subCommunity,state,city,maritalStatus,height,diet,qualification,income,occupation;
+    String gender,image,firstName,lastName,mobile,email,password,religion,community,subCommunity,state,city,maritalStatus,height,diet,qualification,income,occupation;
     long dateOfBirth;
     int weight;
     @Override
@@ -58,12 +58,13 @@ public class reg6_qualiOccupationIncome extends Fragment {
                 qualification=spQual.getSelectedItem().toString();
                 income= spincome.getSelectedItem().toString();
                 occupation=spOccupation.getSelectedItem().toString();
+                image=b.getString("image");
 
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            UserDetails u=new UserDetails(gender,firstName,lastName,mobile,email,password,religion,community,subCommunity,city,state,maritalStatus,height,weight,diet,qualification,occupation,income,dateOfBirth);
+                            UserDetails u=new UserDetails(gender,image,firstName,lastName,mobile,email,password,religion,community,subCommunity,city,state,maritalStatus,height,weight,diet,qualification,occupation,income,dateOfBirth);
                             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getUid()).setValue(u);
                             Toast.makeText(getActivity(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getActivity(), Dashboard.class));

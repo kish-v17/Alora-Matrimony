@@ -8,66 +8,8 @@
     tools:context=".reg2_nmDob">
 
     <TextView
-        android:id="@+id/txtName"
-        style="@style/txtQuicksandsemibold30"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="40dp"
-        android:gravity="start"
-        android:letterSpacing="0.09"
-        android:singleLine="true"
-        android:text="@string/lbl_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etFirstName"
-        style="@style/etSolidRounded"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:hint="@string/lbl_first_name"
-        android:inputType="text"
-        android:letterSpacing="0.06"
-        android:paddingStart="11dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="30dp"
-        android:paddingBottom="14dp"
-        android:singleLine="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
-
-    <EditText
-        android:id="@+id/etLastName"
-        style="@style/etSolidRounded"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
-        android:hint="@string/lbl_last_name"
-        android:inputType="text"
-        android:letterSpacing="0.06"
-        android:paddingStart="11dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="30dp"
-        android:paddingBottom="14dp"
-        android:singleLine="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
-
-    <TextView
         android:id="@+id/txtDateofBirth"
+        style="@style/txtQuicksandsemibold30"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -78,11 +20,11 @@
         android:letterSpacing="0.09"
         android:singleLine="true"
         android:text="@string/lbl_date_of_birth"
-        style="@style/txtQuicksandsemibold30"
         app:layout_constraintBottom_toTopOf="@+id/tvPickDate"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+        app:layout_constraintTop_toBottomOf="@id/rg_gen" />
 
     <TextView
         android:id="@+id/tvPickDate"
@@ -111,22 +53,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
         android:letterSpacing="0.09"
         android:singleLine="true"
         android:text="@string/lbl_choose_gender"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPickDate" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/rg_gen"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,8 +81,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:text="@string/lbl_male"
-            />
+            android:text="@string/lbl_male" />
 
         <RadioButton
             android:id="@+id/txtfemale"
@@ -149,6 +90,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lbl_female" />
     </RadioGroup>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinue"
         style="@style/btnSolidRounded_1"
@@ -171,6 +113,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPickDate"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.766" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,32 +6,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Profile">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_bar"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:gravity="center|start"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/search_header"
         android:elevation="30dp"
-        android:background="@drawable/search_header">
+        android:gravity="center|start"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-51dp">
 
         <ImageView
-            android:id="@+id/pfp"
+            android:id="@+id/UserProfile"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/deshboard_profile_circle"/>
+            android:src="@drawable/deshboard_profile_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtUserName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txtUserName"
+            style="@style/txtQuicksandsemibold30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="136dp"
             android:text="@string/lbl_user_name"
-            android:layout_marginStart="10dp"
-            style="@style/txtQuicksandsemibold30"
-            android:textColor="@color/bluegray_100"/>
+            android:textColor="@color/bluegray_100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.504" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"

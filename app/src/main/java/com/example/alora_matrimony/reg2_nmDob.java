@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class reg2_nmDob extends Fragment {
     RadioButton gensel;
     TextView tvPickDate;
     long dob;
-    String gender,fnm,lnm;
+    String gender;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,24 +86,11 @@ public class reg2_nmDob extends Fragment {
     }
 
     void validateFields() {
-        fnm = etFnm.getText().toString().trim();
-        lnm = etLnm.getText().toString().trim();
         String dobStr = tvPickDate.getText().toString().trim();
         int checkedGenId = gen.getCheckedRadioButtonId();
 
         if (checkedGenId == -1) {
             Toast.makeText(getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (fnm.isEmpty()) {
-            etFnm.setError("Enter first name");
-            etFnm.requestFocus();
-            return;
-        }
-
-        if (lnm.isEmpty()) {
-            etLnm.setError("Enter last name");
-            etLnm.requestFocus();
             return;
         }
 
@@ -115,8 +103,7 @@ public class reg2_nmDob extends Fragment {
         gender=gensel.getText().toString();
         reg3_contactDetails con = new reg3_contactDetails();
         Bundle b=new Bundle();
-        b.putString("firstName",fnm);
-        b.putString("lastName",lnm);
+
         b.putLong("dateOfBirth",dob);
         b.putString("gender",gender);
 

@@ -46,9 +46,14 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation ("com.google.android.material:material:1.5.0")
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-storage")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //meow navbar
     implementation ("com.etebarian:meow-bottom-navigation:1.2.0")
+
+
+
+
 }

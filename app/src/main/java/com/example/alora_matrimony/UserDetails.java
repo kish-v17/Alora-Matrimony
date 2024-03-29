@@ -5,11 +5,12 @@ import androidx.lifecycle.ViewModel;
 import java.security.Timestamp;
 
 public class UserDetails extends ViewModel {
-    String gender, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
+    String gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
     long dateOfBirth;
     int weight;
-    public UserDetails(String gender, String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
+    public UserDetails(String gender, String Image,String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
         this.gender = gender;
+        this.image=image;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNo = mobileNo;
@@ -36,6 +37,14 @@ public class UserDetails extends ViewModel {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getFirstName() {
