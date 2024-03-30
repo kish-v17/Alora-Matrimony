@@ -102,7 +102,7 @@ public class reg2_nmDob extends Fragment {
         gensel=getView().findViewById(checkedGenId);
         gender=gensel.getText().toString();
         reg3_contactDetails con = new reg3_contactDetails();
-        Bundle b=new Bundle();
+        Bundle b=getArguments();
 
         b.putLong("dateOfBirth",dob);
         b.putString("gender",gender);

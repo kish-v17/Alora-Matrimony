@@ -41,6 +41,7 @@ public class reg1_profileFor extends Fragment {
     FragmentReg1ProfileForBinding b;
     String fnm,lnm,image;
     private Uri selectedImageUri;
+    Bundle bundle;
     ActivityResultLauncher<Intent> activityResultLauncher;
 
     @Override
@@ -80,41 +81,11 @@ public class reg1_profileFor extends Fragment {
         return view;
     }
 
-    public void uploadImg(){
-        if(selectedImageUri != null){
-            StorageReference sr= FirebaseStorage.getInstance().getReference();
-            StorageReference imgRef=sr.child("Profile/"+ System.currentTimeMillis()+".jpg");
 
-            imgRef.putFile(selectedImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    if(task.isSuccessful()){
-                        imgRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Uri> task) {
-                                if(task.isSuccessful()){
-                                    Uri downloadedUri=task.getResult();
-                                    image=downloadedUri.toString();
-                                }else {
-                                    Toast.makeText(getActivity(), "Failed to get URL", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-                    }else{
-                        Toast.makeText(getActivity(), "Failed to upload image", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }else{
-            Toast.makeText(getActivity(), "Please select an Image", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     void validateFields() {
         fnm = b.etFirstName.getText().toString().trim();
         lnm = b.etLastName.getText().toString().trim();
-
-
         if (TextUtils.isEmpty(fnm)) {
             b.etFirstName.setError("Enter first name");
             b.etFirstName.requestFocus();
@@ -126,14 +97,14 @@ public class reg1_profileFor extends Fragment {
             b.etLastName.requestFocus();
             return;
         }
-        uploadImg();
-        reg2_nmDob genDob = new reg2_nmDob();
-        Bundle b=new Bundle();
-        b.putString("firstName",fnm);
-        b.putString("lastName",lnm);
-        b.putString("image",image);
 
-        genDob.setArguments(b);
+        reg2_nmDob genDob = new reg2_nmDob();
+        bundle=new Bundle();
+        bundle.putString("firstName",fnm);
+        bundle.putString("lastName",lnm);
+        bundle.putString("image",selectedImageUri.toString());
+
+        genDob.setArguments(bundle);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, genDob).addToBackStack(null).commit();
 
     }

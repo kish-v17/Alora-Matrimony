@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.apache.commons.text.WordUtils;
+
 public class Profile extends Fragment {
     FragmentProfileBinding b;
     DatabaseReference dbr;
@@ -31,7 +33,6 @@ public class Profile extends Fragment {
         uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbr=FirebaseDatabase.getInstance().getReference();
         readData();
-
         b.ppref.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,19 +78,30 @@ public class Profile extends Fragment {
     }
 
     private void readData(){
-        DatabaseReference uRef=dbr.child("Users").child("uid");
+        DatabaseReference uRef=dbr.child("users").child(uid);
         uRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    UserDetails u=snapshot.getValue(UserDetails.class);
-                    if(u!=null){
-                        b.txtUserName.setText(u.getFirstName()+" "+u.getLastName());
-                        Glide.with(requireContext())
-                                .load(u.getImage()) // Assuming profileImageUrl is the URL in your database
-                                .placeholder(R.drawable.deshboard_profile_circle) // Placeholder image while loading
-                                .error(R.drawable.deshboard_profile_circle) // Error image if loading fails
-                                .into(b.UserProfile);
+                if(snapshot.exists() && isAdded()){
+                    UserDetails user = snapshot.getValue(UserDetails.class);
+                    if(user != null){
+                        // Set user's name
+                        String userName = WordUtils.capitalizeFully(user.getFirstName()) + " " + WordUtils.capitalizeFully(user.getLastName());
+                        b.txtUserName.setText(userName);
+
+                        // Set user's image using Glide
+                        String imageUrl = user.getImage();
+                        if (imageUrl != null && !imageUrl.isEmpty()) {
+                            Glide.with(requireContext())
+                                    .load(imageUrl)
+                                    .placeholder(R.drawable.deshboard_profile_circle)
+                                    .error(R.drawable.deshboard_profile_circle)
+                                    .circleCrop()
+                                    .into(b.UserProfile);
+                        } else {
+                            // If no image URL is available, set a default placeholder
+                            b.UserProfile.setImageResource(R.drawable.deshboard_profile_circle);
+                        }
                     }
                 }
             }
