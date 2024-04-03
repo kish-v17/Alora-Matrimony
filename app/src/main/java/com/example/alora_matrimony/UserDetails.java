@@ -1,17 +1,14 @@
 package com.example.alora_matrimony;
 
-import androidx.lifecycle.ViewModel;
-
-import java.security.Timestamp;
-
 public class UserDetails{
-    String gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
+    String userId,gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
     long dateOfBirth;
     int weight;
     public UserDetails() {
         // Default constructor required for Firebase
     }
-    public UserDetails(String gender, String image,String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
+    public UserDetails( String userId,String gender, String image,String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
+        this.userId=userId;
         this.gender = gender;
         this.image= image;
         this.firstName = firstName;
@@ -32,6 +29,14 @@ public class UserDetails{
         this.occupation = occupation;
         this.income = income;
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getGender() {

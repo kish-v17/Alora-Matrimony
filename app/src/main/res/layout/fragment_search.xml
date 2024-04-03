@@ -6,30 +6,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Search">
 
-    <LinearLayout
-        android:id="@+id/search_bar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchHeader"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="vertical"
+        android:background="@drawable/search_header"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/search_header">
+        tools:layout_editor_absoluteX="-10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Find Your Match"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/chatHistory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
         <SearchView
+            android:id="@+id/chatHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:queryHint="Search Profiles"
+            android:background="@drawable/searchbar"
             android:iconifiedByDefault="false"
-            android:background="@drawable/searchbar"/>
-
-    </LinearLayout>
+            android:queryHint="Search Profiles"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.754" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintTop_toBottomOf="@id/searchHeader"
         android:paddingBottom="170dp">
 
     <LinearLayout
