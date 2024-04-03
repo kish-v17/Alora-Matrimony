@@ -11,16 +11,15 @@
             android:layout_marginStart="4dp"
             android:layout_width="90dp"
             android:layout_height="90dp"
+            android:elevation="2dp"
             android:background="@drawable/deshboard_profile_circle" />
 
         <ImageView
-
             android:id="@+id/bigpfp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:background="@drawable/deshboard_profile" />
+            android:background="@drawable/deshboard_profile"
+            android:elevation="1dp" />
 
     <LinearLayout
         android:layout_width="120dp"
@@ -30,6 +29,7 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/deshboard_profile_rectangle"
         android:gravity="center"
+        android:elevation="3dp"
         android:orientation="horizontal">
 
         <ImageView

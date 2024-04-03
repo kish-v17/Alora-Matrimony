@@ -2,6 +2,13 @@ package com.example.alora_matrimony;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +16,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.Transformation;
+import com.bumptech.glide.load.engine.Resource;
+import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
 import java.util.List;
 
 public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder> {
@@ -44,7 +57,7 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder>
                         .into(holder.bigpfp);
                 Glide.with(context)
                         .load(hur.getImage())
-                        .centerCrop()
+                        .circleCrop()
                         .error(R.drawable.deshboard_profile_circle)
                         .into(holder.pfp);
             }
