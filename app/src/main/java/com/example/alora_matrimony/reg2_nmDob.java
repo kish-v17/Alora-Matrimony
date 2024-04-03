@@ -1,5 +1,6 @@
 package com.example.alora_matrimony;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 
@@ -35,6 +36,7 @@ public class reg2_nmDob extends Fragment {
     TextView tvPickDate;
     long dob;
     String gender;
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

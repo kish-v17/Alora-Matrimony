@@ -1,6 +1,6 @@
 package com.example.alora_matrimony;
 
-public class rv_itemmodel {
+public class rv_itemmodel extends UserDetails {
     int pfp;
     int bigpfp;
     int like;
@@ -30,7 +30,7 @@ public class rv_itemmodel {
     }
 
     public int getLike() {
-        return like;
+            return like;
     }
 
     public void setLike(int like) {

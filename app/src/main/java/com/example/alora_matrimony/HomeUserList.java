@@ -1,37 +1,25 @@
 package com.example.alora_matrimony;
 
-import androidx.lifecycle.ViewModel;
-
-import java.security.Timestamp;
-
-public class UserDetails{
-    String gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
+public class HomeUserList {
+    String userId,gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
     long dateOfBirth;
     int weight;
-    public UserDetails() {
+
+    public HomeUserList() {
         // Default constructor required for Firebase
     }
-    public UserDetails(String gender, String image,String firstName, String lastName, String mobileNo, String email, String password, String religion, String community, String subCommunity, String city, String state, String maritalStatus, String height, int weight, String diet, String qualification, String occupation, String income, long dateOfBirth) {
-        this.gender = gender;
-        this.image= image;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNo = mobileNo;
-        this.email = email;
-        this.password = password;
-        this.religion = religion;
-        this.community = community;
-        this.subCommunity = subCommunity;
-        this.city = city;
-        this.state = state;
-        this.maritalStatus = maritalStatus;
-        this.height = height;
-        this.weight = weight;
-        this.diet = diet;
-        this.qualification = qualification;
-        this.occupation = occupation;
-        this.income = income;
-        this.dateOfBirth = dateOfBirth;
+
+    public HomeUserList(String userId, String image) {
+        this.userId = userId;
+        this.image=image;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getGender() {
@@ -146,14 +134,6 @@ public class UserDetails{
         this.height = height;
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
     public String getDiet() {
         return diet;
     }
@@ -192,5 +172,13 @@ public class UserDetails{
 
     public void setDateOfBirth(long dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 }

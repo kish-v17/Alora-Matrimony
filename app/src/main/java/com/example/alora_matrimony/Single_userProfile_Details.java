@@ -14,6 +14,7 @@ public class Single_userProfile_Details extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_single_user_profile__details, container, false);
+        View view= inflater.inflate(R.layout.fragment_single_user_profile__details, container, false);
+        return view;
     }
 }

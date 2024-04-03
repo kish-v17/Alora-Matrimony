@@ -51,6 +51,7 @@ dependencies {
 
     // Room Database
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation("com.google.firebase:firebase-firestore:24.11.0")
 
     // Testing
     testImplementation("junit:junit:4.13.2")

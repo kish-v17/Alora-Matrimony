@@ -49,13 +49,7 @@ public class Dashboard extends AppCompatActivity {
             public Unit invoke(MeowBottomNavigation.Model model) {
                 switch (model.getId()){
                     case home:
-                        if (savedInstanceState != null) {
-                            getSupportFragmentManager().beginTransaction().add(R.id.dbContainer, new Home()).commit();
-                        }
-                        else {
-                            //getSupportFragmentManager().beginTransaction().remove(fragmentToRemove);
-                            getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Home()).commit();
-                        }
+                        getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Home()).commit();
                         break;
                     case search:
                         getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer,new Search()).commit();

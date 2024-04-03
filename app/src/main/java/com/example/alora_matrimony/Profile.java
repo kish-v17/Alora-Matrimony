@@ -86,7 +86,7 @@ public class Profile extends Fragment {
                     UserDetails user = snapshot.getValue(UserDetails.class);
                     if(user != null){
                         // Set user's name
-                        String userName = WordUtils.capitalizeFully(user.getFirstName()) + " " + WordUtils.capitalizeFully(user.getLastName());
+                        String userName = WordUtils.capitalizeFully(user.getFirstName());
                         b.txtUserName.setText(userName);
 
                         // Set user's image using Glide
