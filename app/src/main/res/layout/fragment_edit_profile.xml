@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Edit_profile">
 
     <ImageView
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="horizontal"
+        android:background="@drawable/search_header"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/search_header"/>
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/profilelayout"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="65dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -38,7 +38,7 @@
             android:layout_height="100dp"
             android:layout_gravity="end|bottom"
             android:elevation="2dp"
-            android:src="@drawable/deshboard_profile_circle"/>
+            android:src="@drawable/deshboard_profile_circle" />
 
     </FrameLayout>
 
@@ -57,219 +57,303 @@
             android:layout_margin="20dp"
             android:orientation="vertical">
 
-            //BasicDetails
+            <!--            Basic details-->
+            <TextView
+                style="@style/txtQuicksandbold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Basic Details" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Name:" />
+
+            <EditText
+                android:id="@+id/nm"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Gender:"/>
+
+            <EditText
+                android:id="@+id/gen"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Date of Birth:" />
+
+            <EditText
+                android:id="@+id/dob"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Height:" />
+
+            <EditText
+                android:id="@+id/height"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Weight:" />
+
+            <EditText
+                android:id="@+id/weight"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Diet:" />
+
+            <EditText
+                android:id="@+id/diet"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Marital Status:" />
+
+            <EditText
+                android:id="@+id/maritalStatus"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editblockline" />
+
+            <!--            ContactDetails-->
+                <TextView
+                    style="@style/txtQuicksandbold24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Contact Details" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Contact No.:" />
+
+            <EditText
+                android:id="@+id/cno"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editblockline" />
+
+            <!--            EducationandCareer-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25">
+                android:background="@drawable/rectangle_bluegray100_radius25"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
+                    style="@style/txtQuicksandbold24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Basic Details"
                     android:layout_gravity="center"
-                    style="@style/txtQuicksandbold24"/>
+                    android:text="Education and Career" />
 
                 <TextView
+                    android:id="@+id/hquali"
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profile Created By:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="Highest Qualification:" />
 
                 <TextView
+                    android:id="@+id/occupation"
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="Occupation:" />
 
                 <TextView
+                    android:id="@+id/income"
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gender:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date of birth:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Height:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Weight:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Diet:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Marital Status:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="Income:" />
 
             </LinearLayout>
 
-            //ContactDetails
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editblockline" />
+
+            <!--            Password-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25">
+                android:background="@drawable/rectangle_bluegray100_radius25"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
+                    style="@style/txtQuicksandbold24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Details"
                     android:layout_gravity="center"
-                    style="@style/txtQuicksandbold24"/>
+                    android:text="Password" />
 
                 <TextView
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="Old Password:" />
 
                 <TextView
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact No.:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="New Password:" />
+
+                <TextView
+                    style="@style/txtQuicksandregular23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Confirm Password:" />
 
             </LinearLayout>
 
-            //EducationandCareer
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editblockline" />
+
+            <!--            Area-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Education and Career"
-                    android:layout_gravity="center"
-                    style="@style/txtQuicksandbold24"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Highest Qualification:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Occupation:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Income:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-            </LinearLayout>
-
-            //Password
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_bluegray100_radius25"
                 android:orientation="vertical"
-                android:padding="10dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25">
+                android:padding="10dp">
 
                 <TextView
+                    style="@style/txtQuicksandbold24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Password"
                     android:layout_gravity="center"
-                    style="@style/txtQuicksandbold24"/>
+                    android:text="Area" />
 
                 <TextView
+                    android:id="@+id/state"
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Old Password:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="State:" />
 
                 <TextView
+                    android:id="@+id/city"
+                    style="@style/txtQuicksandregular23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Password:"
                     android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Confirm Password:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-            </LinearLayout>
-
-            //Area
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Area"
-                    android:layout_gravity="center"
-                    style="@style/txtQuicksandbold24"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="State:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
+                    android:text="City:" />
 
 
             </LinearLayout>

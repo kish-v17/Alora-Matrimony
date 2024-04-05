@@ -61,16 +61,6 @@ public class Home extends Fragment {
         readData();
         listData();
 
-        //fetching data for recycle view
-//        List<rv_itemmodel> iteamlist = new ArrayList<>();
-//        for(int i=1;i<=5;i++) {
-//            iteamlist.add(new rv_itemmodel(R.drawable.deshboard_profile_circle,R.drawable.deshboard_profile,R.drawable.img_likebtn,R.drawable.img_morebtn));
-//        }
-//        rv_adapter adapter = new rv_adapter(getContext(),iteamlist);
-//        b.dbRv.setLayoutManager(new LinearLayoutManager(getContext()));
-//        b.dbRv.setAdapter(adapter);
-
-
         // Inflate the layout for this fragment
         return view;
     }
@@ -127,18 +117,6 @@ public class Home extends Fragment {
                         }
                     }
                 }
-
-//                List<UserDetails> userList = new ArrayList<>();
-//                for (DataSnapshot usrsnapshot : snapshot.getChildren()) {
-//                    UserDetails usr = usrsnapshot.getValue(UserDetails.class);
-//                    if (usr != null && !TextUtils.equals(usrsnapshot.getKey(), uid)) {
-//                        userList.add(usr);
-//                    }
-//                }
-//                // Now you have a list of other users, populate RecyclerView with it
-//                rv_adapter adapter = new rv_adapter(getContext(), userList);
-//                b.dbRv.setLayoutManager(new LinearLayoutManager(getContext()));
-//                b.dbRv.setAdapter(adapter);
             }
 
             @Override
