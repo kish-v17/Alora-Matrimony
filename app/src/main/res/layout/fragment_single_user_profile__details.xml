@@ -140,6 +140,7 @@
                     style="@style/txtQuicksandbold24"/>
 
                 <TextView
+                    android:id="@+id/des"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Here will be small description user has provided for their introduction like what are their interests and etc..."

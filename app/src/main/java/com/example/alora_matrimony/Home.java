@@ -1,13 +1,16 @@
 package com.example.alora_matrimony;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,6 +52,9 @@ public class Home extends Fragment {
     FragmentHomeBinding b;
     String uid;
 
+    SharedPreferences sp;
+    SharedPreferences.Editor edit;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,6 +64,7 @@ public class Home extends Fragment {
 
         dbr = FirebaseDatabase.getInstance().getReference();
         uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         readData();
         listData();
 
@@ -94,7 +101,6 @@ public class Home extends Fragment {
         uRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 if (snapshot.exists() && isAdded()) {
                     UserDetails user = snapshot.getValue(UserDetails.class);
                     if (user != null) {
