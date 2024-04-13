@@ -22,11 +22,17 @@ public class db2 extends AppCompatActivity {
 
         if(getIntent()!=null){
             int btnId=i.getIntExtra("btnId",-1);
+            String suid=i.getStringExtra("usrEmail");
+
             if(btnId==R.id.partner_preferences || btnId==R.id.ppref){
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Partner_Preferences()).commit();
             }
             else if(btnId==R.id.more){
-                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Single_userProfile_Details()).commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("usrEmail", suid); // Pass usrEmail to fragment
+                Single_userProfile_Details userProfileDetailsFragment = new Single_userProfile_Details();
+                userProfileDetailsFragment.setArguments(bundle);// Bundle as argument
+                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,userProfileDetailsFragment).commit();
             } else if (btnId==R.id.editProfile) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Edit_profile()).commit();
             } else if (btnId==R.id.abtus) {

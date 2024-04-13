@@ -40,7 +40,6 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
         //holder.image_profile.setImageResource(R.drawable.deshboard_profile_circle);
         holder.text_recent_message.setText("msg");
         holder.text_time.setText("11:11");
-
         hur=itemlist.get(position);
         if(hur!=null){
             holder.text_sender_name.setText(WordUtils.capitalizeFully(hur.firstName)+" "+ WordUtils.capitalizeFully(hur.lastName));
@@ -50,6 +49,8 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
                     .error(R.drawable.deshboard_profile_circle)
                     .into(holder.image_profile);
         }
+
+        
     }
 
     @Override

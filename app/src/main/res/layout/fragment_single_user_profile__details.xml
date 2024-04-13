@@ -15,9 +15,11 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/bigpfp"
             android:layout_width="350dp"
             android:layout_height="350dp"
             android:layout_marginTop="30dp"
+            android:elevation="2dp"
             android:src="@drawable/user_profile" />
 
         <ImageView
@@ -26,6 +28,7 @@
             android:layout_height="90dp"
             android:layout_gravity="bottom|end"
             android:layout_marginStart="4dp"
+            android:elevation="1dp"
             android:background="@drawable/deshboard_profile_circle" />
 
     </FrameLayout>
@@ -64,7 +67,7 @@
                     style="@style/txtArimaMaduraibold30" />
 
                 <TextView
-                    android:id="@+id/quali"
+                    android:id="@+id/profession1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -110,7 +113,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:src="@drawable/age_height_weight_box" />
+                    android:background="@drawable/age_height_weight_box" />
 
                 <ImageView
                     android:layout_width="100dp"
@@ -136,28 +139,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Little about me"
+                    android:text="Full Name"
                     style="@style/txtQuicksandbold24"/>
 
                 <TextView
-                    android:id="@+id/des"
+                    android:id="@+id/fnm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Here will be small description user has provided for their introduction like what are their interests and etc..."
+                    android:text="firstname lastname"
                     style="@style/txtQuicksandregular23"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Hobbies/ Interests"
-                    style="@style/txtQuicksandbold24"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:text="Hobbies/ Interests"-->
+<!--                    style="@style/txtQuicksandbold24"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="item 1"
-                    style="@style/txtQuicksandregular23"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="item 1"-->
+<!--                    style="@style/txtQuicksandregular23"/>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -172,6 +175,7 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/maritalStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="item 1"
@@ -192,6 +196,7 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/area"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="State/City"
@@ -212,6 +217,7 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/religion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="religion"
@@ -232,6 +238,7 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/community"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="comm"
@@ -252,6 +259,7 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/diet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="veg"
@@ -272,12 +280,14 @@
                         style="@style/txtQuicksandbold24"/>
 
                     <TextView
+                        android:id="@+id/email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="email"
                         style="@style/txtQuicksandregular23"/>
 
                     <TextView
+                        android:id="@+id/phnno"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="phone No"
@@ -299,18 +309,21 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/hquali"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Highest Qualification : quali"
                         style="@style/txtQuicksandregular23"/>
 
                     <TextView
+                        android:id="@+id/profession"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Proffession : xyz"
                         style="@style/txtQuicksandregular23"/>
 
                     <TextView
+                        android:id="@+id/annualincome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Annual Income : xyz"

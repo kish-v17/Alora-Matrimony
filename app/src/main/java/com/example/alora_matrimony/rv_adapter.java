@@ -69,14 +69,15 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder>
                 holder.more.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String suid = "";
                         HomeUserList clickedUser = itemlist.get(holder.getAdapterPosition());
                         if (clickedUser != null) {
-                            String suid=clickedUser.getEmail();
+                            suid=clickedUser.getEmail();
                         }
                         Intent i=new Intent(context, db2.class);
                         Bundle b=new Bundle();
                         b.putInt("btnId",R.id.more);
-                        b.putString("usrEmail",hur.getEmail());
+                        b.putString("usrEmail",suid);
                         i.putExtras(b);
                         context.startActivity(i);
                     }
