@@ -20,7 +20,7 @@ public class db2 extends AppCompatActivity {
         dbContainer2=findViewById(R.id.dbContainer2);
         Intent i=getIntent();
 
-        if(getIntent()!=null){
+        if(i!=null){
             int btnId=i.getIntExtra("btnId",-1);
             String suid=i.getStringExtra("usrEmail");
 
@@ -37,9 +37,10 @@ public class db2 extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Edit_profile()).commit();
             } else if (btnId==R.id.abtus) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new AboutUs()).commit();
-            }else if(btnId==R.id.delacc){
-                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Delete_Profile()).commit();
+            }else if(btnId==R.id.delacc) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2, new Delete_Profile()).commit();
             }
+
         }
 
     }

@@ -2,41 +2,27 @@ package com.example.alora_matrimony;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.Transformation;
-import com.bumptech.glide.load.engine.Resource;
-import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 
-import java.nio.charset.Charset;
-import java.security.MessageDigest;
 import java.util.List;
 
 public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder> {
 
     Context context;
-    List<HomeUserList> itemlist;
+    List<UserDetails> itemlist;
 
-    HomeUserList hur;
+    UserDetails hur;
 
-    public rv_adapter(Context context, List<HomeUserList> itemlist) {
+    public rv_adapter(Context context, List<UserDetails> itemlist) {
         this.context = context;
         this.itemlist = itemlist;
     }
@@ -53,7 +39,7 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder>
         holder.like.setImageResource(R.drawable.img_likebtn);
         holder.more.setImageResource(R.drawable.img_morebtn);
 
-            hur=itemlist.get(position);
+        hur=itemlist.get(position);
             if(hur!=null){
                 Glide.with(context)
                         .load(hur.getImage())
@@ -70,7 +56,7 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder>
                     @Override
                     public void onClick(View v) {
                         String suid = "";
-                        HomeUserList clickedUser = itemlist.get(holder.getAdapterPosition());
+                        UserDetails clickedUser = itemlist.get(holder.getAdapterPosition());
                         if (clickedUser != null) {
                             suid=clickedUser.getEmail();
                         }

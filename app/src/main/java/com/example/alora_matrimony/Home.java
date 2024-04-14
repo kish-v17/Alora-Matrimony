@@ -45,6 +45,7 @@ import org.apache.commons.text.WordUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Home extends Fragment {
 
@@ -52,18 +53,16 @@ public class Home extends Fragment {
     FragmentHomeBinding b;
     String uid;
 
-    SharedPreferences sp;
-    SharedPreferences.Editor edit;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         b = FragmentHomeBinding.inflate(inflater, container, false);
         View view = b.getRoot();
 
         dbr = FirebaseDatabase.getInstance().getReference();
-        uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        uid = FirebaseAuth.getInstance().getUid();
 
         readData();
         listData();
@@ -77,12 +76,12 @@ public class Home extends Fragment {
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                List<HomeUserList> userList=new ArrayList<>();
+                List<UserDetails> userList=new ArrayList<>();
                 for(DataSnapshot userSnapshot:snapshot.getChildren()){
-                    HomeUserList homeUserList=userSnapshot.getValue(HomeUserList.class);
-                    String uid2=homeUserList.getUserId();
-                    if(homeUserList!=null && !uid.equals(uid2)){
-                        userList.add(homeUserList);
+                    UserDetails userDetails=userSnapshot.getValue(UserDetails.class);
+                    String uid2= userDetails.getUserId();
+                    if(userDetails!=null && !uid.equals(uid2)){
+                        userList.add(userDetails);
                     }
                 }
                 rv_adapter adapter=new rv_adapter(getContext(),userList);

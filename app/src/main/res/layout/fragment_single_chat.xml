@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/image_profile"
+        android:id="@+id/imageProfile"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
 
 
     <TextView
-        android:id="@+id/unm"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/image_profile"
@@ -66,13 +66,11 @@
         android:padding="20dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-
-
     <EditText
         android:id="@+id/msg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter text"
+        android:hint="Enter Message"
         android:layout_margin="10dp"
         style="@style/EditTextStyle"
         android:background="@color/white_A700_3f"
@@ -80,7 +78,8 @@
         android:fontFamily="@font/quicksand_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sendbtn"/>
+        app:layout_constraintEnd_toStartOf="@id/sendbtn"
+        android:inputType="text" />
     
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/sendbtn"
