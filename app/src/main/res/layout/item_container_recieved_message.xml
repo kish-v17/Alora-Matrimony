@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/image_profile"
+        android:id="@+id/recieverImg"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -31,6 +31,7 @@
         app:layout_constraintWidth_percent="0.70"/>
 
     <TextView
+        android:id="@+id/recievedTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="time"

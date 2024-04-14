@@ -2,6 +2,7 @@ package com.example.alora_matrimony;
 
 import static java.util.Locale.filter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.fragment.app.FragmentTransaction;
 
 public class Chat extends Fragment implements chat_adapter.OnUserClickListener {
     FragmentChatBinding b;
@@ -69,16 +68,11 @@ public class Chat extends Fragment implements chat_adapter.OnUserClickListener {
     }
 
     @Override
-    public void onUserClick(String userId) {
-        singleChat singleChatFragment = new singleChat();
-        Bundle bundle = new Bundle();
-        bundle.putString("userMsgId", userId);
-        singleChatFragment.setArguments(bundle);
-        //alll for you
-        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.dbContainer2, singleChatFragment);
-        transaction.addToBackStack(null); // Optional: add to back stack
-        transaction.commit();
+    public void onUserClick(String userId, String image) {
+        Intent intent = new Intent(getActivity(), db2.class);
+        intent.putExtra("userMsgId", userId);
+        intent.putExtra("image", image);
+        startActivity(intent);
     }
 }
 

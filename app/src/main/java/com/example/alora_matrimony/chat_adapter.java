@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.firestore.auth.User;
 
 import org.apache.commons.text.WordUtils;
 
@@ -23,7 +22,7 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
     private OnUserClickListener onUserClickListener;
 
     public interface OnUserClickListener {
-        void onUserClick(String userId);
+        void onUserClick(String userId, String image);
     }
 
     public chat_adapter(Context context, List<UserDetails> itemlist, OnUserClickListener onUserClickListener) {
@@ -57,7 +56,7 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
                 @Override
                 public void onClick(View v) {
                     if (onUserClickListener != null) {
-                        onUserClickListener.onUserClick(hur.getUserId());
+                        onUserClickListener.onUserClick(hur.getUserId(),hur.getImage());
                     }
                 }
             });
