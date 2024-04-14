@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.alora_matrimony.databinding.FragmentChatBinding;
 import com.example.alora_matrimony.databinding.FragmentSingleChatBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.apache.commons.text.WordUtils;
 
-public class singleChat extends Fragment {
+public class SingleChat extends Fragment {
 
     FragmentSingleChatBinding b;
     DatabaseReference dbr;
