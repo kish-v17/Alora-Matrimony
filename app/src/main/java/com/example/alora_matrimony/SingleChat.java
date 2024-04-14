@@ -10,8 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.example.alora_matrimony.R;
-import com.example.alora_matrimony.UserDetails;
 import com.example.alora_matrimony.databinding.FragmentSingleChatBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

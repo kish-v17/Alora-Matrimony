@@ -53,7 +53,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if (holder.getItemViewType() == VIEW_TYPE_SENDER) {
             ((SenderMessageViewHolder) holder).bind(message);
         } else {
-            ((ReceiverMessageViewHolder) holder).bind(message,context);
+            ((ReceiverMessageViewHolder) holder).bind(message, context);
         }
     }
 
@@ -122,12 +122,11 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
-
+    // Format timestamp method
     private static String formatTimestamp(long timestamp) {
-        // Implement your timestamp formatting logic
+        // Implement your timestamp formatting logic here
         // For example, convert timestamp to readable date/time format
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         return sdf.format(new Date(timestamp));
     }
 }
-
