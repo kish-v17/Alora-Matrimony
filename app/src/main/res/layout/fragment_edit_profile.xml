@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profilelayout">
 
@@ -240,29 +240,53 @@
                     android:layout_marginTop="10dp"
                     android:text="Education and Career" />
 
-                <TextView
-                    android:id="@+id/hquali"
-                    style="@style/txtQuicksandregular23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Highest Qualification:" />
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Highest Qualification:" />
 
-                <TextView
-                    android:id="@+id/occupation"
-                    style="@style/txtQuicksandregular23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Occupation:" />
+            <EditText
+                android:id="@+id/quali"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/income"
-                    style="@style/txtQuicksandregular23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Income:" />
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Profession:" />
+
+            <EditText
+                android:id="@+id/profession"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Income:" />
+
+            <EditText
+                android:id="@+id/income"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -271,13 +295,6 @@
                 android:src="@drawable/editblockline" />
 
             <!--            Password-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25"
-                android:orientation="vertical"
-                android:padding="10dp">
 
                 <TextView
                     style="@style/txtQuicksandbold24"
@@ -287,27 +304,52 @@
                     android:text="Password" />
 
                 <TextView
-                    style="@style/txtQuicksandregular23"
+                    style="@style/txtQuicksandmedium15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="start"
+                    android:letterSpacing="0.04"
+                    android:singleLine="true"
                     android:text="Old Password:" />
 
+                <EditText
+                    android:id="@+id/pwd"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <TextView
-                    style="@style/txtQuicksandregular23"
+                    style="@style/txtQuicksandmedium15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="start"
+                    android:letterSpacing="0.04"
+                    android:singleLine="true"
                     android:text="New Password:" />
 
+                <EditText
+                    android:id="@+id/npwd"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <TextView
-                    style="@style/txtQuicksandregular23"
+                    style="@style/txtQuicksandmedium15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="start"
+                    android:letterSpacing="0.04"
+                    android:singleLine="true"
                     android:text="Confirm Password:" />
 
-            </LinearLayout>
+                <EditText
+                    android:id="@+id/cpwd"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -316,13 +358,6 @@
                 android:src="@drawable/editblockline" />
 
             <!--            Area-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rectangle_bluegray100_radius25"
-                android:orientation="vertical"
-                android:padding="10dp">
 
                 <TextView
                     style="@style/txtQuicksandbold24"
@@ -331,24 +366,37 @@
                     android:layout_gravity="center"
                     android:text="Area" />
 
-                <TextView
-                    android:id="@+id/state"
-                    style="@style/txtQuicksandregular23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="State:" />
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="State:" />
 
-                <TextView
-                    android:id="@+id/city"
-                    style="@style/txtQuicksandregular23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="City:" />
+            <EditText
+                android:id="@+id/state"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="City:" />
 
-            </LinearLayout>
+            <EditText
+                android:id="@+id/city"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

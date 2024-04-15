@@ -52,6 +52,19 @@ public class Edit_profile extends Fragment {
                         // Set user's name
                         String userName = WordUtils.capitalizeFully(user.getFirstName())+" "+WordUtils.capitalizeFully(user.getLastName());
                         b.nm.setText(userName);
+                        b.diet.setText(user.getDiet());
+                        b.email.setText(user.getEmail());
+                        b.cno.setText(user.getMobileNo());
+                        b.city.setText(user.getCity());
+                        b.gen.setText(user.getGender());
+                        b.income.setText(user.getIncome());
+                        b.maritalStatus.setText(user.getMaritalStatus());
+                        b.profession.setText(user.getOccupation());
+                        b.quali.setText(user.getQualification());
+                        b.state.setText(user.getState());
+//                        b.weight.setText(user.getWeight());
+//                        b.height.setText(user.getHeight());
+//                        b.dob.setText((int) user.getDateOfBirth());
 
                         // Set user's image using Glide
                         String imageUrl = user.getImage();

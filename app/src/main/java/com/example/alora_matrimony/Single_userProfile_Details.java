@@ -27,12 +27,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.apache.commons.text.WordUtils;
 
+import java.util.Calendar;
+
 public class Single_userProfile_Details extends Fragment {
 
     FragmentSingleUserProfileDetailsBinding b;
     DatabaseReference dbr;
     String uid,suid;
 
+    private chat_adapter.OnUserClickListener onUserClickListener;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,9 +66,21 @@ public class Single_userProfile_Details extends Fragment {
                                 .error(R.drawable.rectangle_radius_40)
                                 .fitCenter().centerCrop()
                                 .into(b.bigpfp);
-                        b.usrnm.setText(WordUtils.capitalizeFully(ud.getFirstName()));
-                        b.profession1.setText(WordUtils.capitalizeFully(ud.getOccupation()));
 
+                        b.addbtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+//                                    onUserClickListener.onUserClick(ud.getUserId(),ud.getImage());
+                                    getParentFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Chat()).commit();
+                            }
+                        });
+
+                        String lnmletter=WordUtils.capitalizeFully(ud.getLastName());
+                        b.usrnm.setText(WordUtils.capitalizeFully(ud.getFirstName())+" "+(lnmletter.charAt(0))+".");
+                        b.profession1.setText(WordUtils.capitalizeFully(ud.getOccupation()));
+//                        b.dob1.setText((int) ud.dateOfBirth);
+//                        b.height1.setText(ud.height);
+//                        b.weight1.setText(ud.weight+"kg");
                         b.fnm.setText(WordUtils.capitalizeFully(ud.getFirstName())+" "+WordUtils.capitalizeFully(ud.getLastName()));
                         b.profession.setText("Proffession : "+WordUtils.capitalizeFully(ud.getOccupation()));
                         b.maritalStatus.setText(WordUtils.capitalizeFully(ud.getMaritalStatus()));
@@ -93,4 +108,21 @@ public class Single_userProfile_Details extends Fragment {
             }
         });
     }
+    public static class AgeCalculator {
+        public static int calculateAge(int year, int month, int day) {
+
+            Calendar dob = Calendar.getInstance();
+            Calendar today = Calendar.getInstance();
+
+            dob.set(year, month, day);
+
+            int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+            if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                age--;
+            }
+
+            return age;
+        }
+    }
+
 }
