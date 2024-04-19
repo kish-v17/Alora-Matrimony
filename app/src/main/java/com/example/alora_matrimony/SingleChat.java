@@ -8,9 +8,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.example.alora_matrimony.databinding.FragmentSingleChatBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,12 +33,23 @@ public class SingleChat extends Fragment {
 
     FragmentSingleChatBinding b;
     DatabaseReference dbr;
+    List<ChatMessage> messageList;
+
+    MessageAdapter messageAdapter;
+    String receiver;
+    String userId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         b = FragmentSingleChatBinding.inflate(inflater, container, false);
         View view = b.getRoot();
+
+        messageList = new ArrayList<>();
+        Bundle bundle = getArguments();
+        receiver = bundle.getString("userMsgId");
+        String image = bundle.getString("image");
+        userId = FirebaseAuth.getInstance().getUid();
 
         dbr = FirebaseDatabase.getInstance().getReference();
         readData();
@@ -46,71 +60,47 @@ public class SingleChat extends Fragment {
             if (messageText.isEmpty()) {
                 Toast.makeText(getContext(), "Message can't be empty!", Toast.LENGTH_SHORT).show();
             } else {
-                Bundle bundle = getArguments();
-                if (bundle != null) {
-                    String receiverUid = bundle.getString("userMsgId");
-                    String image=bundle.getString("image");
-                    sendMessage(messageText, receiverUid,image);
-                }
+                sendMessage(messageText, receiver, image);
             }
         });
 
-        // Setup message listener
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String receiverUid = bundle.getString("userMsgId");
-            setupMessageListener(receiverUid);
-        }
-
-        return view;
-    }
-
-    private void setupMessageListener(String receiverUid) {
-        DatabaseReference chatRef = dbr.child("chats").child(receiverUid);
-        chatRef.addValueEventListener(new ValueEventListener() {
+        dbr.child("chats").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                List<ChatMessage> messageList = new ArrayList<>();
-                for (DataSnapshot messageSnapshot : snapshot.getChildren()) {
-                    ChatMessage message = messageSnapshot.getValue(ChatMessage.class);
-                    if (message != null) {
-                        messageList.add(message);
+                messageList.clear();
+                for(DataSnapshot message:snapshot.getChildren()){
+                    ChatMessage msg=message.getValue(ChatMessage.class);
+                    if(msg.getSenderUid().equals(userId) && msg.getRecieverUid().equals(receiver) || msg.getSenderUid().equals(receiver) && msg.getRecieverUid().equals(userId)){
+                        messageList.add(msg);
                     }
                 }
-
-                // Pass messageList to the ChatAdapter
-                MessageAdapter adapter = new MessageAdapter(messageList, FirebaseAuth.getInstance().getCurrentUser().getUid());
-                b.singleChatrv.setAdapter(adapter);
-                b.singleChatrv.scrollToPosition(messageList.size() - 1); // Scroll to bottom
+                messageAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Handle cancelled event
+
             }
         });
+        b.singleChatrv.setLayoutManager(new LinearLayoutManager(getContext()));
+        messageAdapter=new MessageAdapter(messageList,userId);
+        b.singleChatrv.setAdapter(messageAdapter);
+
+
+        return view;
     }
 
-
-    private void sendMessage(String messageText, String receiverUid,String image) {
-        ChatMessage message = new ChatMessage();
-        message.setMessageText(messageText);
-        message.setSenderUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        message.setTimestamp(System.currentTimeMillis());
-        message.setSenderProfileImageUrl(image);
-
-        DatabaseReference chatRef = dbr.child("chats").child(receiverUid).push();
-        chatRef.setValue(message)
-                .addOnSuccessListener(aVoid -> {
-                    // Message sent successfully
-                    Toast.makeText(getContext(), "Message Sent", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    // Error sending message
-                    Toast.makeText(getContext(), "Failed to send message", Toast.LENGTH_SHORT).show();
-                });
-    }
-
+private void sendMessage(String messageText, String receiverUid, String image){
+    String userId = FirebaseAuth.getInstance().getUid();
+    String messageId = dbr.child("chats").push().getKey();
+    ChatMessage message = new ChatMessage(messageText, userId, receiverUid, image, messageId);
+    dbr.child("chats").child(messageId).setValue(message).addOnCompleteListener(new OnCompleteListener<Void>() {
+        @Override
+        public void onComplete(@NonNull Task<Void> task) {
+            Toast.makeText(getActivity(), "Message sent!", Toast.LENGTH_SHORT).show();
+        }
+    });
+}
     private void readData() {
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -150,9 +140,5 @@ public class SingleChat extends Fragment {
             });
         }
     }
-
-    private String formatTimestamp(long timestamp) {
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
-        return sdf.format(new Date(timestamp));
-    }
 }
+
