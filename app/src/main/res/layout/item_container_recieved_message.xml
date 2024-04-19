@@ -7,8 +7,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/recieverImg"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
@@ -27,7 +27,7 @@
         android:layout_marginStart="10dp"
         android:background="@drawable/background_recieved_message"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/image_profile"
+        app:layout_constraintStart_toEndOf="@id/recieverImg"
         app:layout_constraintWidth_percent="0.70"/>
 
     <TextView

@@ -37,7 +37,7 @@ public class SingleChat extends Fragment {
 
     MessageAdapter messageAdapter;
     String receiver;
-    String userId;
+    String userId,image;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +48,6 @@ public class SingleChat extends Fragment {
         messageList = new ArrayList<>();
         Bundle bundle = getArguments();
         receiver = bundle.getString("userMsgId");
-        String image = bundle.getString("image");
         userId = FirebaseAuth.getInstance().getUid();
 
         dbr = FirebaseDatabase.getInstance().getReference();
@@ -114,6 +113,7 @@ private void sendMessage(String messageText, String receiverUid, String image){
                         if (user != null) {
                             // Set user's name
                             String userName = WordUtils.capitalizeFully(user.getFirstName());
+                            image=user.getImage();
                             b.userName.setText(userName);
 
                             // Set user's image using Glide
