@@ -50,6 +50,11 @@ public class db2 extends AppCompatActivity {
                                     .replace(R.id.dbContainer2, userProfileDetailsFragment)
                                     .commit();
                         }
+                    }else if (btnId==R.id.cpwd) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.dbContainer2, new Change_Password())
+                                .commit();
+
                     }
                     else if(btnId==R.id.editProfile){
                         getSupportFragmentManager().beginTransaction()

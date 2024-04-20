@@ -33,12 +33,14 @@
             android:src="@drawable/rectangle_radius_40" />
 
         <ImageView
-            android:id="@+id/pfpcircle"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="end|bottom"
+            android:id="@+id/btn_upload"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/deshboard_profile_circle"
             android:elevation="2dp"
-            android:src="@drawable/deshboard_profile_circle" />
+            android:padding="10dp"
+            android:src="@drawable/add_photo_24" />
 
     </FrameLayout>
 
@@ -47,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profilelayout">
 
@@ -55,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <!--Basic details-->
@@ -294,69 +297,6 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/editblockline" />
 
-            <!--            Password-->
-
-                <TextView
-                    style="@style/txtQuicksandbold24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Password" />
-
-                <TextView
-                    style="@style/txtQuicksandmedium15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:gravity="start"
-                    android:letterSpacing="0.04"
-                    android:singleLine="true"
-                    android:text="Old Password:" />
-
-                <EditText
-                    android:id="@+id/pwd"
-                    style="@style/EditTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    style="@style/txtQuicksandmedium15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:gravity="start"
-                    android:letterSpacing="0.04"
-                    android:singleLine="true"
-                    android:text="New Password:" />
-
-                <EditText
-                    android:id="@+id/npwd"
-                    style="@style/EditTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    style="@style/txtQuicksandmedium15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:gravity="start"
-                    android:letterSpacing="0.04"
-                    android:singleLine="true"
-                    android:text="Confirm Password:" />
-
-                <EditText
-                    android:id="@+id/cpwd"
-                    style="@style/EditTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/editblockline" />
-
             <!--            Area-->
 
                 <TextView
@@ -395,6 +335,7 @@
             <EditText
                 android:id="@+id/city"
                 style="@style/EditTextStyle"
+                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
