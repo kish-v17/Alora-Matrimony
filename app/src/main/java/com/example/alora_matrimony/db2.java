@@ -14,11 +14,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class db2 extends AppCompatActivity {
     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("partnerPreferences");
+
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +86,8 @@ public class db2 extends AppCompatActivity {
                 .commit();
     }
     private void checkPartnerPreferences() {
-        userRef.child("partnerPreferences").addListenerForSingleValueEvent(new ValueEventListener() {
+        Query query = userRef.orderByChild("prefUId").equalTo(userId);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {

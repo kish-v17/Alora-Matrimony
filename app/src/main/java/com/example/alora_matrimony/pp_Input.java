@@ -2,6 +2,7 @@ package com.example.alora_matrimony;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,13 +10,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.alora_matrimony.databinding.FragmentPpInputBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class pp_Input extends Fragment {
     FragmentPpInputBinding b;
-    String gender,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation;
+    String uid,prefid,gender,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation;
     ArrayAdapter<CharSequence> subComAd,cityAd;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -218,6 +225,35 @@ public class pp_Input extends Fragment {
             }
         });
 
+        b.btnSavePref.setOnClickListener(v->{
+            setValues();
+            DatabaseReference dbr= FirebaseDatabase.getInstance().getReference();
+            uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+            prefid=dbr.child("partnerPreferences").push().getKey();
+            PP_Details p=new PP_Details(prefid,uid,gender,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation);
+            dbr.child("partnerPreferences").child(prefid).setValue(p).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(getActivity(), "Preferences saved", Toast.LENGTH_SHORT).show();
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Partner_Preferences()).commit();
+                }
+            });
+        });
         return view;
+    }
+    void setValues(){
+        gender = (b.ppSpGen.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpGen.getSelectedItem().toString();
+        religion = (b.ppSpReligion.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpReligion.getSelectedItem().toString();
+        community = (b.ppSpCommunity.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpCommunity.getSelectedItem().toString();
+        subCom = (b.ppSpSubCommunity.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpSubCommunity.getSelectedItem().toString();
+        state = (b.ppSpState.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpState.getSelectedItem().toString();
+        city = (b.ppSpCity.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpCity.getSelectedItem().toString();
+        maritalStatus = (b.ppSpMaritalStatus.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpMaritalStatus.getSelectedItem().toString();
+        height = (b.ppSpHeight.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpHeight.getSelectedItem().toString();
+        weight = b.ppEtWeight.getText().toString().isEmpty() ? "Not Prefered" : b.ppEtWeight.getText().toString();
+        diet = (b.ppSpDiet.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpDiet.getSelectedItem().toString();
+        qual = (b.ppSpQualification.getSelectedItemId() == 0) ? "v" : b.ppSpQualification.getSelectedItem().toString();
+        income = (b.ppSpIncome.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpIncome.getSelectedItem().toString();
+        occupation = (b.ppSpOccupation.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpOccupation.getSelectedItem().toString();
     }
 }
