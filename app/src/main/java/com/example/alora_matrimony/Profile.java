@@ -39,6 +39,12 @@ public class Profile extends Fragment {
                 changeFragment(R.id.ppref);
             }
         });
+        b.cpwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(R.id.cpwd);
+            }
+        });
 
         b.editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
