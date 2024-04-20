@@ -52,6 +52,11 @@
         <item name="android:textColor">@color/bluegray_700</item>
         <item name="android:fontFamily">@font/quicksand_semibold</item>
     </style>
+    <style name="txtQuicksandsemibold25">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/bluegray_700</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
     <style name="btnSolidRounded_1">
         <item name="android:textSize">20dp</item>
         <item name="android:textColor">@color/white_A700</item>

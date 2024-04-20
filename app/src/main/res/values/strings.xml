@@ -727,6 +727,7 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
     </string-array>
 
     <string-array name="height">
+        <item style="font-family:quicksand_light">Select Height</item>
         <item>4ft 5in - 134cm</item>
         <item>4ft 6in - 137cm</item>
         <item>4ft 7in - 139cm</item>
@@ -759,6 +760,12 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
         <item>6ft 10in - 208cm</item>
         <item>6ft 11in - 210cm</item>
         <item>7ft - 213cm</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item><b>Select Gender</b></item>
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
 
     <string-array name="qaulifications">

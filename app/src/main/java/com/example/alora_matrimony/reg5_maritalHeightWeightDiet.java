@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class reg5_maritalHeightWeightDiet extends Fragment {
    AppCompatButton btnContinue;
-   AutoCompleteTextView actvHeight;
+   Spinner spHeight;
    Spinner spMarital,spDiet;
    EditText etWeight;
    String maritalStatus,height,diet;
@@ -27,26 +27,24 @@ public class reg5_maritalHeightWeightDiet extends Fragment {
         View view=inflater.inflate(R.layout.fragment_reg5_marital_height_weight_diet, container, false);
 
         btnContinue= view.findViewById(R.id.btnContinue);
-        actvHeight=view.findViewById(R.id.actvHeight);
+        spHeight=view.findViewById(R.id.spHeight);
         spMarital=view.findViewById(R.id.spMaritalStatus);
         etWeight=view.findViewById(R.id.etWeight);
         spDiet=view.findViewById(R.id.spDiet);
 
-        ArrayAdapter<String> heightAdd=new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.height));
-        actvHeight.setAdapter(heightAdd);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 maritalStatus=spMarital.getSelectedItem().toString();
-                height=actvHeight.getText().toString().trim();
+                height=spHeight.getSelectedItem().toString().trim();
                 weight=Integer.parseInt(etWeight.getText().toString().trim());
                 diet=spDiet.getSelectedItem().toString();
 
                 if (maritalStatus.equals("Select Marital Status")) {
                     Toast.makeText(getActivity(), "Please select a marital status", Toast.LENGTH_SHORT).show();
                 } else if (height.isEmpty()) {
-                    actvHeight.setError("Please enter height");
+                    Toast.makeText(getActivity(), "Please select a weight", Toast.LENGTH_SHORT).show();
                 } else if (etWeight.getText().toString().isEmpty()) {
                     etWeight.setError("Please enter weight");
                 } else if(diet.equals("Select Diet")) {

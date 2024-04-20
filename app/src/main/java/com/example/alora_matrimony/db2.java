@@ -1,13 +1,24 @@
 package com.example.alora_matrimony;
 
+import static android.app.PendingIntent.getActivity;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class db2 extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+public class db2 extends AppCompatActivity {
+    String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +35,9 @@ public class db2 extends AppCompatActivity {
                 int btnId = intent.getIntExtra("btnId",-1);
                 if (btnId != -1) {
                     if(btnId== R.id.partner_preferences ||btnId== R.id.ppref) {
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.dbContainer2, new Partner_Preferences())
-                                .commit();
+                        checkPartnerPreferences();
+
+
                     }
                     else if(btnId== R.id.more) {
                         String usrEmail = intent.getStringExtra("usrEmail");
@@ -71,5 +82,26 @@ public class db2 extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.dbContainer2, singleChatFragment)
                 .commit();
+    }
+    private void checkPartnerPreferences() {
+        userRef.child("partnerPreferences").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.dbContainer2, new Partner_Preferences())
+                            .commit();
+                } else {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.dbContainer2, new pp_Input())
+                            .commit();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle database error
+            }
+        });
     }
 }

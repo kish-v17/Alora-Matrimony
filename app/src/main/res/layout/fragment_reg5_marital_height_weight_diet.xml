@@ -73,8 +73,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/spMaritalStatus" />
 
-            <AutoCompleteTextView
-                android:id="@+id/actvHeight"
+            <Spinner
+                android:id="@+id/spHeight"
                 style="@style/etSolidRounded"
                 android:layout_width="0dp"
                 android:layout_height="51dp"
@@ -83,7 +83,6 @@
                 android:completionThreshold="1"
                 android:dropDownVerticalOffset="51dp"
                 android:fontFamily="@font/quicksand_regular"
-                android:hint="Enter Height"
                 android:letterSpacing="0.06"
                 android:paddingStart="15dp"
                 android:paddingTop="17dp"
@@ -91,6 +90,7 @@
                 android:paddingBottom="12dp"
                 android:textAlignment="textStart"
                 android:textSize="20sp"
+                android:entries="@array/height"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +107,7 @@
                 android:text="@string/lbl_weight"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/actvHeight" />
+                app:layout_constraintTop_toBottomOf="@id/spHeight" />
 
             <EditText
                 android:id="@+id/etWeight"
@@ -117,7 +117,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/rectangle_bg_bluegray_100_radius_20"
                 android:hint="Enter Weight"
-                android:inputType="text"
+                android:inputType="number"
                 android:letterSpacing="0.06"
                 android:paddingStart="15dp"
                 android:paddingTop="17dp"

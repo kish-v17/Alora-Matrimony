@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtChooseGender">
 
         <RadioButton
-            android:id="@+id/txtmale"
+            android:id="@+id/ppRbMale"
             style="@style/RadioButtonStyle"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             android:text="@string/lbl_male" />
 
         <RadioButton
-            android:id="@+id/txtfemale"
+            android:id="@+id/ppRbFemale"
             style="@style/RadioButtonStyle"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
