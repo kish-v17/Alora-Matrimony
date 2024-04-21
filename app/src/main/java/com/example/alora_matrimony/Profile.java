@@ -30,6 +30,7 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         b = FragmentProfileBinding.inflate(inflater, container, false);
         View view = b.getRoot();
+
         uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         dbr=FirebaseDatabase.getInstance().getReference();
         readData();

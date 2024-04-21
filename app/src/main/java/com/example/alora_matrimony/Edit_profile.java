@@ -1,5 +1,7 @@
 package com.example.alora_matrimony;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -26,6 +31,14 @@ public class Edit_profile extends Fragment {
     FragmentEditProfileBinding b;
     String uid;
 
+    private static final int DIET_FIELD = 1;
+    private static final int MARITAL_STATUS_FIELD = 2;
+    private static final int HIGHEST_QUALI=3;
+    private static final int PROFESSION=4;
+    private static final int INCOME=5;
+    private static final int STATE=6;
+    private static final int CITY=7;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,11 +48,25 @@ public class Edit_profile extends Fragment {
         dbr= FirebaseDatabase.getInstance().getReference();
         uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         readData();
-        Toast.makeText(getContext(), "uid:"+uid, Toast.LENGTH_SHORT).show();
+
+        b.diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSpinnerDialog(b.diet, DIET_FIELD);
+            }
+        });
+        b.maritalStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSpinnerDialog(b.maritalStatus, MARITAL_STATUS_FIELD);
+            }
+        });
+
 
         // Inflate the layout for this fragment
         return view;
     }
+
     private void readData() {
         DatabaseReference uRef = dbr.child("users").child(uid);
         uRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -88,6 +115,64 @@ public class Edit_profile extends Fragment {
 
             }
         });
-
     }
+
+    private void showSpinnerDialog(final EditText editText, final int fieldIdentifier) {
+        // Create AlertDialog with Spinner
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Select an option");
+
+
+        // Set up the Spinner
+        final Spinner spinner = new Spinner(requireContext());
+
+        // Load appropriate string array based on fieldIdentifier
+        ArrayAdapter<String> adapter;
+        switch (fieldIdentifier) {
+            case DIET_FIELD:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.diet));
+                break;
+            case MARITAL_STATUS_FIELD:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.marital_status));
+                break;
+            case HIGHEST_QUALI:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.qaulifications));
+                break;
+            case PROFESSION:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.professions));
+                break;
+            case INCOME:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.income));
+                break;
+            // Add cases for other EditText fields here
+            default:
+                adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, new String[]{});
+                break;
+        }
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        // Set up the AlertDialog
+        builder.setView(spinner)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Get selected item from the Spinner and set it as the hint for the EditText field
+                        int selectedIndex = spinner.getSelectedItemPosition();
+                        String selectedItem = adapter.getItem(selectedIndex);
+                        editText.setHint(selectedItem);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        // Show the AlertDialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 }
