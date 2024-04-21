@@ -30,6 +30,7 @@ import com.example.alora_matrimony.databinding.FragmentEditProfileBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -97,6 +98,7 @@ public class Edit_profile extends Fragment {
                         binding.subcommu.setText(userDetails.getSubCommunity());
                         binding.state.setText(userDetails.getState());
                         binding.city.setText(userDetails.getCity());
+                        password= userDetails.getPassword();
 
                         if (userDetails.getImage() != null && !userDetails.getImage().isEmpty()) {
                             Glide.with(requireContext())
@@ -150,6 +152,24 @@ public class Edit_profile extends Fragment {
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userId=FirebaseAuth.getInstance().getUid();
+                firstName=binding.fnm.getText().toString();
+                lastName=binding.fnm.getText().toString();
+                gender=binding.gen.getText().toString();
+                mobileNo=binding.cno.getText().toString();
+                email=binding.email.getText().toString();
+                religion=binding.reg.getText().toString();
+                community=binding.commu.getText().toString();
+                subCommunity=binding.subcommu.getText().toString();
+                city=binding.city.getText().toString();
+                state=binding.state.getText().toString();
+                maritalStatus=binding.maritalStatus.getText().toString();
+                height=binding.height.getText().toString();
+                diet=binding.diet.getText().toString();
+                qualification=binding.quali.getText().toString();
+                occupation=binding.profession.getText().toString();
+                income=binding.income.getText().toString();
+                weight=Integer.parseInt(binding.weight.getText().toString());
 
             }
         });
@@ -428,20 +448,25 @@ public class Edit_profile extends Fragment {
     }
     private void openDatePickerDialog(final TextView textView) {
         MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
-                .setTitleText("Select Date")
+                .setTitleText("Select Date of birth")
                 .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
                 .build();
 
-        datePicker.addOnPositiveButtonClickListener(selection -> {
-            Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-            calendar.setTimeInMillis(selection);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-            String selectedDate = dateFormat.format(calendar.getTime());
-            textView.setText(selectedDate);
+        datePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+            @Override
+            public void onPositiveButtonClick(Long selection) {
+                Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                calendar.setTimeInMillis(selection);
+                dateOfBirth=selection;
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String selectedDate = dateFormat.format(calendar.getTime());
+                textView.setText(selectedDate);
+            }
         });
 
         datePicker.show(requireActivity().getSupportFragmentManager(), "DATE_PICKER");
     }
+
 
     private void openEditTextDialog(final TextView textView, final String fieldName) {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
