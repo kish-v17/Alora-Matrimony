@@ -92,9 +92,9 @@
                 android:gravity="start"
                 android:letterSpacing="0.04"
                 android:singleLine="true"
-                android:text="Gender:"/>
+                android:text="Gender:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/gen"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -158,7 +158,7 @@
                 android:singleLine="true"
                 android:text="Diet:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/diet"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -174,7 +174,7 @@
                 android:singleLine="true"
                 android:text="Marital Status:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/maritalStatus"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -187,13 +187,13 @@
                 android:src="@drawable/editblockline" />
 
             <!--            ContactDetails-->
-                <TextView
-                    style="@style/txtQuicksandbold24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="Contact Details" />
+            <TextView
+                style="@style/txtQuicksandbold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Contact Details" />
 
             <TextView
                 style="@style/txtQuicksandmedium15"
@@ -235,13 +235,13 @@
 
             <!-- EducationandCareer-->
 
-                <TextView
-                    style="@style/txtQuicksandbold24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="Education and Career" />
+            <TextView
+                style="@style/txtQuicksandbold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Education and Career" />
 
             <TextView
                 style="@style/txtQuicksandmedium15"
@@ -253,7 +253,7 @@
                 android:singleLine="true"
                 android:text="Highest Qualification:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/quali"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -269,7 +269,7 @@
                 android:singleLine="true"
                 android:text="Profession:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/profession"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -285,11 +285,76 @@
                 android:singleLine="true"
                 android:text="Income:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/income"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <!--            religion-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editblockline" />
+
+            <TextView
+                style="@style/txtQuicksandbold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Religion" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Religion:" />
+
+            <TextView
+                android:id="@+id/reg"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Community:" />
+
+            <TextView
+                android:id="@+id/commu"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Sub Community:" />
+
+            <TextView
+                android:id="@+id/subcommu"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--            Area-->
 
             <ImageView
                 android:layout_width="match_parent"
@@ -297,14 +362,13 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/editblockline" />
 
-            <!--            Area-->
 
-                <TextView
-                    style="@style/txtQuicksandbold24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Area" />
+            <TextView
+                style="@style/txtQuicksandbold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Area" />
 
             <TextView
                 style="@style/txtQuicksandmedium15"
@@ -316,7 +380,7 @@
                 android:singleLine="true"
                 android:text="State:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/state"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -332,22 +396,22 @@
                 android:singleLine="true"
                 android:text="City:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/city"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnContinue"
+                android:id="@+id/btnUpload"
                 style="@style/btnSolidRounded_1"
                 android:layout_width="190dp"
                 android:layout_height="48dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
-                android:layout_gravity="center"
                 android:letterSpacing="0.06"
                 android:paddingStart="30dp"
                 android:paddingTop="9dp"

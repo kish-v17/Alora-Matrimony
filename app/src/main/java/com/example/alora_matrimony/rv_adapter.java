@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.collection.LLRBNode;
+import com.google.type.Color;
 
 import java.util.List;
 
@@ -76,7 +81,6 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.rv_myViewHolder>
     public static class rv_myViewHolder extends RecyclerView.ViewHolder {
         ImageView pfp, like, more;
         MaskedImage bigpfp;
-
         public rv_myViewHolder(@NonNull View itemView) {
             super(itemView);
             pfp = itemView.findViewById(R.id.pfp);
