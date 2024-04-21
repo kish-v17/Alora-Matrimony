@@ -27,7 +27,7 @@
             android:layout_width="74dp"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/db_profile_icon" />
+            android:background="@drawable/deshboard_profile_circle" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -80,6 +80,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dbRv"
+            android:background="@color/blah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
