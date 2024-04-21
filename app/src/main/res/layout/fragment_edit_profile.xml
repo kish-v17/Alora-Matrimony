@@ -30,7 +30,7 @@
             android:layout_height="250dp"
             android:layout_gravity="center"
             android:elevation="1dp"
-            android:src="@drawable/rectangle_radius_40" />
+            android:background="@drawable/rectangle_radius_40" />
 
         <ImageView
             android:id="@+id/btn_upload"
@@ -76,10 +76,26 @@
                 android:gravity="start"
                 android:letterSpacing="0.04"
                 android:singleLine="true"
-                android:text="Name:" />
+                android:text="First Name:" />
 
-            <EditText
-                android:id="@+id/nm"
+            <TextView
+                android:id="@+id/fnm"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txtQuicksandmedium15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:letterSpacing="0.04"
+                android:singleLine="true"
+                android:text="Last Name:" />
+
+            <TextView
+                android:id="@+id/lnm"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -110,9 +126,10 @@
                 android:singleLine="true"
                 android:text="Date of Birth:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/dob"
                 style="@style/EditTextStyle"
+                android:text="DD/MM/YYYY"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -126,7 +143,7 @@
                 android:singleLine="true"
                 android:text="Height:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/height"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -142,7 +159,7 @@
                 android:singleLine="true"
                 android:text="Weight:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/weight"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -205,7 +222,7 @@
                 android:singleLine="true"
                 android:text="Email:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/email"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -221,7 +238,7 @@
                 android:singleLine="true"
                 android:text="Contact No.:" />
 
-            <EditText
+            <TextView
                 android:id="@+id/cno"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -403,7 +420,7 @@
                 android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnUpload"
+                android:id="@+id/btnUpdate"
                 style="@style/btnSolidRounded_1"
                 android:layout_width="190dp"
                 android:layout_height="48dp"

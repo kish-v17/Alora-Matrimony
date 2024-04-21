@@ -18,7 +18,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class db2 extends AppCompatActivity {
-    String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    String userId;
     DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("partnerPreferences");
 
     @SuppressLint("NonConstantResourceId")
@@ -26,6 +26,7 @@ public class db2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_db2);
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -59,8 +60,14 @@ public class db2 extends AppCompatActivity {
 
                     }
                     else if(btnId==R.id.editProfile){
+                        Edit_profile editProfile=new Edit_profile();
+                        Intent i=getIntent();
+                        String cuid=i.getStringExtra("cuid");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("cuid",cuid);
+                        editProfile.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.dbContainer2, new Edit_profile())
+                                .replace(R.id.dbContainer2, editProfile)
                                 .commit();
                     }
                     else if(btnId==R.id.abtus) {

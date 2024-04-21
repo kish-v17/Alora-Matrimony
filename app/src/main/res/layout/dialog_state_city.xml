@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/stateLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select State"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/stateSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/cityLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select City"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:enabled="false" />
+
+</LinearLayout>

@@ -1,5 +1,9 @@
 package com.example.alora_matrimony;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class UserDetails{
     String userId,gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
     long dateOfBirth;
@@ -191,8 +195,10 @@ public class UserDetails{
         this.income = income;
     }
 
-    public long getDateOfBirth() {
-        return dateOfBirth;
+    public String getDateOfBirthFormatted() {
+        Date date = new Date(dateOfBirth);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        return dateFormat.format(date);
     }
 
     public void setDateOfBirth(long dateOfBirth) {

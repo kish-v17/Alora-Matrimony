@@ -80,6 +80,7 @@ public class Profile extends Fragment {
         Intent i=new Intent(getContext(), db2.class);
         Bundle b=new Bundle();
         b.putInt("btnId",btnId);
+        b.putString("cuid",uid);
         i.putExtras(b);
         startActivity(i);
     }
