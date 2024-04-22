@@ -170,6 +170,8 @@ public class Edit_profile extends Fragment {
                 occupation=binding.profession.getText().toString();
                 income=binding.income.getText().toString();
                 weight=Integer.parseInt(binding.weight.getText().toString());
+                password=userDetails.getPassword();
+
 
             }
         });
@@ -309,7 +311,7 @@ public class Edit_profile extends Fragment {
                 String[] cities;
                 switch (position) {
                     case 0: // Select State (Default)
-                        cities = new String[0]; // No cities for this option
+                        cities = getResources().getStringArray(R.array.defaultCity); // No cities for this option
                         break;
                     case 1: // Andaman and Nicobar Islands
                         cities = getResources().getStringArray(R.array.andaman_and_nicobar_islands);
