@@ -23,16 +23,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AloraMatrimony"
         tools:targetApi="31">
-        <activity
-            android:name=".MessageActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".MessageActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".db2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Dashboard"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".registration"
             android:exported="false"
