@@ -17,9 +17,8 @@
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dbContainer"
+        app:layout_constraintTop_toBottomOf="@id/dbContainer"
         app:mbn_backgroundBottomColor="@color/bluegray_700"
         app:mbn_circleColor="@color/bluegray_700"
         app:mbn_countBackgroundColor="#ff6f00"
@@ -27,7 +26,6 @@
         app:mbn_defaultIconColor="@color/white"
         app:mbn_rippleColor="#2f424242"
         app:mbn_selectedIconColor="@color/white"
-        app:mbn_shadowColor="#1f212121"
-        tools:layout_editor_absoluteX="0dp" />
+        app:mbn_shadowColor="#1f212121" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
