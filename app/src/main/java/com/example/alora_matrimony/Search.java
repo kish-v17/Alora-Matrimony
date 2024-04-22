@@ -36,7 +36,7 @@ public class Search extends Fragment {
     FirebaseFirestore db;
 
     private search_adapter sa;
-    private List<HomeUserList> userList;
+    private List<UserDetails> userList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,7 +76,7 @@ public class Search extends Fragment {
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 // Iterate through the query results and add them to the userList
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    HomeUserList user = documentSnapshot.toObject(HomeUserList.class);
+                    UserDetails user = documentSnapshot.toObject(UserDetails.class);
                     userList.add(user);
                 }
                 // Notify the adapter of dataset change

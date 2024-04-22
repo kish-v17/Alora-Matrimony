@@ -17,9 +17,9 @@ import java.util.List;
 
 public class search_adapter extends RecyclerView.Adapter<search_adapter.ViewHolder> {
 
-    private List<HomeUserList> userList;
+    private List<UserDetails> userList;
 
-    public search_adapter(List<HomeUserList> userList) {
+    public search_adapter(List<UserDetails> userList) {
         this.userList = userList;
     }
 
@@ -32,7 +32,7 @@ public class search_adapter extends RecyclerView.Adapter<search_adapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HomeUserList user = userList.get(position);
+        UserDetails user = userList.get(position);
         holder.bind(user);
     }
 
@@ -52,7 +52,7 @@ public class search_adapter extends RecyclerView.Adapter<search_adapter.ViewHold
             professionTextView = itemView.findViewById(R.id.profession);
         }
 
-        public void bind(HomeUserList user) {
+        public void bind(UserDetails user) {
             String lnm= WordUtils.capitalizeFully(user.getLastName());
             usernameTextView.setText(WordUtils.capitalizeFully(user.getFirstName())+" "+lnm.charAt(0)+".");
             professionTextView.setText(user.getOccupation());
