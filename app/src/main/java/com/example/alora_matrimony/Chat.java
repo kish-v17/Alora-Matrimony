@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chat extends Fragment implements chat_adapter.OnUserClickListener {
+public class Chat extends Fragment implements ChatAdapter.OnUserClickListener {
     FragmentChatBinding b;
     DatabaseReference dbr;
     String uid;
@@ -55,7 +55,7 @@ public class Chat extends Fragment implements chat_adapter.OnUserClickListener {
                         userList.add(userDetails);
                     }
                 }
-                chat_adapter adapter = new chat_adapter(getContext(), userList, Chat.this);
+                ChatAdapter adapter = new ChatAdapter(getContext(), userList, Chat.this);
                 b.chatrv.setLayoutManager(new LinearLayoutManager(getContext()));
                 b.chatrv.setAdapter(adapter);
             }

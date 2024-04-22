@@ -16,7 +16,7 @@ import org.apache.commons.text.WordUtils;
 
 import java.util.List;
 
-public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHolder> {
+public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.chat_viewHolder> {
     private Context context;
     private List<UserDetails> itemlist;
     private OnUserClickListener onUserClickListener;
@@ -25,7 +25,7 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
         void onUserClick(String userId, String image);
     }
 
-    public chat_adapter(Context context, List<UserDetails> itemlist, OnUserClickListener onUserClickListener) {
+    public ChatAdapter(Context context, List<UserDetails> itemlist, OnUserClickListener onUserClickListener) {
         this.context = context;
         this.itemlist = itemlist;
         this.onUserClickListener = onUserClickListener;
@@ -35,7 +35,7 @@ public class chat_adapter extends RecyclerView.Adapter<chat_adapter.chat_viewHol
     @Override
     public chat_viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.chat_list_rv,parent,false);
-        return new chat_adapter.chat_viewHolder(view);
+        return new ChatAdapter.chat_viewHolder(view);
     }
 
     @Override
