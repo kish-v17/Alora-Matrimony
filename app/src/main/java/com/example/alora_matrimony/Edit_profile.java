@@ -27,8 +27,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.alora_matrimony.databinding.FragmentEditProfileBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,8 +45,10 @@ import com.google.firebase.storage.UploadTask;
 
 import org.apache.commons.text.WordUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -85,7 +89,7 @@ public class Edit_profile extends Fragment {
                         binding.fnm.setText(userDetails.getFirstName());
                         binding.lnm.setText(userDetails.getLastName());
                         binding.gen.setText(userDetails.getGender());
-                        binding.dob.setText(userDetails.getDateOfBirthFormatted());
+                        dateSelection(userDetails.getDateOfBirth());
                         binding.height.setText(userDetails.getHeight());
                         binding.weight.setText(String.valueOf(userDetails.getWeight()));
                         binding.diet.setText(userDetails.getDiet());
@@ -101,7 +105,7 @@ public class Edit_profile extends Fragment {
                         binding.state.setText(userDetails.getState());
                         binding.city.setText(userDetails.getCity());
                         password = userDetails.getPassword();
-
+                        image=userDetails.getImage();
                         if (userDetails.getImage() != null && !userDetails.getImage().isEmpty()) {
                             Glide.with(requireContext())
                                     .load(userDetails.getImage())
@@ -112,6 +116,16 @@ public class Edit_profile extends Fragment {
                         }
                     }
                 }
+            }
+
+            private void dateSelection(long dateOfBirth) {
+
+                Date date = new Date(dateOfBirth * 1000); // Convert seconds to milliseconds
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String formattedDate = dateFormat.format(date);
+                binding.dob.setText(formattedDate);
+
             }
 
             @Override
@@ -155,26 +169,27 @@ public class Edit_profile extends Fragment {
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userId = FirebaseAuth.getInstance().getUid();
-                firstName = binding.fnm.getText().toString();
-                lastName = binding.fnm.getText().toString();
-                gender = binding.gen.getText().toString();
-                mobileNo = binding.cno.getText().toString();
-                email = binding.email.getText().toString();
-                religion = binding.reg.getText().toString();
-                community = binding.commu.getText().toString();
-                subCommunity = binding.subcommu.getText().toString();
-                city = binding.city.getText().toString();
-                state = binding.state.getText().toString();
-                maritalStatus = binding.maritalStatus.getText().toString();
-                height = binding.height.getText().toString();
-                diet = binding.diet.getText().toString();
-                qualification = binding.quali.getText().toString();
-                occupation = binding.profession.getText().toString();
-                income = binding.income.getText().toString();
-                weight = Integer.parseInt(binding.weight.getText().toString());
+                userId=FirebaseAuth.getInstance().getUid();
+                firstName=binding.fnm.getText().toString();
+                lastName=binding.lnm.getText().toString();
+                gender=binding.gen.getText().toString();
+                mobileNo=binding.cno.getText().toString();
+                email=binding.email.getText().toString();
+                religion=binding.reg.getText().toString();
+                community=binding.commu.getText().toString();
+                subCommunity=binding.subcommu.getText().toString();
+                city=binding.city.getText().toString();
+                state=binding.state.getText().toString();
+                maritalStatus=binding.maritalStatus.getText().toString();
+                height=binding.height.getText().toString();
+                diet=binding.diet.getText().toString();
+                qualification=binding.quali.getText().toString();
+                occupation=binding.profession.getText().toString();
+                income=binding.income.getText().toString();
+                weight=Integer.parseInt(binding.weight.getText().toString());
+                dateOfBirth=convertToTimestamp(binding.dob.getText().toString());
 
-                if (selectedImageUri != null) {
+                    if (selectedImageUri != null) {
                     // Upload the new image to Firebase Storage
                     uploadImageToFirebaseStorage(selectedImageUri);
                 } else {
@@ -187,24 +202,29 @@ public class Edit_profile extends Fragment {
 
     //to update image in db
     private void uploadImageToFirebaseStorage(Uri imageUri) {
-        StorageReference storageRef = FirebaseStorage.getInstance().getReference()
-                .child("profile_images")
-                .child(userId + ".jpg");
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("Profile/" + System.currentTimeMillis() + ".jpg");
 
-        storageRef.putFile(imageUri)
-                .addOnSuccessListener(taskSnapshot -> {
-                    // Image uploaded successfully
-                    storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-                        // Get the download URL of the uploaded image
-                        image = uri.toString();
-                        // Update user's profile with the new image URL
-                        updateUserProfile();
+        storageRef.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if(task.isSuccessful()){
+                    storageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if(task.isSuccessful()){
+                                Uri downloadUri=task.getResult();
+                                image=downloadUri.toString();
+                                updateUserProfile();
+                            }else {
+                                Toast.makeText(getActivity(), "Failed to get URL", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     });
-                })
-                .addOnFailureListener(e -> {
-                    // Handle any errors
-                    Toast.makeText(requireContext(), "Failed to upload image.", Toast.LENGTH_SHORT).show();
-                });
+                }else{
+                    Toast.makeText(getActivity(), "Failed to upload image", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     //to update user details in db
@@ -356,7 +376,7 @@ public class Edit_profile extends Fragment {
                 String[] cities;
                 switch (position) {
                     case 0: // Select State (Default)
-                        cities = new String[0]; // No cities for this option
+                        cities = getResources().getStringArray(R.array.defaultCity); // No cities for this option
                         break;
                     case 1: // Andaman and Nicobar Islands
                         cities = getResources().getStringArray(R.array.andaman_and_nicobar_islands);
@@ -504,7 +524,6 @@ public class Edit_profile extends Fragment {
             public void onPositiveButtonClick(Long selection) {
                 Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
                 calendar.setTimeInMillis(selection);
-                dateOfBirth = selection;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                 String selectedDate = dateFormat.format(calendar.getTime());
                 textView.setText(selectedDate);
@@ -538,5 +557,15 @@ public class Edit_profile extends Fragment {
             textView.setText(selectedItem);
         });
         builder.show();
+    }
+    private long convertToTimestamp(String selectedDateStr) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date selectedDate = dateFormat.parse(selectedDateStr);
+            return selectedDate.getTime() / 1000; // Convert milliseconds to seconds
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return -1; // Error occurred
+        }
     }
 }

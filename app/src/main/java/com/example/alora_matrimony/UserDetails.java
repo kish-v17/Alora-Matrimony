@@ -195,13 +195,12 @@ public class UserDetails{
         this.income = income;
     }
 
-    public String getDateOfBirthFormatted() {
-        Date date = new Date(dateOfBirth);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        return dateFormat.format(date);
+    public long getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public void setDateOfBirth(long dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
 }
