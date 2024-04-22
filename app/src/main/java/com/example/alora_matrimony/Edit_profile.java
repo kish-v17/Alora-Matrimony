@@ -37,6 +37,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import org.apache.commons.text.WordUtils;
 
@@ -53,7 +56,7 @@ public class Edit_profile extends Fragment {
     private DatabaseReference databaseReference;
     private UserDetails userDetails;
     ActivityResultLauncher<Intent> activityResultLauncher;
-    String userId,gender,image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation,income;
+    String userId, gender, image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, diet, qualification, occupation, income;
     long dateOfBirth;
     int weight;
     Uri selectedImageUri;
@@ -73,7 +76,6 @@ public class Edit_profile extends Fragment {
 
     private void retrieveUserDetails() {
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
         databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -98,7 +100,7 @@ public class Edit_profile extends Fragment {
                         binding.subcommu.setText(userDetails.getSubCommunity());
                         binding.state.setText(userDetails.getState());
                         binding.city.setText(userDetails.getCity());
-                        password= userDetails.getPassword();
+                        password = userDetails.getPassword();
 
                         if (userDetails.getImage() != null && !userDetails.getImage().isEmpty()) {
                             Glide.with(requireContext())
@@ -149,44 +151,89 @@ public class Edit_profile extends Fragment {
                         }
                     }
                 });
+
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userId=FirebaseAuth.getInstance().getUid();
-                firstName=binding.fnm.getText().toString();
-                lastName=binding.fnm.getText().toString();
-                gender=binding.gen.getText().toString();
-                mobileNo=binding.cno.getText().toString();
-                email=binding.email.getText().toString();
-                religion=binding.reg.getText().toString();
-                community=binding.commu.getText().toString();
-                subCommunity=binding.subcommu.getText().toString();
-                city=binding.city.getText().toString();
-                state=binding.state.getText().toString();
-                maritalStatus=binding.maritalStatus.getText().toString();
-                height=binding.height.getText().toString();
-                diet=binding.diet.getText().toString();
-                qualification=binding.quali.getText().toString();
-                occupation=binding.profession.getText().toString();
-                income=binding.income.getText().toString();
-                weight=Integer.parseInt(binding.weight.getText().toString());
+                userId = FirebaseAuth.getInstance().getUid();
+                firstName = binding.fnm.getText().toString();
+                lastName = binding.fnm.getText().toString();
+                gender = binding.gen.getText().toString();
+                mobileNo = binding.cno.getText().toString();
+                email = binding.email.getText().toString();
+                religion = binding.reg.getText().toString();
+                community = binding.commu.getText().toString();
+                subCommunity = binding.subcommu.getText().toString();
+                city = binding.city.getText().toString();
+                state = binding.state.getText().toString();
+                maritalStatus = binding.maritalStatus.getText().toString();
+                height = binding.height.getText().toString();
+                diet = binding.diet.getText().toString();
+                qualification = binding.quali.getText().toString();
+                occupation = binding.profession.getText().toString();
+                income = binding.income.getText().toString();
+                weight = Integer.parseInt(binding.weight.getText().toString());
 
+                if (selectedImageUri != null) {
+                    // Upload the new image to Firebase Storage
+                    uploadImageToFirebaseStorage(selectedImageUri);
+                } else {
+                    // Proceed to update user's data in the Firebase Realtime Database
+                    updateUserProfile();
+                }
             }
         });
+    }
+
+    //to update image in db
+    private void uploadImageToFirebaseStorage(Uri imageUri) {
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference()
+                .child("profile_images")
+                .child(userId + ".jpg");
+
+        storageRef.putFile(imageUri)
+                .addOnSuccessListener(taskSnapshot -> {
+                    // Image uploaded successfully
+                    storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                        // Get the download URL of the uploaded image
+                        image = uri.toString();
+                        // Update user's profile with the new image URL
+                        updateUserProfile();
+                    });
+                })
+                .addOnFailureListener(e -> {
+                    // Handle any errors
+                    Toast.makeText(requireContext(), "Failed to upload image.", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    //to update user details in db
+    private void updateUserProfile() {
+        // Update user's profile in the Firebase Realtime Database
+        UserDetails updatedUser = new UserDetails(userId, gender, image, firstName, lastName, mobileNo, email, password, religion, community, subCommunity, city, state, maritalStatus, height, weight, diet, qualification, occupation, income, dateOfBirth);
+        databaseReference.child(userId).setValue(updatedUser)
+                .addOnSuccessListener(aVoid -> {
+                    // User profile updated successfully
+                    Toast.makeText(requireContext(), "Profile updated successfully.", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    // Handle any errors
+                    Toast.makeText(requireContext(), "Failed to update profile.", Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void setClickListeners() {
         binding.fnm.setOnClickListener(view -> openEditTextDialog(binding.fnm, "firstName"));
         binding.lnm.setOnClickListener(view -> openEditTextDialog(binding.lnm, "lastName"));
         binding.dob.setOnClickListener(view -> openDatePickerDialog(binding.dob));
-        binding.height.setOnClickListener(view -> openDropdownDialog(binding.height, "height",R.array.height));
+        binding.height.setOnClickListener(view -> openDropdownDialog(binding.height, "height", R.array.height));
         binding.weight.setOnClickListener(view -> openEditTextDialog(binding.weight, "weight"));
-        binding.diet.setOnClickListener(view -> openDropdownDialog(binding.diet, "diet",R.array.diet));
-        binding.maritalStatus.setOnClickListener(view -> openDropdownDialog(binding.maritalStatus, "maritalStatus",R.array.marital_status));
+        binding.diet.setOnClickListener(view -> openDropdownDialog(binding.diet, "diet", R.array.diet));
+        binding.maritalStatus.setOnClickListener(view -> openDropdownDialog(binding.maritalStatus, "maritalStatus", R.array.marital_status));
         binding.cno.setOnClickListener(view -> openEditTextDialog(binding.cno, "mobileNo"));
-        binding.quali.setOnClickListener(view -> openDropdownDialog(binding.quali, "qualification",R.array.qaulifications));
-        binding.profession.setOnClickListener(view -> openDropdownDialog(binding.profession, "occupation",R.array.professions));
-        binding.income.setOnClickListener(view -> openDropdownDialog(binding.income, "income",R.array.income));
+        binding.quali.setOnClickListener(view -> openDropdownDialog(binding.quali, "qualification", R.array.qaulifications));
+        binding.profession.setOnClickListener(view -> openDropdownDialog(binding.profession, "occupation", R.array.professions));
+        binding.income.setOnClickListener(view -> openDropdownDialog(binding.income, "income", R.array.income));
         binding.reg.setOnClickListener(view -> openReligionDialog());
         binding.state.setOnClickListener(view -> openStateCityDialog());
     }
@@ -210,7 +257,7 @@ public class Edit_profile extends Fragment {
         comAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         communitySpinner.setAdapter(comAdapter);
 
-        ArrayAdapter<CharSequence> subComAdapter=ArrayAdapter.createFromResource(requireContext(),R.array.default_subcommunity,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> subComAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.default_subcommunity, android.R.layout.simple_spinner_item);
         subCommunitySpinner.setAdapter(subComAdapter);
 
         religionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -299,7 +346,7 @@ public class Edit_profile extends Fragment {
         stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stateSpinner.setAdapter(stateAdapter);
 
-        ArrayAdapter<CharSequence> cityAd=ArrayAdapter.createFromResource(requireContext(),R.array.defaultCity,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> cityAd = ArrayAdapter.createFromResource(requireContext(), R.array.defaultCity, android.R.layout.simple_spinner_item);
         citySpinner.setAdapter(cityAd);
 
         // Set listener for state selection
@@ -427,7 +474,6 @@ public class Edit_profile extends Fragment {
                 citySpinner.setAdapter(cityAdapter);
             }
 
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // Do nothing
@@ -446,6 +492,7 @@ public class Edit_profile extends Fragment {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
     private void openDatePickerDialog(final TextView textView) {
         MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Select Date of birth")
@@ -457,7 +504,7 @@ public class Edit_profile extends Fragment {
             public void onPositiveButtonClick(Long selection) {
                 Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
                 calendar.setTimeInMillis(selection);
-                dateOfBirth=selection;
+                dateOfBirth = selection;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                 String selectedDate = dateFormat.format(calendar.getTime());
                 textView.setText(selectedDate);
@@ -466,7 +513,6 @@ public class Edit_profile extends Fragment {
 
         datePicker.show(requireActivity().getSupportFragmentManager(), "DATE_PICKER");
     }
-
 
     private void openEditTextDialog(final TextView textView, final String fieldName) {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
