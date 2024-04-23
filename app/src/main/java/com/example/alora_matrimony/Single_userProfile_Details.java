@@ -52,6 +52,7 @@ public class Single_userProfile_Details extends Fragment {
                 if(snapshot.exists()){
                     for(DataSnapshot snap: snapshot.getChildren()){
                         UserDetails ud=snap.getValue(UserDetails.class);
+                        uid=ud.getUserId();
                         Glide.with(requireContext())
                                 .load(ud.getImage())
                                 .placeholder(R.drawable.rectangle_radius_40)
@@ -63,7 +64,11 @@ public class Single_userProfile_Details extends Fragment {
                             @Override
                             public void onClick(View v) {
 //                                    onUserClickListener.onUserClick(ud.getUserId(),ud.getImage());
-                                    getParentFragmentManager().beginTransaction().replace(R.id.dbContainer2,new Chat()).commit();
+                                SingleChat s=new SingleChat();
+                                Bundle bundle=new Bundle();
+                                bundle.putString("userMsgId",uid);
+                                s.setArguments(bundle);
+                                    getParentFragmentManager().beginTransaction().replace(R.id.dbContainer2,s).commit();
                             }
                         });
 
@@ -100,21 +105,4 @@ public class Single_userProfile_Details extends Fragment {
             }
         });
     }
-    public static class AgeCalculator {
-        public static int calculateAge(int year, int month, int day) {
-
-            Calendar dob = Calendar.getInstance();
-            Calendar today = Calendar.getInstance();
-
-            dob.set(year, month, day);
-
-            int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-            if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                age--;
-            }
-
-            return age;
-        }
-    }
-
 }

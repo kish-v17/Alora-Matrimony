@@ -111,12 +111,10 @@ private void sendMessage(String messageText, String receiverUid, String image){
                     if (snapshot.exists() && isAdded()) {
                         UserDetails user = snapshot.getValue(UserDetails.class);
                         if (user != null) {
-                            // Set user's name
                             String userName = WordUtils.capitalizeFully(user.getFirstName());
                             image=user.getImage();
                             b.userName.setText(userName);
 
-                            // Set user's image using Glide
                             String imageUrl = user.getImage();
                             if (imageUrl != null && !imageUrl.isEmpty()) {
                                 Glide.with(requireContext())
@@ -126,7 +124,6 @@ private void sendMessage(String messageText, String receiverUid, String image){
                                         .circleCrop()
                                         .into(b.imageProfile);
                             } else {
-                                // If no image URL is available, set a default placeholder
                                 b.imageProfile.setImageResource(R.drawable.deshboard_profile_circle);
                             }
                         }
@@ -135,7 +132,7 @@ private void sendMessage(String messageText, String receiverUid, String image){
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    // Handle cancelled event
+
                 }
             });
         }

@@ -63,7 +63,7 @@ public class Dashboard extends AppCompatActivity {
                         break;
                 }
                 //for notification
-                navbar.setCount(chat,"3");
+                navbar.setCount(chat,"1");
                 return null;
             }
         });
