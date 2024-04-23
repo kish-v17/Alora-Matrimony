@@ -44,6 +44,12 @@ public class Single_userProfile_Details extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+    private void getAge(long time){
+        long currentTimestamp = System.currentTimeMillis();
+        long ageInMillis = currentTimestamp - time;
+        double ageInYears = ageInMillis / (365.25 * 24 * 3600 * 1000);
+        b.dob1.setText(String.format("%.2f", ageInYears) + " years");
+    }
 
     private void fetchUserData(){
         dbr.orderByChild("email").equalTo(suid).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -55,10 +61,12 @@ public class Single_userProfile_Details extends Fragment {
                         uid=ud.getUserId();
                         Glide.with(requireContext())
                                 .load(ud.getImage())
-                                .placeholder(R.drawable.rectangle_radius_40)
-                                .error(R.drawable.rectangle_radius_40)
                                 .fitCenter().centerCrop()
-                                .into(b.bigpfp);
+                                .into(b.probigpfp);
+                        Glide.with(requireContext())
+                                .load(ud.getImage())
+                                .fitCenter().circleCrop()
+                                .into(b.propfp);
 
                         b.addbtn.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -75,9 +83,9 @@ public class Single_userProfile_Details extends Fragment {
                         String lnmletter=WordUtils.capitalizeFully(ud.getLastName());
                         b.usrnm.setText(WordUtils.capitalizeFully(ud.getFirstName())+" "+(lnmletter.charAt(0))+".");
                         b.profession1.setText(WordUtils.capitalizeFully(ud.getOccupation()));
-//                        b.dob1.setText((int) ud.dateOfBirth);
-//                        b.height1.setText(ud.height);
-//                        b.weight1.setText(ud.weight+"kg");
+                        getAge(ud.getDateOfBirth());
+                        b.height1.setText(ud.getHeight());
+                        b.weight1.setText(ud.getWeight()+"kg");
                         b.fnm.setText(WordUtils.capitalizeFully(ud.getFirstName())+" "+WordUtils.capitalizeFully(ud.getLastName()));
                         b.profession.setText("Proffession : "+WordUtils.capitalizeFully(ud.getOccupation()));
                         b.maritalStatus.setText(WordUtils.capitalizeFully(ud.getMaritalStatus()));

@@ -78,7 +78,7 @@
             android:fontFamily="@font/quicksand_medium"
             android:hint="Enter Message"
             android:inputType="text"
-            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/sendbtn"
             app:layout_constraintStart_toStartOf="parent"

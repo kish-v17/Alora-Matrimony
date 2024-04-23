@@ -14,21 +14,20 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/bigpfp"
+        <com.example.alora_matrimony.MaskedImageSingle
+            android:id="@+id/probigpfp"
             android:layout_width="350dp"
             android:layout_height="350dp"
             android:layout_marginTop="30dp"
-            android:elevation="2dp"
+            android:elevation="-1dp"
             android:src="@drawable/user_profile" />
 
         <ImageView
-            android:id="@+id/pfp"
+            android:id="@+id/propfp"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_gravity="bottom|end"
             android:layout_marginStart="4dp"
-            android:elevation="1dp"
             android:background="@drawable/deshboard_profile_circle" />
 
     </FrameLayout>
@@ -82,7 +81,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/img_chat"
+                android:background="@drawable/chat_icon_single_pro"
                 app:layout_constraintEnd_toEndOf="@+id/likebtn"
                 app:layout_constraintStart_toEndOf="@id/unmQuali"
                 app:layout_constraintTop_toTopOf="@id/scroll" />
