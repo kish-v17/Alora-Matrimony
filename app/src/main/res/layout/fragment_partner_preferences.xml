@@ -7,9 +7,9 @@
     tools:context=".Partner_Preferences">
 
     <LinearLayout
-        android:id="@+id/top_bar"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,23 +25,12 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/pref_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="From here you can customize your partner preferences "
-        app:layout_constraintTop_toBottomOf="@id/top_bar"
-        android:fontFamily="@font/quicksand_medium"
-        android:textSize="20dp"
-        android:layout_margin="20dp"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pref_text">
+        app:layout_constraintTop_toBottomOf="@id/topBar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,6 +54,7 @@
                 style="@style/txtQuicksandbold24"/>
 
             <TextView
+                android:id="@+id/txtPrefAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Age:"
@@ -72,6 +62,7 @@
                 style="@style/txtQuicksandregular23"/>
 
             <TextView
+                android:id="@+id/txtPrefHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Height:"
@@ -79,6 +70,7 @@
                 style="@style/txtQuicksandregular23"/>
 
             <TextView
+                android:id="@+id/txtPrefWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weight:"
@@ -86,6 +78,15 @@
                 style="@style/txtQuicksandregular23"/>
 
             <TextView
+                android:id="@+id/txtPrefMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marital Status:"
+                android:layout_marginTop="10dp"
+                style="@style/txtQuicksandregular23"/>
+
+            <TextView
+                android:id="@+id/txtprefDiet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Diet:"
@@ -110,13 +111,15 @@
                     style="@style/txtQuicksandbold24"/>
 
                 <TextView
+                    android:id="@+id/txtPrefQual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Highest Qualification:"
+                    android:text="Qualification:"
                     android:layout_marginTop="10dp"
                     style="@style/txtQuicksandregular23"/>
 
                 <TextView
+                    android:id="@+id/txtPrefProf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Proffession:"
@@ -124,6 +127,7 @@
                     style="@style/txtQuicksandregular23"/>
 
                 <TextView
+                    android:id="@+id/txtPrefIncome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Income:"
@@ -148,6 +152,7 @@
                     style="@style/txtQuicksandbold24"/>
 
                 <TextView
+                    android:id="@+id/txtPrefReligion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Religion:"
@@ -155,6 +160,7 @@
                     style="@style/txtQuicksandregular23"/>
 
                 <TextView
+                    android:id="@+id/txtPrefCom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Community:"
@@ -162,16 +168,10 @@
                     style="@style/txtQuicksandregular23"/>
 
                 <TextView
+                    android:id="@+id/txtPrefSubCom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Community:"
-                    android:layout_marginTop="10dp"
-                    style="@style/txtQuicksandregular23"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sub Community:"
+                    android:text="Sub Com.:"
                     android:layout_marginTop="10dp"
                     style="@style/txtQuicksandregular23"/>
 
@@ -193,6 +193,7 @@
                     style="@style/txtQuicksandbold24"/>
 
                 <TextView
+                    android:id="@+id/txtPrefState"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="State:"
@@ -200,6 +201,7 @@
                     style="@style/txtQuicksandregular23"/>
 
                 <TextView
+                    android:id="@+id/txtPrefCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="City:"

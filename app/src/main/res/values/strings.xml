@@ -934,5 +934,14 @@ Engage and Connect: Initiate conversations, discover shared interests, and build
         <item>Fitness Instructor</item>
         <item>Yoga Instructor</item>
     </string-array>
+
+    <string-array name="ageGrp">
+        <item><b>Select Age Group</b></item>
+        <item>21 to 30</item>
+        <item>31 to 40</item>
+        <item>41 to 50</item>
+        <item>51 to 60</item>
+        <item>60 and above</item>
+    </string-array>
 </resources>
 

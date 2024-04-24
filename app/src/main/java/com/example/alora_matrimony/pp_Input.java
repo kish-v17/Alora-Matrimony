@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class pp_Input extends Fragment {
     FragmentPpInputBinding b;
-    String uid,prefid,gender,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation;
+    String uid,prefid,gender,ageGroup,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation;
     ArrayAdapter<CharSequence> subComAd,cityAd;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -230,7 +230,7 @@ public class pp_Input extends Fragment {
             DatabaseReference dbr= FirebaseDatabase.getInstance().getReference();
             uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
             prefid=dbr.child("partnerPreferences").push().getKey();
-            PP_Details p=new PP_Details(prefid,uid,gender,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation);
+            PP_Details p=new PP_Details(prefid,uid,gender,ageGroup,religion,community,subCom,state,city,maritalStatus,height,weight,diet,qual,income,occupation);
             dbr.child("partnerPreferences").child(prefid).setValue(p).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -243,6 +243,7 @@ public class pp_Input extends Fragment {
     }
     void setValues(){
         gender = (b.ppSpGen.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpGen.getSelectedItem().toString();
+        ageGroup=(b.ppSpAgeGrp.getSelectedItemId()==0) ? "Not Prefered" : b.ppSpAgeGrp.getSelectedItem().toString();
         religion = (b.ppSpReligion.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpReligion.getSelectedItem().toString();
         community = (b.ppSpCommunity.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpCommunity.getSelectedItem().toString();
         subCom = (b.ppSpSubCommunity.getSelectedItemId() == 0) ? "Not Prefered" : b.ppSpSubCommunity.getSelectedItem().toString();

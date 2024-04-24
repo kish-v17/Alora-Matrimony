@@ -1,15 +1,16 @@
 package com.example.alora_matrimony;
 
 public class PP_Details {
-    String prefId,prefUId,prefGender,prefReligion,prefCommunity,prefSubCom,prefState,prefCity,prefMaritalStatus,prefHeight,prefWeight,prefDiet,prefQual,prefIncome,prefOccupation;
+    String prefId,prefUId,prefGender,prefAgeGroup,prefReligion,prefCommunity,prefSubCom,prefState,prefCity,prefMaritalStatus,prefHeight,prefWeight,prefDiet,prefQual,prefIncome,prefOccupation;
 
     public PP_Details() {
     }
 
-    public PP_Details(String prefId, String prefUId, String prefGender, String prefReligion, String prefCommunity, String prefSubCom, String prefState, String prefCity, String prefMaritalStatus, String prefHeight, String prefWeight, String prefDiet, String prefQual, String prefIncome, String prefOccupation) {
+    public PP_Details(String prefId, String prefUId, String prefGender,String prefAgeGroup,String prefReligion, String prefCommunity, String prefSubCom, String prefState, String prefCity, String prefMaritalStatus, String prefHeight, String prefWeight, String prefDiet, String prefQual, String prefIncome, String prefOccupation) {
         this.prefId = prefId;
         this.prefUId = prefUId;
         this.prefGender = prefGender;
+        this.prefAgeGroup=prefAgeGroup;
         this.prefReligion = prefReligion;
         this.prefCommunity = prefCommunity;
         this.prefSubCom = prefSubCom;
@@ -22,6 +23,14 @@ public class PP_Details {
         this.prefQual = prefQual;
         this.prefIncome = prefIncome;
         this.prefOccupation = prefOccupation;
+    }
+
+    public String getPrefAgeGroup() {
+        return prefAgeGroup;
+    }
+
+    public void setPrefAgeGroup(String prefAgeGroup) {
+        this.prefAgeGroup = prefAgeGroup;
     }
 
     public String getPrefId() {
