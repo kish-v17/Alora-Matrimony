@@ -47,8 +47,8 @@ public class Single_userProfile_Details extends Fragment {
     private void getAge(long time){
         long currentTimestamp = System.currentTimeMillis();
         long ageInMillis = currentTimestamp - time;
-        double ageInYears = ageInMillis / (365.25 * 24 * 3600 * 1000);
-        b.dob1.setText(String.format("%.2f", ageInYears) + " years");
+        int ageInYears = (int) (ageInMillis / (365.25 * 24 * 3600 * 1000));
+        b.dob1.setText(ageInYears+" years");
     }
 
     private void fetchUserData(){
